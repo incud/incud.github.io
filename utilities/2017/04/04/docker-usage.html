@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>How to use Docker</title>
+  <meta name="description" content="Images vs Containers">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="/utilities/2017/04/04/docker-usage.html">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="Incud&#39;s blog" href="/feed.xml">
+
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:title" content="How to use Docker">
+  <meta name="twitter:description" content="Images vs Containers">
+  
+  
+
+  <script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Bitter:400,700,400italic:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Incud&#39;s blog</a>
+
+    <nav class="site-nav">
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    
+      <h1 class="post-title" itemprop="name headline">How to use Docker</h1>
+    
+    <p class="post-meta"><time datetime="2017-04-04T14:16:00+02:00" itemprop="datePublished">Apr 4, 2017</time> • 
+  
+  
+
+</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h1 id="images-vs-containers">Images vs Containers</h1>
+
+<p>According to <a href="http://paislee.io/how-to-automate-docker-deployments/">this post</a></p>
+<blockquote>
+  <p>An image is an inert, immutable, file that’s essentially a snapshot of a container. 
+Images are created with the build command, and they’ll produce a container when started with run. 
+Images are stored in a Docker registry such as registry.hub.docker.com. 
+Because they can become quite large, images are designed to be composed of layers of other images, allowing a miminal amount of data to be sent when transferring images over the network.</p>
+</blockquote>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># List local images</span>
+docker images
+
+<span class="c"># List running containers</span>
+docker ps
+
+<span class="c"># List all containers</span>
+docker ps -a
+
+<span class="c"># Delete all containers</span>
+docker rm <span class="k">$(</span>docker ps -a -q<span class="k">)</span>
+
+<span class="c"># Delete all images</span>
+docker rmi <span class="k">$(</span>docker images -q<span class="k">)</span></code></pre></figure>
+
+<h1 id="start-a-new-container">Start a new container</h1>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Pull the image called 'ocaml/opam:alpine'</span>
+docker pull ocaml/opam:alpine
+
+<span class="c"># Run new instance of the image just downloaded</span>
+docker run -i -t ocaml/opam:alpine /bin/bash
+<span class="c"># -a=[]           : Attach to `STDIN`, `STDOUT` and/or `STDERR`</span>
+<span class="c"># -t              : Allocate a pseudo-tty</span>
+<span class="c"># --sig-proxy=true: Proxy all received signals to the process (non-TTY mode only)</span>
+<span class="c"># -i              : Keep STDIN open even if not attached</span>
+
+<span class="c"># Run new instance with volume</span>
+docker run -v &lt;host dir&gt;:&lt;guest dir&gt; &lt;image name&gt; &lt;<span class="nb">command</span>&gt;
+docker run -v C:/mydirec:/guestdirec alpine       ls /data
+
+<span class="c"># Run new instance (full command)</span>
+docker run -i -t -v c:/DockerDataIncud:/data ocaml/opam:alpine /bin/bash</code></pre></figure>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy;  - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="/feed.xml">RSS</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
