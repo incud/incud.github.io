@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>Latex</title>
+  <meta name="description" content="Latex snippets">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="/notes/2017/04/05/latex.html">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="Incud&#39;s blog" href="/feed.xml">
+
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:title" content="Latex">
+  <meta name="twitter:description" content="Latex snippets">
+  
+  
+
+  <script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Bitter:400,700,400italic:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Incud&#39;s blog</a>
+
+    <nav class="site-nav">
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    
+      <h1 class="post-title" itemprop="name headline">Latex</h1>
+    
+    <p class="post-meta"><time datetime="2017-04-05T00:23:00+02:00" itemprop="datePublished">Apr 5, 2017</time> • 
+  
+  
+
+</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h1 id="latex-snippets">Latex snippets</h1>
+
+<h3 id="zig-zag-method">Zig-zag method</h3>
+<p>Taken from <a href="http://tex.stackexchange.com/questions/129480/countability-of-the-rationals-a-pictorial-diagram">Tex.Stackexchange</a> and slightly modified.</p>
+
+<figure class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\documentclass</span><span class="na">[preview]</span><span class="p">{</span>standalone<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>tikz<span class="p">}</span>
+<span class="k">\usetikzlibrary</span><span class="p">{</span>matrix<span class="p">}</span>
+<span class="nt">\begin{document}</span>
+<span class="nt">\begin{tikzpicture}</span>
+<span class="k">\matrix</span>(m)[matrix of math nodes,column sep=1cm,row sep=1cm]<span class="p">{</span>
+       <span class="p">&amp;</span> C0 <span class="p">&amp;</span> C1 <span class="p">&amp;</span> C2 <span class="p">&amp;</span> C3  <span class="p">&amp;</span> <span class="k">\cdots</span> <span class="k">\\</span>
+    P0 <span class="p">&amp;</span> 1  <span class="p">&amp;</span> 2  <span class="p">&amp;</span> 6  <span class="p">&amp;</span> 7   <span class="p">&amp;</span> <span class="k">\cdots</span> <span class="k">\\</span>
+    P1 <span class="p">&amp;</span> 3  <span class="p">&amp;</span> 5  <span class="p">&amp;</span> 8  <span class="p">&amp;</span> 14  <span class="p">&amp;</span> <span class="k">\\</span>
+    P2 <span class="p">&amp;</span> 4  <span class="p">&amp;</span> 9  <span class="p">&amp;</span> 13 <span class="p">&amp;</span>     <span class="p">&amp;</span> <span class="k">\\</span>
+    P3 <span class="p">&amp;</span> 10 <span class="p">&amp;</span> 12 <span class="p">&amp;</span>    <span class="p">&amp;</span>     <span class="p">&amp;</span> <span class="k">\\</span>
+    P4 <span class="p">&amp;</span> 11 <span class="p">&amp;</span>    <span class="p">&amp;</span>    <span class="p">&amp;</span>     <span class="p">&amp;</span> <span class="k">\\</span>
+    <span class="k">\vdots</span> <span class="p">&amp;&amp;</span>    <span class="p">&amp;</span>    <span class="p">&amp;</span>     <span class="p">&amp;</span> <span class="k">\\</span>
+<span class="p">}</span>;
+<span class="k">\draw</span><span class="na">[-&gt;]</span>
+    (m-2-2)edge(m-2-3)
+    (m-2-3)edge(m-3-2)
+    (m-3-2)edge(m-4-2)
+    (m-4-2)edge(m-3-3)
+    (m-3-3)edge(m-2-4)
+    (m-2-4)edge(m-2-5)
+    (m-2-5)edge(m-3-4)
+    (m-3-4)edge(m-4-3)
+    (m-4-3)edge(m-5-2)
+    (m-5-2)edge(m-6-2)
+    (m-6-2)edge(m-5-3)
+    (m-5-3)edge(m-4-4)
+    (m-4-4)edge(m-3-5)
+    (m-3-5)edge(m-2-6);
+<span class="nt">\end{tikzpicture}</span>
+<span class="nt">\end{document}</span></code></pre></figure>
+
+<p><img src="/assets/transfiniti/zig-zag.png" alt="Zig-zag" class="center-image" /></p>
+
+<figure class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\documentclass</span><span class="na">[preview]</span><span class="p">{</span>standalone<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>tikz<span class="p">}</span>
+<span class="k">\usetikzlibrary</span><span class="p">{</span>matrix<span class="p">}</span>
+<span class="nt">\begin{document}</span>
+<span class="nt">\begin{tikzpicture}</span>
+<span class="k">\matrix</span>(m)[matrix of math nodes,column sep=1cm,row sep=1cm]<span class="p">{</span>
+                <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>1<span class="p">}{</span>-<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>2<span class="p">}{</span>-<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>3<span class="p">}{</span>-<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>4<span class="p">}{</span>-<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\cdots</span> <span class="k">\\</span>
+    <span class="k">\frac</span><span class="p">{</span>-<span class="p">}{</span>1<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>1<span class="p">}{</span>1<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>2<span class="p">}{</span>1<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>3<span class="p">}{</span>1<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>4<span class="p">}{</span>1<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\cdots</span> <span class="k">\\</span>
+    <span class="k">\frac</span><span class="p">{</span>-<span class="p">}{</span>2<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>1<span class="p">}{</span>2<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>2<span class="p">}{</span>2<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>3<span class="p">}{</span>2<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>4<span class="p">}{</span>2<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\\</span>
+    <span class="k">\frac</span><span class="p">{</span>-<span class="p">}{</span>3<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>1<span class="p">}{</span>3<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>2<span class="p">}{</span>3<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>3<span class="p">}{</span>3<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>4<span class="p">}{</span>3<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\\</span>
+    <span class="k">\frac</span><span class="p">{</span>-<span class="p">}{</span>4<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>1<span class="p">}{</span>4<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>2<span class="p">}{</span>4<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>3<span class="p">}{</span>4<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>4<span class="p">}{</span>4<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\\</span>
+    <span class="k">\frac</span><span class="p">{</span>-<span class="p">}{</span>5<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>1<span class="p">}{</span>5<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>2<span class="p">}{</span>5<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>3<span class="p">}{</span>5<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\frac</span><span class="p">{</span>4<span class="p">}{</span>5<span class="p">}</span> <span class="p">&amp;</span> <span class="k">\\</span>
+<span class="p">}</span>;
+<span class="k">\draw</span><span class="na">[-&gt;]</span>
+    (m-2-2)edge(m-2-3)
+    (m-2-3)edge(m-3-2)
+    (m-3-2)edge(m-4-2)
+    (m-4-2)edge(m-3-3)
+    (m-3-3)edge(m-2-4)
+    (m-2-4)edge(m-2-5)
+    (m-2-5)edge(m-3-4)
+    (m-3-4)edge(m-4-3)
+    (m-4-3)edge(m-5-2)
+    (m-5-2)edge(m-6-2)
+    (m-6-2)edge(m-5-3)
+    (m-5-3)edge(m-4-4)
+    (m-4-4)edge(m-3-5)
+    (m-3-5)edge(m-2-6);
+<span class="nt">\end{tikzpicture}</span>
+<span class="nt">\end{document}</span></code></pre></figure>
+
+<p><img src="/assets/transfiniti/zig-zag2.png" alt="Zig-zag2" class="center-image" /></p>
+
+<h3 id="diagonalization">Diagonalization</h3>
+
+<figure class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\documentclass</span><span class="na">[preview]</span><span class="p">{</span>standalone<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>tikz<span class="p">}</span>
+<span class="k">\usetikzlibrary</span><span class="p">{</span>matrix<span class="p">}</span>
+<span class="nt">\begin{document}</span>
+<span class="nt">\begin{tikzpicture}</span>
+<span class="k">\matrix</span>(m)[matrix of math nodes,column sep=0.5mm,row sep=1mm]<span class="p">{</span>
+          <span class="p">&amp;</span> 0, <span class="p">&amp;</span> c<span class="p">_</span>1 <span class="p">&amp;</span> c<span class="p">_</span>2 <span class="p">&amp;</span> c<span class="p">_</span>3 <span class="p">&amp;</span> c<span class="p">_</span>4 <span class="p">&amp;</span> c<span class="p">_</span>5 <span class="p">&amp;</span> ... <span class="k">\\</span>
+    X<span class="p">_</span>1 = <span class="p">&amp;</span> 0, <span class="p">&amp;</span> 5   <span class="p">&amp;</span> 2   <span class="p">&amp;</span> 7   <span class="p">&amp;</span> 3   <span class="p">&amp;</span> 4   <span class="p">&amp;</span> ... <span class="k">\\</span>
+    X<span class="p">_</span>2 = <span class="p">&amp;</span> 0, <span class="p">&amp;</span> 3   <span class="p">&amp;</span> 3   <span class="p">&amp;</span> 8   <span class="p">&amp;</span> 2   <span class="p">&amp;</span> 1   <span class="p">&amp;</span> ... <span class="k">\\</span>
+    X<span class="p">_</span>3 = <span class="p">&amp;</span> 0, <span class="p">&amp;</span> 8   <span class="p">&amp;</span> 6   <span class="p">&amp;</span> 5   <span class="p">&amp;</span> 4   <span class="p">&amp;</span> 4   <span class="p">&amp;</span> ... <span class="k">\\</span>
+    X<span class="p">_</span>4 = <span class="p">&amp;</span> 0, <span class="p">&amp;</span> 9   <span class="p">&amp;</span> 1   <span class="p">&amp;</span> 4   <span class="p">&amp;</span> 9   <span class="p">&amp;</span> 7   <span class="p">&amp;</span> ... <span class="k">\\</span>
+    X<span class="p">_</span>5 = <span class="p">&amp;</span> 0, <span class="p">&amp;</span> 1   <span class="p">&amp;</span> 4   <span class="p">&amp;</span> 2   <span class="p">&amp;</span> 4   <span class="p">&amp;</span> 8   <span class="p">&amp;</span> ... <span class="k">\\</span>
+    <span class="k">\vdots</span> <span class="p">&amp;</span>   <span class="p">&amp;</span>     <span class="p">&amp;</span>     <span class="p">&amp;</span>     <span class="p">&amp;</span>     <span class="p">&amp;</span>     <span class="p">&amp;</span>     <span class="k">\\</span>
+    Y =   <span class="p">&amp;</span> 0, <span class="p">&amp;</span> 6   <span class="p">&amp;</span> 4   <span class="p">&amp;</span> 6   <span class="p">&amp;</span> 0   <span class="p">&amp;</span> 9   <span class="p">&amp;</span> ... <span class="k">\\</span>
+<span class="p">}</span>;
+<span class="k">\draw</span><span class="na">[red, thick]</span> (m-2-3.north west) rectangle (m-2-3.south east);
+<span class="k">\draw</span><span class="na">[red, thick]</span> (m-3-4.north west) rectangle (m-3-4.south east);
+<span class="k">\draw</span><span class="na">[red, thick]</span> (m-4-5.north west) rectangle (m-4-5.south east);
+<span class="k">\draw</span><span class="na">[red, thick]</span> (m-5-6.north west) rectangle (m-5-6.south east);
+<span class="k">\draw</span><span class="na">[red, thick]</span> (m-6-7.north west) rectangle (m-6-7.south east);
+<span class="nt">\end{tikzpicture}</span>
+<span class="nt">\end{document}</span></code></pre></figure>
+
+<p><img src="/assets/transfiniti/diagonalizzazione.png" alt="Diagon" class="center-image" /></p>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      <small>
+<!-- licence -->
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+<img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+Quest'opera è distribuita con Licenza <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+Creative Commons Attribuzione - Non commerciale - Non opere derivate 4.0 Internazionale</a>.
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.<br/>
+
+&copy;  - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a>
+</small>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

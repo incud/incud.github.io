@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>Funzioni ricorsive parziali</title>
+  <meta name="description" content="Funzioni ricorsive primitive">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="/notes/2017/04/05/funzioni-ricorsive-parziali.html">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="Incud&#39;s blog" href="/feed.xml">
+
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:title" content="Funzioni ricorsive parziali">
+  <meta name="twitter:description" content="Funzioni ricorsive primitive">
+  
+  
+
+  <script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Bitter:400,700,400italic:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Incud&#39;s blog</a>
+
+    <nav class="site-nav">
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    
+      <h1 class="post-title" itemprop="name headline">Funzioni ricorsive parziali</h1>
+    
+    <p class="post-meta"><time datetime="2017-04-05T20:49:00+02:00" itemprop="datePublished">Apr 5, 2017</time> • 
+  
+  
+
+</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h1 id="funzioni-ricorsive-primitive">Funzioni ricorsive primitive</h1>
+
+<p>Definiamo l’insieme <script type="math/tex">\mathcal{C}</script> delle funzioni ricorsive primitive il più piccolo insieme contenente</p>
+<ul>
+  <li>le tre <em>funzioni base</em>:
+    <ol>
+      <li>La funzione zero <script type="math/tex">Z(x_1, x_2, ..., x_n)=0</script></li>
+      <li>La funzione successivo <script type="math/tex">S(x)=x+1</script></li>
+      <li>Le funzioni proiezione <script type="math/tex">P_1(x_1, x_2, ..., x_n) = x_1, P_2(x_1, x_2, ..., x_n)=x_2, ...</script></li>
+    </ol>
+  </li>
+  <li>le funzione ottenute applicando l’operazione di composizione o di ricorsione primitiva ad altre funzioni <script type="math/tex">\in \mathcal{C}</script>:
+    <ul>
+      <li>
+        <p>Sia <script type="math/tex">X = (x_1, ..., x_n)</script>. Siano <script type="math/tex">g_1, ..., g_k</script> funzioni di arità <script type="math/tex">n</script>, <script type="math/tex">h</script> funzione di arità <script type="math/tex">k</script>. Allora possiamo definire:</p>
+
+        <script type="math/tex; mode=display">f(X) = h(g_1(X), g_2(X), ..., g_k(X))</script>
+      </li>
+      <li>
+        <p>Sia <script type="math/tex">X = (x_1, ..., x_n)</script>. Siano <script type="math/tex">g, h</script> funzioni di <script type="math/tex">n</script> e <script type="math/tex">n+2</script> argomenti rispettivamente. Possiamo definire la funzione <script type="math/tex">f</script> di <script type="math/tex">n+1</script> argomenti:</p>
+
+        <script type="math/tex; mode=display">% <![CDATA[
+f: \begin{cases} f(0, X) &= g(X) \\ f(y+1, X) &= h(y, f(y, X), X) \end{cases} %]]></script>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Esempi di funzioni ricorsive primitive sono:</p>
+<ol>
+  <li>a</li>
+  <li>b</li>
+  <li>c</li>
+</ol>
+
+<p>Si dice che l’insieme <script type="math/tex">\mathcal{C}</script> è chiuso rispetto alle operazioni di composizione e ricorsione primitiva. Un insieme <script type="math/tex">I</script> è chiuso rispetto ad una generica operazione <script type="math/tex">\cdot</script> se e solo se <script type="math/tex">\forall x,y \in I</script> si ha <script type="math/tex">x \cdot y \in I</script>.</p>
+
+<p>L’insieme <script type="math/tex">\mathcal{C}</script> è chiuso anche rispetto alle operazioni di <em>somma limitata</em> e <em>prodotto limitato</em>:</p>
+<ol>
+  <li>a</li>
+  <li>b</li>
+</ol>
+
+<p>Si può creare l’equivalente della <em>formation sequence</em> delle formule logiche per le funzioni ricorsive primitive: <script type="math/tex">f</script> è ricorsiva primitiva solo se si può scrivere una lista <script type="math/tex">f_1, f_2, ..., f_n = f</script> dove per ogni <script type="math/tex">i \in \lbrack 1, n \rbrack</script> abbiamo che <script type="math/tex">f_i</script> è una funzione base oppure ottenuta da funzioni <script type="math/tex">% <![CDATA[
+f_j, j<i %]]></script>.</p>
+
+<h4 id="predicati-primitivi-ricorsivi">Predicati primitivi ricorsivi</h4>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      <small>
+<!-- licence -->
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+<img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+Quest'opera è distribuita con Licenza <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+Creative Commons Attribuzione - Non commerciale - Non opere derivate 4.0 Internazionale</a>.
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.<br/>
+
+&copy;  - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a>
+</small>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

@@ -1,8 +1,156 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-04-05T08:58:43+02:00</updated><id>/</id><title type="html">Incud’s blog</title><subtitle>Here's where I collect my notes. 
-</subtitle><entry><title type="html">I numeri transfiniti</title><link href="/notes/2017/04/05/i-numeri-transfiniti.html" rel="alternate" type="text/html" title="I numeri transfiniti" /><published>2017-04-05T00:23:00+02:00</published><updated>2017-04-05T00:23:00+02:00</updated><id>/notes/2017/04/05/i-numeri-transfiniti</id><content type="html" xml:base="/notes/2017/04/05/i-numeri-transfiniti.html">&lt;p&gt;All the material is a summary of material found online. Particulary userful is the “I Numeri Transfiniti” notes from Alessandro Berarducci (UniPi). Search for it on Google. The notes are in Italian.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-04-06T08:43:44+02:00</updated><id>/</id><title type="html">Incud’s blog</title><subtitle>Here's where I collect my notes. 
+</subtitle><entry><title type="html">Funzioni ricorsive parziali</title><link href="/notes/2017/04/05/funzioni-ricorsive-parziali.html" rel="alternate" type="text/html" title="Funzioni ricorsive parziali" /><published>2017-04-05T20:49:00+02:00</published><updated>2017-04-05T20:49:00+02:00</updated><id>/notes/2017/04/05/funzioni-ricorsive-parziali</id><content type="html" xml:base="/notes/2017/04/05/funzioni-ricorsive-parziali.html">&lt;h1 id=&quot;funzioni-ricorsive-primitive&quot;&gt;Funzioni ricorsive primitive&lt;/h1&gt;
+
+&lt;p&gt;Definiamo l’insieme &lt;script type=&quot;math/tex&quot;&gt;\mathcal{C}&lt;/script&gt; delle funzioni ricorsive primitive il più piccolo insieme contenente&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;le tre &lt;em&gt;funzioni base&lt;/em&gt;:
+    &lt;ol&gt;
+      &lt;li&gt;La funzione zero &lt;script type=&quot;math/tex&quot;&gt;Z(x_1, x_2, ..., x_n)=0&lt;/script&gt;&lt;/li&gt;
+      &lt;li&gt;La funzione successivo &lt;script type=&quot;math/tex&quot;&gt;S(x)=x+1&lt;/script&gt;&lt;/li&gt;
+      &lt;li&gt;Le funzioni proiezione &lt;script type=&quot;math/tex&quot;&gt;P_1(x_1, x_2, ..., x_n) = x_1, P_2(x_1, x_2, ..., x_n)=x_2, ...&lt;/script&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;le funzione ottenute applicando l’operazione di composizione o di ricorsione primitiva ad altre funzioni &lt;script type=&quot;math/tex&quot;&gt;\in \mathcal{C}&lt;/script&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Sia &lt;script type=&quot;math/tex&quot;&gt;X = (x_1, ..., x_n)&lt;/script&gt;. Siano &lt;script type=&quot;math/tex&quot;&gt;g_1, ..., g_k&lt;/script&gt; funzioni di arità &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;h&lt;/script&gt; funzione di arità &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt;. Allora possiamo definire:&lt;/p&gt;
+
+        &lt;script type=&quot;math/tex; mode=display&quot;&gt;f(X) = h(g_1(X), g_2(X), ..., g_k(X))&lt;/script&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Sia &lt;script type=&quot;math/tex&quot;&gt;X = (x_1, ..., x_n)&lt;/script&gt;. Siano &lt;script type=&quot;math/tex&quot;&gt;g, h&lt;/script&gt; funzioni di &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; e &lt;script type=&quot;math/tex&quot;&gt;n+2&lt;/script&gt; argomenti rispettivamente. Possiamo definire la funzione &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; di &lt;script type=&quot;math/tex&quot;&gt;n+1&lt;/script&gt; argomenti:&lt;/p&gt;
+
+        &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+f: \begin{cases} f(0, X) &amp;= g(X) \\ f(y+1, X) &amp;= h(y, f(y, X), X) \end{cases} %]]&gt;&lt;/script&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Esempi di funzioni ricorsive primitive sono:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;a&lt;/li&gt;
+  &lt;li&gt;b&lt;/li&gt;
+  &lt;li&gt;c&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Si dice che l’insieme &lt;script type=&quot;math/tex&quot;&gt;\mathcal{C}&lt;/script&gt; è chiuso rispetto alle operazioni di composizione e ricorsione primitiva. Un insieme &lt;script type=&quot;math/tex&quot;&gt;I&lt;/script&gt; è chiuso rispetto ad una generica operazione &lt;script type=&quot;math/tex&quot;&gt;\cdot&lt;/script&gt; se e solo se &lt;script type=&quot;math/tex&quot;&gt;\forall x,y \in I&lt;/script&gt; si ha &lt;script type=&quot;math/tex&quot;&gt;x \cdot y \in I&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;L’insieme &lt;script type=&quot;math/tex&quot;&gt;\mathcal{C}&lt;/script&gt; è chiuso anche rispetto alle operazioni di &lt;em&gt;somma limitata&lt;/em&gt; e &lt;em&gt;prodotto limitato&lt;/em&gt;:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;a&lt;/li&gt;
+  &lt;li&gt;b&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Si può creare l’equivalente della &lt;em&gt;formation sequence&lt;/em&gt; delle formule logiche per le funzioni ricorsive primitive: &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; è ricorsiva primitiva solo se si può scrivere una lista &lt;script type=&quot;math/tex&quot;&gt;f_1, f_2, ..., f_n = f&lt;/script&gt; dove per ogni &lt;script type=&quot;math/tex&quot;&gt;i \in \lbrack 1, n \rbrack&lt;/script&gt; abbiamo che &lt;script type=&quot;math/tex&quot;&gt;f_i&lt;/script&gt; è una funzione base oppure ottenuta da funzioni &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+f_j, j&lt;i %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;predicati-primitivi-ricorsivi&quot;&gt;Predicati primitivi ricorsivi&lt;/h4&gt;</content><author><name></name></author><summary type="html">Funzioni ricorsive primitive</summary></entry><entry><title type="html">Latex</title><link href="/notes/2017/04/05/latex.html" rel="alternate" type="text/html" title="Latex" /><published>2017-04-05T00:23:00+02:00</published><updated>2017-04-05T00:23:00+02:00</updated><id>/notes/2017/04/05/latex</id><content type="html" xml:base="/notes/2017/04/05/latex.html">&lt;h1 id=&quot;latex-snippets&quot;&gt;Latex snippets&lt;/h1&gt;
+
+&lt;h3 id=&quot;zig-zag-method&quot;&gt;Zig-zag method&lt;/h3&gt;
+&lt;p&gt;Taken from &lt;a href=&quot;http://tex.stackexchange.com/questions/129480/countability-of-the-rationals-a-pictorial-diagram&quot;&gt;Tex.Stackexchange&lt;/a&gt; and slightly modified.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\documentclass&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[preview]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;standalone&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;tikz&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\usetikzlibrary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;matrix&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;\begin{document}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;\begin{tikzpicture}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\matrix&lt;/span&gt;(m)[matrix of math nodes,column sep=1cm,row sep=1cm]&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; C0 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; C1 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; C2 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; C3  &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\cdots&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+    P0 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 1  &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 2  &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 6  &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 7   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\cdots&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+    P1 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 3  &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 5  &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 8  &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 14  &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+    P2 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 4  &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 9  &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 13 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+    P3 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 10 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 12 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+    P4 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 11 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\vdots&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;;
+&lt;span class=&quot;k&quot;&gt;\draw&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[-&amp;gt;]&lt;/span&gt;
+    (m-2-2)edge(m-2-3)
+    (m-2-3)edge(m-3-2)
+    (m-3-2)edge(m-4-2)
+    (m-4-2)edge(m-3-3)
+    (m-3-3)edge(m-2-4)
+    (m-2-4)edge(m-2-5)
+    (m-2-5)edge(m-3-4)
+    (m-3-4)edge(m-4-3)
+    (m-4-3)edge(m-5-2)
+    (m-5-2)edge(m-6-2)
+    (m-6-2)edge(m-5-3)
+    (m-5-3)edge(m-4-4)
+    (m-4-4)edge(m-3-5)
+    (m-3-5)edge(m-2-6);
+&lt;span class=&quot;nt&quot;&gt;\end{tikzpicture}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;\end{document}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/transfiniti/zig-zag.png&quot; alt=&quot;Zig-zag&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\documentclass&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[preview]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;standalone&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;tikz&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\usetikzlibrary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;matrix&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;\begin{document}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;\begin{tikzpicture}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\matrix&lt;/span&gt;(m)[matrix of math nodes,column sep=1cm,row sep=1cm]&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\cdots&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;-&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\cdots&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;-&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;-&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;-&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;-&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;5&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;5&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;5&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;5&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;5&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;;
+&lt;span class=&quot;k&quot;&gt;\draw&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[-&amp;gt;]&lt;/span&gt;
+    (m-2-2)edge(m-2-3)
+    (m-2-3)edge(m-3-2)
+    (m-3-2)edge(m-4-2)
+    (m-4-2)edge(m-3-3)
+    (m-3-3)edge(m-2-4)
+    (m-2-4)edge(m-2-5)
+    (m-2-5)edge(m-3-4)
+    (m-3-4)edge(m-4-3)
+    (m-4-3)edge(m-5-2)
+    (m-5-2)edge(m-6-2)
+    (m-6-2)edge(m-5-3)
+    (m-5-3)edge(m-4-4)
+    (m-4-4)edge(m-3-5)
+    (m-3-5)edge(m-2-6);
+&lt;span class=&quot;nt&quot;&gt;\end{tikzpicture}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;\end{document}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/transfiniti/zig-zag2.png&quot; alt=&quot;Zig-zag2&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;diagonalization&quot;&gt;Diagonalization&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\documentclass&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[preview]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;standalone&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;tikz&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\usetikzlibrary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;matrix&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;\begin{document}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;\begin{tikzpicture}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\matrix&lt;/span&gt;(m)[matrix of math nodes,column sep=0.5mm,row sep=1mm]&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 0, &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; c&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;1 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; c&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;2 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; c&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;3 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; c&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;4 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; c&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;5 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; ... &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+    X&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;1 = &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 0, &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 5   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 2   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 7   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 3   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 4   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; ... &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+    X&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;2 = &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 0, &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 3   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 3   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 8   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 2   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 1   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; ... &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+    X&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;3 = &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 0, &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 8   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 6   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 5   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 4   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 4   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; ... &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+    X&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;4 = &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 0, &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 9   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 1   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 4   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 9   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 7   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; ... &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+    X&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;5 = &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 0, &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 1   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 4   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 2   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 4   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 8   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; ... &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\vdots&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+    Y =   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 0, &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 6   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 4   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 6   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 0   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 9   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; ... &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;;
+&lt;span class=&quot;k&quot;&gt;\draw&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[red, thick]&lt;/span&gt; (m-2-3.north west) rectangle (m-2-3.south east);
+&lt;span class=&quot;k&quot;&gt;\draw&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[red, thick]&lt;/span&gt; (m-3-4.north west) rectangle (m-3-4.south east);
+&lt;span class=&quot;k&quot;&gt;\draw&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[red, thick]&lt;/span&gt; (m-4-5.north west) rectangle (m-4-5.south east);
+&lt;span class=&quot;k&quot;&gt;\draw&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[red, thick]&lt;/span&gt; (m-5-6.north west) rectangle (m-5-6.south east);
+&lt;span class=&quot;k&quot;&gt;\draw&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[red, thick]&lt;/span&gt; (m-6-7.north west) rectangle (m-6-7.south east);
+&lt;span class=&quot;nt&quot;&gt;\end{tikzpicture}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;\end{document}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/transfiniti/diagonalizzazione.png&quot; alt=&quot;Diagon&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Latex snippets</summary></entry><entry><title type="html">Insiemi numerabili</title><link href="/notes/2017/04/05/insiemi-numerabili.html" rel="alternate" type="text/html" title="Insiemi numerabili" /><published>2017-04-05T00:23:00+02:00</published><updated>2017-04-05T00:23:00+02:00</updated><id>/notes/2017/04/05/insiemi-numerabili</id><content type="html" xml:base="/notes/2017/04/05/insiemi-numerabili.html">&lt;p&gt;Insiemi infinitamente numerabili? Cardinalità aleph zero?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/meme/peter-momento.jpg&quot; alt=&quot;Peter meme&quot; class=&quot;center-image meme&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Le seguenti note vogliono chiarire questi concetti che compaiono in tutti i libri che mi capita di sfogliare. Sono fatte a mio uso e consumo, se possono essere utili ad altri tanto meglio.&lt;/p&gt;
+
+&lt;p&gt;Non è detto che tutto quello che ci sia scritto sia giusto, anzi… In ogni caso, il lettore che trova errori in quel che ho scritto e che mi avvisa vince una menzione in fondo al post.&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#introduzione&quot; id=&quot;markdown-toc-introduzione&quot;&gt;Introduzione&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#cardinalità-di-mathbbn&quot; id=&quot;markdown-toc-cardinalità-di-mathbbn&quot;&gt;Cardinalità di &lt;script type=&quot;math/tex&quot;&gt;\mathbb{N}&lt;/script&gt;&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#cardinalità-aleph_0&quot; id=&quot;markdown-toc-cardinalità-aleph_0&quot;&gt;Cardinalità &lt;script type=&quot;math/tex&quot;&gt;\aleph_0&lt;/script&gt;&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#lalbergo-di-russel&quot; id=&quot;markdown-toc-lalbergo-di-russel&quot;&gt;L’albergo di Russel&lt;/a&gt;&lt;/li&gt;
@@ -21,18 +169,7 @@
       &lt;li&gt;&lt;a href=&quot;#cardinalità-maggiori-di-2aleph_0&quot; id=&quot;markdown-toc-cardinalità-maggiori-di-2aleph_0&quot;&gt;Cardinalità maggiori di &lt;script type=&quot;math/tex&quot;&gt;2^{\aleph_0}&lt;/script&gt;&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#appendice-codice-latex&quot; id=&quot;markdown-toc-appendice-codice-latex&quot;&gt;Appendice: codice Latex&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h1 id=&quot;introduzione&quot;&gt;Introduzione&lt;/h1&gt;
-
-&lt;p&gt;Insiemi infinitamente numerabili? Cardinalità aleph zero?&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/meme/peter-momento.jpg&quot; alt=&quot;Peter meme&quot; class=&quot;center-image meme&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Le seguenti note vogliono chiarire questi concetti che compaiono in tutti i libri che mi capita di sfogliare. Sono fatte a mio uso e consumo, se possono essere utili ad altri tanto meglio.&lt;/p&gt;
-
-&lt;p&gt;Non è detto che tutto quello che ci sia scritto sia giusto, anzi… In ogni caso, il lettore che trova errori in quel che ho scritto e che mi avvisa vince una menzione in fondo al post.&lt;/p&gt;
 
 &lt;h1 id=&quot;cardinalità-di-mathbbn&quot;&gt;Cardinalità di &lt;script type=&quot;math/tex&quot;&gt;\mathbb{N}&lt;/script&gt;&lt;/h1&gt;
 
@@ -77,6 +214,7 @@
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; non è ugualmente numeroso a tutto &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;hr /&gt;
 &lt;h1 id=&quot;cardinalità-di-mathbbq&quot;&gt;Cardinalità di &lt;script type=&quot;math/tex&quot;&gt;\mathbb{Q}&lt;/script&gt;&lt;/h1&gt;
 
 &lt;h4 id=&quot;lalbergo-di-cantor&quot;&gt;L’albergo di Cantor&lt;/h4&gt;
@@ -107,6 +245,7 @@
 
 &lt;p&gt;Otteniamo una lista: &lt;script type=&quot;math/tex&quot;&gt;1, 2, \frac{1}{2}, \frac{1}{3}, \frac{2}{2}, 3, ...&lt;/script&gt; da cui eliminiamo gli elementi ripetuti. L’insieme ottenuto andrà in corrispondenza biunivoca con i numeri naturali.&lt;/p&gt;
 
+&lt;hr /&gt;
 &lt;h1 id=&quot;cardinalità-di-mathbbr&quot;&gt;Cardinalità di &lt;script type=&quot;math/tex&quot;&gt;\mathbb{R}&lt;/script&gt;&lt;/h1&gt;
 
 &lt;h4 id=&quot;cardinalità-2aleph_0&quot;&gt;Cardinalità &lt;script type=&quot;math/tex&quot;&gt;2^{\aleph_0}&lt;/script&gt;&lt;/h4&gt;
@@ -145,88 +284,31 @@
 
 &lt;p&gt;Per dimostrare che &lt;script type=&quot;math/tex&quot;&gt;\mathbb{R}&lt;/script&gt; non è numerabile, dimostreremo che non lo è il suo sottoinsieme &lt;script type=&quot;math/tex&quot;&gt;\lbrack 0, 1 \rbrack&lt;/script&gt;.&lt;/p&gt;
 
-&lt;p&gt;Elenchiamo tutti gli elementi dell’insieme: $$X_1, X_2, X_3, …$.&lt;/p&gt;
+&lt;p&gt;Supponiamo l’insieme sia enumerabile. Enumeriamo tutti gli elementi dell’insieme &lt;script type=&quot;math/tex&quot;&gt;\lbrack 0, 1 \rbrack&lt;/script&gt;, otteniamo una sequenza di numeri &lt;script type=&quot;math/tex&quot;&gt;X_1, X_2, X_3, ...&lt;/script&gt; ognuno di infinite cifre nella forma &lt;script type=&quot;math/tex&quot;&gt;0,c_1c_2c_3c_4...&lt;/script&gt; dove &lt;script type=&quot;math/tex&quot;&gt;c_1&lt;/script&gt; è la prima cifra decimale, &lt;script type=&quot;math/tex&quot;&gt;c_2&lt;/script&gt; la seconda e così via.&lt;/p&gt;
 
-&lt;p&gt;Costriuamo un nuovo numero &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; tale che per ogni i, la i-esima cifra di $Y$ sia uguale alla i-esima cifra di $X_i$ aumentata di uno (modulo nove).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/transfiniti/diagonalizzazione.png&quot; alt=&quot;Diagon&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Poichè &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; è un numero reale, avremo un numero &lt;script type=&quot;math/tex&quot;&gt;X_k=Y&lt;/script&gt;. Qui abbiamo una contraddizione: la k-esima cifra di $Y$ deve essere&lt;/p&gt;
+&lt;p&gt;Definiamo la funzione &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\mathbf{cifrasucc}(c) = \begin{cases} c+1, &amp;c&lt;9 \\ 0, &amp;c=9 \\ \end{cases} %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Costriuamo un nuovo numero &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; tale che la sua i-esima cifra &lt;script type=&quot;math/tex&quot;&gt;= \mathbf{cifrasucc}(c_i)&lt;/script&gt; dove &lt;script type=&quot;math/tex&quot;&gt;c_i&lt;/script&gt; è l’i-esima cifra decimale del numero &lt;script type=&quot;math/tex&quot;&gt;X_i&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Allo stesso tempo, poichè &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; è un numero reale questo sarà presente nella lista ad una certa posizione &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt;. Quindi &lt;script type=&quot;math/tex&quot;&gt;X_k = Y&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Qui abbiamo una contraddizione: la k-esima cifra di &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; è&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;uguale a &lt;script type=&quot;math/tex&quot;&gt;(x_k + 1) % 9&lt;/script&gt; per la sua costruzione e&lt;/li&gt;
-  &lt;li&gt;uguale a &lt;script type=&quot;math/tex&quot;&gt;x_k&lt;/script&gt; perchè gia presente nella enumerazione.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;=\mathbf{cifrasucc}(c_k)&lt;/script&gt; per la sua costruzione,&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;=c_k&lt;/script&gt; perchè gia presente nella enumerazione.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Quindi l’insieme non è numerabile.&lt;/p&gt;
 
 &lt;h4 id=&quot;cardinalità-maggiori-di-2aleph_0&quot;&gt;Cardinalità maggiori di &lt;script type=&quot;math/tex&quot;&gt;2^{\aleph_0}&lt;/script&gt;&lt;/h4&gt;
 
-&lt;p&gt;I punti di una retta sono &lt;script type=&quot;math/tex&quot;&gt;2^{\aleph_0}&lt;/script&gt;, l’insieme delle parti di una retta ha cardinalità &lt;script type=&quot;math/tex&quot;&gt;2^{2^{\aleph_0}}&lt;/script&gt;, il suo insieme delle parti ha cardinalità &lt;script type=&quot;math/tex&quot;&gt;2^{2^{2^{\aleph_0}}}&lt;/script&gt; e così via. Non c’è una cardinalità massima, eccezion fatta per &lt;em&gt;l’insieme di tutte le cose&lt;/em&gt; che non è considerato un insieme poichè porta a paradossi.&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+2^{\aleph_0} = P(\mathbb{N}) &lt; P(P(\mathbb{N})) &lt; P(P(P(\mathbb{N}))) &lt; \cdots %]]&gt;&lt;/script&gt;
 
-&lt;h1 id=&quot;appendice-codice-latex&quot;&gt;Appendice: codice Latex&lt;/h1&gt;
-
-&lt;p&gt;Il codice per la rappresentazione del metodo a zig-zag in Latex è preso da questa domanda su &lt;a href=&quot;http://tex.stackexchange.com/questions/129480/countability-of-the-rationals-a-pictorial-diagram&quot;&gt;Tex.Stackexchange&lt;/a&gt; e adattato al nostro caso.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\documentclass&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[preview]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;standalone&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;tikz&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;\usetikzlibrary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;matrix&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;\begin{document}&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;\begin{tikzpicture}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;\matrix&lt;/span&gt;(m)[matrix of math nodes,column sep=1cm,row sep=1cm]&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-       &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; C0 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; C1 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; C2 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; C3  &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\cdots&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
-    P0 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 1  &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 2  &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 6  &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 7   &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\cdots&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
-    P1 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 3  &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 5  &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 8  &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 14  &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
-    P2 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 4  &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 9  &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 13 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
-    P3 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 10 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 12 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
-    P4 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; 11 &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;\vdots&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;;
-&lt;span class=&quot;k&quot;&gt;\draw&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[-&amp;gt;]&lt;/span&gt;
-    (m-2-2)edge(m-2-3)
-    (m-2-3)edge(m-3-2)
-    (m-3-2)edge(m-4-2)
-    (m-4-2)edge(m-3-3)
-    (m-3-3)edge(m-2-4)
-    (m-2-4)edge(m-2-5)
-    (m-2-5)edge(m-3-4)
-    (m-3-4)edge(m-4-3)
-    (m-4-3)edge(m-5-2)
-    (m-5-2)edge(m-6-2)
-    (m-6-2)edge(m-5-3)
-    (m-5-3)edge(m-4-4)
-    (m-4-4)edge(m-3-5)
-    (m-3-5)edge(m-2-6);
-&lt;span class=&quot;nt&quot;&gt;\end{tikzpicture}&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;\end{document}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\documentclass&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[preview]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;standalone&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;tikz&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;\usetikzlibrary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;matrix&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;\begin{document}&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;\begin{tikzpicture}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;\matrix&lt;/span&gt;(m)[matrix of math nodes,column sep=1cm,row sep=1cm]&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\cdots&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;-&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\cdots&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;-&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;-&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;-&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;-&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;5&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;5&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;5&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;3&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;5&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\frac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;4&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;5&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\\&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;;
-&lt;span class=&quot;k&quot;&gt;\draw&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[-&amp;gt;]&lt;/span&gt;
-    (m-2-2)edge(m-2-3)
-    (m-2-3)edge(m-3-2)
-    (m-3-2)edge(m-4-2)
-    (m-4-2)edge(m-3-3)
-    (m-3-3)edge(m-2-4)
-    (m-2-4)edge(m-2-5)
-    (m-2-5)edge(m-3-4)
-    (m-3-4)edge(m-4-3)
-    (m-4-3)edge(m-5-2)
-    (m-5-2)edge(m-6-2)
-    (m-6-2)edge(m-5-3)
-    (m-5-3)edge(m-4-4)
-    (m-4-4)edge(m-3-5)
-    (m-3-5)edge(m-2-6);
-&lt;span class=&quot;nt&quot;&gt;\end{tikzpicture}&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;\end{document}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name></name></author><summary type="html">All the material is a summary of material found online. Particulary userful is the “I Numeri Transfiniti” notes from Alessandro Berarducci (UniPi). Search for it on Google. The notes are in Italian.</summary></entry><entry><title type="html">Solution of ‘The Algorithm Design Manual’ 2nd edition</title><link href="/notes/2017/04/04/solution-of-algorithm-design-manual.html" rel="alternate" type="text/html" title="Solution of 'The Algorithm Design Manual' 2nd edition" /><published>2017-04-04T14:16:00+02:00</published><updated>2017-04-04T14:16:00+02:00</updated><id>/notes/2017/04/04/solution-of-algorithm-design-manual</id><content type="html" xml:base="/notes/2017/04/04/solution-of-algorithm-design-manual.html">&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/Algorithm-Design-Manual-Steven-Skiena/dp/1848000693&quot;&gt;The Algorithm Design Manual&lt;/a&gt; is the book I use in my algorithm course. I prefer this one to the &lt;a href=&quot;https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844/&quot;&gt;other, universally used book about algoritms&lt;/a&gt;. I’m posting here some of the solutions of the exercises I’ve done. All exercises are written in C or Java. I didn’t copy a single line of code from the book or anywhere else, with the exception of the structure of &lt;code class=&quot;highlighter-rouge&quot;&gt;Backtrackable&lt;/code&gt; class. All the images are made in Latex (the trees are made with &lt;code class=&quot;highlighter-rouge&quot;&gt;forest&lt;/code&gt; package). All the codes (should) at least compile, most of them should work. Some of the explanations are in Italian (I will translate them).&lt;/p&gt;
+&lt;p&gt;Non c’è una cardinalità massima. Solo &lt;em&gt;l’insieme di tutte le cose&lt;/em&gt; avrebbe cardinalità massima, ma non viene considerato un insieme poichè porta alla creazione di paradossi.&lt;/p&gt;</content><author><name></name></author><summary type="html">Insiemi infinitamente numerabili? Cardinalità aleph zero?</summary></entry><entry><title type="html">Solution of ‘The Algorithm Design Manual’ 2nd edition</title><link href="/notes/2017/04/04/solution-of-algorithm-design-manual.html" rel="alternate" type="text/html" title="Solution of 'The Algorithm Design Manual' 2nd edition" /><published>2017-04-04T14:16:00+02:00</published><updated>2017-04-04T14:16:00+02:00</updated><id>/notes/2017/04/04/solution-of-algorithm-design-manual</id><content type="html" xml:base="/notes/2017/04/04/solution-of-algorithm-design-manual.html">&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/Algorithm-Design-Manual-Steven-Skiena/dp/1848000693&quot;&gt;The Algorithm Design Manual&lt;/a&gt; is the book I use in my algorithm course. I prefer this one to the &lt;a href=&quot;https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844/&quot;&gt;other, universally used book about algoritms&lt;/a&gt;. I’m posting here some of the solutions of the exercises I’ve done. All exercises are written in C or Java. I didn’t copy a single line of code from the book or anywhere else, with the exception of the structure of &lt;code class=&quot;highlighter-rouge&quot;&gt;Backtrackable&lt;/code&gt; class. All the images are made in Latex (the trees are made with &lt;code class=&quot;highlighter-rouge&quot;&gt;forest&lt;/code&gt; package). All the codes (should) at least compile, most of them should work. Some of the explanations are in Italian (I will translate them).&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#chapter-7-combinatorial-search-and-heuristic-methods&quot; id=&quot;markdown-toc-chapter-7-combinatorial-search-and-heuristic-methods&quot;&gt;Chapter 7: Combinatorial Search and Heuristic Methods&lt;/a&gt;&lt;/li&gt;

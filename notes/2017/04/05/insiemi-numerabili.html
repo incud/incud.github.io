@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>Insiemi numerabili</title>
+  <meta name="description" content="Insiemi infinitamente numerabili? Cardinalità aleph zero?">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="/notes/2017/04/05/insiemi-numerabili.html">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="Incud&#39;s blog" href="/feed.xml">
+
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:title" content="Insiemi numerabili">
+  <meta name="twitter:description" content="Insiemi infinitamente numerabili? Cardinalità aleph zero?">
+  
+  
+
+  <script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Bitter:400,700,400italic:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Incud&#39;s blog</a>
+
+    <nav class="site-nav">
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    
+      <h1 class="post-title" itemprop="name headline">Insiemi numerabili</h1>
+    
+    <p class="post-meta"><time datetime="2017-04-05T00:23:00+02:00" itemprop="datePublished">Apr 5, 2017</time> • 
+  
+  
+
+</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Insiemi infinitamente numerabili? Cardinalità aleph zero?</p>
+
+<p><img src="/assets/meme/peter-momento.jpg" alt="Peter meme" class="center-image meme" /></p>
+
+<p>Le seguenti note vogliono chiarire questi concetti che compaiono in tutti i libri che mi capita di sfogliare. Sono fatte a mio uso e consumo, se possono essere utili ad altri tanto meglio.</p>
+
+<p>Non è detto che tutto quello che ci sia scritto sia giusto, anzi… In ogni caso, il lettore che trova errori in quel che ho scritto e che mi avvisa vince una menzione in fondo al post.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#cardinalità-di-mathbbn" id="markdown-toc-cardinalità-di-mathbbn">Cardinalità di <script type="math/tex">\mathbb{N}</script></a>    <ul>
+      <li><a href="#cardinalità-aleph_0" id="markdown-toc-cardinalità-aleph_0">Cardinalità <script type="math/tex">\aleph_0</script></a></li>
+      <li><a href="#lalbergo-di-russel" id="markdown-toc-lalbergo-di-russel">L’albergo di Russel</a></li>
+      <li><a href="#la-parte-è-minore-del-tutto" id="markdown-toc-la-parte-è-minore-del-tutto">La parte è minore del tutto?</a></li>
+    </ul>
+  </li>
+  <li><a href="#cardinalità-di-mathbbq" id="markdown-toc-cardinalità-di-mathbbq">Cardinalità di <script type="math/tex">\mathbb{Q}</script></a>    <ul>
+      <li><a href="#lalbergo-di-cantor" id="markdown-toc-lalbergo-di-cantor">L’albergo di Cantor</a></li>
+      <li><a href="#metodo-a-zig-zag" id="markdown-toc-metodo-a-zig-zag">Metodo a zig-zag</a></li>
+    </ul>
+  </li>
+  <li><a href="#cardinalità-di-mathbbr" id="markdown-toc-cardinalità-di-mathbbr">Cardinalità di <script type="math/tex">\mathbb{R}</script></a>    <ul>
+      <li><a href="#cardinalità-2aleph_0" id="markdown-toc-cardinalità-2aleph_0">Cardinalità <script type="math/tex">2^{\aleph_0}</script></a></li>
+      <li><a href="#i-numeri-reali" id="markdown-toc-i-numeri-reali">I numeri reali</a></li>
+      <li><a href="#metodo-della-diagonale" id="markdown-toc-metodo-della-diagonale">Metodo della diagonale</a></li>
+      <li><a href="#cardinalità-maggiori-di-2aleph_0" id="markdown-toc-cardinalità-maggiori-di-2aleph_0">Cardinalità maggiori di <script type="math/tex">2^{\aleph_0}</script></a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="cardinalità-di-mathbbn">Cardinalità di <script type="math/tex">\mathbb{N}</script></h1>
+
+<h4 id="cardinalità-aleph_0">Cardinalità <script type="math/tex">\aleph_0</script></h4>
+
+<p>Per trovare la <em>cardinalità</em> di un insieme finito basta contarne gli elementi. Per quelli infiniti questo metodo non può funzionare.</p>
+
+<p>Consideriamo l’insieme dei numeri naturali <script type="math/tex">\mathbb{N}</script>. Fissiamo la sua cardinalità al simbolo <script type="math/tex">\aleph_0</script>.</p>
+
+<p>Diremo che un insieme infinito è <em>numerabile</em> se è ugualmente numeroso ad <script type="math/tex">\mathbb{N}</script>, cioè se esiste una corrispodenza biunivoca tra l’insieme ed <script type="math/tex">\mathbb{N}</script>.</p>
+
+<h4 id="lalbergo-di-russel">L’albergo di Russel</h4>
+<p>Sia dato un albergo con infinite stanza disposte su un singolo piano. L’albergo è al completo.</p>
+
+<p>All’arrivo di un nuovo cliente, è sempre possibile fargli posto: il cliente della stanza 0 si sposta nella 1, quello della 1 nel 2 e così via. Il nuovo arrivato alloggerà nella stanza 0 appena liberata.</p>
+
+<p>Abbiamo dimostrato che <script type="math/tex">\aleph_0 + 1 = \aleph_0</script>.</p>
+
+<h4 id="la-parte-è-minore-del-tutto">La parte è minore del tutto?</h4>
+
+<p>Per gli insiemi infiniti non vale la regola che <em>la parte è minore del tutto</em>. Consideriamo l’insieme <script type="math/tex">\mathbb{N}</script> e l’insieme <script type="math/tex">P</script> dei numeri pari. Ovviamente <script type="math/tex">P \subset \mathbb{N}</script>.</p>
+
+<p>Vediamo però che i due insiemi hanno la stessa cardinalità: essi infatti possono essere messi in corrispondenza biunivoca.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\mathbb{N} &\leftrightarrow P \\
+0 &\leftrightarrow 0 \\
+1 &\leftrightarrow 2 \\
+2 &\leftrightarrow 4 \\
+3 &\leftrightarrow 6 \\
+4 &\leftrightarrow 8 \\
+  & ...
+\end{align} %]]></script>
+
+<p>Abbiamo dimostrato che <script type="math/tex">\aleph_0 + \aleph_0 = \aleph_0</script>.</p>
+
+<p>Diremo che <script type="math/tex">% <![CDATA[
+\vert A \vert < \vert B \vert %]]></script> se e solo se:</p>
+<ul>
+  <li><script type="math/tex">A</script> ugualmente numeroso ad una parte di <script type="math/tex">B</script></li>
+  <li><script type="math/tex">A</script> non è ugualmente numeroso a tutto <script type="math/tex">B</script></li>
+</ul>
+
+<hr />
+<h1 id="cardinalità-di-mathbbq">Cardinalità di <script type="math/tex">\mathbb{Q}</script></h1>
+
+<h4 id="lalbergo-di-cantor">L’albergo di Cantor</h4>
+
+<p>L’albergo di Cantor ha infinite camere e anche infiniti piani. La camera <script type="math/tex">(x,y)</script> è la camera <script type="math/tex">x</script> del piano <script type="math/tex">y</script>. Possiamo trasferire tutti i clienti dell’albergo di Cantor (pieno) nell’albergo di Russel (vuoto)?</p>
+
+<p>Procediamo nel seguente modo:</p>
+<ol>
+  <li>I clienti del primo piano occupano le stanze pari e lasciano libere le rimanenti (le stanze <script type="math/tex">1, 3, 5, 7, ...</script> vengono lasciate libere);</li>
+  <li>I clienti del secondo piano occupano la rimanenza delle stanze, una si e una no (le stanze <script type="math/tex">3, 7, 13, 17, ...</script> vengono lasciate libere);</li>
+  <li>I clienti del terzo piano occupano la rimanenza delle stanze, una si e una no (le stanze <script type="math/tex">7, 17, 25, 33...</script> vengono lasciate libere);</li>
+  <li>…</li>
+</ol>
+
+<p>In questo modo data una qualsiasi stanza troviamo la sua corrispondente nell’albergo di Russel.</p>
+
+<p>Vale che <script type="math/tex">\aleph_0 \cdot \aleph_0 = \aleph_0</script></p>
+
+<h4 id="metodo-a-zig-zag">Metodo a zig-zag</h4>
+
+<p>Un metodo alternativo consiste nel servire prima le stanze <script type="math/tex">(x,y)</script> con somma <script type="math/tex">x+y</script> minima. Nel grafico vediamo l’ordine in cui vengono servite le stanze, che è <script type="math/tex">(0,0); (1,0); (0,1); (0,2); ...</script></p>
+
+<p><img src="/assets/transfiniti/zig-zag.png" alt="Zig-zag" class="center-image" /></p>
+
+<p>Questa tecnica viene applicata per dimostrare che <script type="math/tex">\mathbb{Q}</script> è numerabile. Questo sembra impossibile poichè <script type="math/tex">\mathbb{N}</script> è un insieme discreto mentre <script type="math/tex">\mathbb{Q}</script> è un insieme <em>denso</em>.</p>
+
+<p><img src="/assets/transfiniti/zig-zag2.png" alt="Zig-zag2" class="center-image" /></p>
+
+<p>Otteniamo una lista: <script type="math/tex">1, 2, \frac{1}{2}, \frac{1}{3}, \frac{2}{2}, 3, ...</script> da cui eliminiamo gli elementi ripetuti. L’insieme ottenuto andrà in corrispondenza biunivoca con i numeri naturali.</p>
+
+<hr />
+<h1 id="cardinalità-di-mathbbr">Cardinalità di <script type="math/tex">\mathbb{R}</script></h1>
+
+<h4 id="cardinalità-2aleph_0">Cardinalità <script type="math/tex">2^{\aleph_0}</script></h4>
+
+<p>Una successione binaria è una sequenza infinita di cifre 0 o 1. L’insieme di tutte le successioni binarie ha cardinalità <script type="math/tex">2^{\aleph_0}</script>.</p>
+
+<p>E’ vero che <script type="math/tex">% <![CDATA[
+\aleph_0 < 2^{\aleph_0} %]]></script> (dimostrazione omessa).</p>
+
+<p>Dato un insieme finito oppure numerabile, per esempio <script type="math/tex">A=\lbrace 0,1,2\rbrace</script>, è definito come segue il suo insieme delle parti:</p>
+
+<script type="math/tex; mode=display">P(A)=\Big\lbrace
+	\lbrace \rbrace,
+	\lbrace 0 \rbrace,
+	\lbrace 1 \rbrace,
+	\lbrace 2 \rbrace,
+	\lbrace 0, 1 \rbrace,
+	\lbrace 1, 2 \rbrace,
+	\lbrace 0, 2 \rbrace,
+	\lbrace 0, 1, 2 \rbrace
+\Big\rbrace</script>
+
+<p>L’insieme delle parti <script type="math/tex">P(\mathbb{N})</script> può essere associato biunivocamente ad una successione binaria, dove alla posizione i-esima corrisponde 1 se il numero è presente nell’elemento/insieme/parte considerata, 0 altrimenti. Quindi <script type="math/tex">\vert P(\mathbb{N}) \vert = 2^{\aleph_0}</script></p>
+
+<h4 id="i-numeri-reali">I numeri reali</h4>
+
+<p>Consideriamo per il momento solo i reali positivi. E’ vero che i numeri compresi nell’insieme <script type="math/tex">\lbrack 0,1 \rbrack</script> sono tanti quanti quelli compresi nell’insieme <script type="math/tex">\lbrack 1,\infty \rbrack</script>. Essi possono essere messi in corrispondenza biunivoca dalla funzione <em>reciproco</em>. L’unione dei due insieme da ovviamente l’insieme <script type="math/tex">\mathbb{R}</script>.</p>
+
+<p>Dimostreremo che <script type="math/tex">\mathbb{R}</script> non è numerabile poichè di cardinalità <script type="math/tex">2^{\aleph_0}</script>.</p>
+
+<p>L’insieme dei reali si può dividere in numeri algebrici (descritti da una equazione algebrica tipo <script type="math/tex">x^2=2</script>) e trascendenti. Le equazioni algebriche sono numerabili: è sempre possibile numerarle per altezza (massimo numero che compare nell’equazione come coefficiente o esponente). Per ogni data altezza ce n’è solo un numero finito, dopo di che si può passare all’altezza successiva.</p>
+
+<p>I numeri non algebrici si dicono trascendenti. Poichè l’insieme dei reali ha <script type="math/tex">2^{\aleph_0}</script> elementi e i numeri algebrici sono solo <script type="math/tex">\aleph_0</script>, la rimanenza sono i numeri trascendenti.</p>
+
+<h4 id="metodo-della-diagonale">Metodo della diagonale</h4>
+
+<p>Per dimostrare che <script type="math/tex">\mathbb{R}</script> non è numerabile, dimostreremo che non lo è il suo sottoinsieme <script type="math/tex">\lbrack 0, 1 \rbrack</script>.</p>
+
+<p>Supponiamo l’insieme sia enumerabile. Enumeriamo tutti gli elementi dell’insieme <script type="math/tex">\lbrack 0, 1 \rbrack</script>, otteniamo una sequenza di numeri <script type="math/tex">X_1, X_2, X_3, ...</script> ognuno di infinite cifre nella forma <script type="math/tex">0,c_1c_2c_3c_4...</script> dove <script type="math/tex">c_1</script> è la prima cifra decimale, <script type="math/tex">c_2</script> la seconda e così via.</p>
+
+<p><img src="/assets/transfiniti/diagonalizzazione.png" alt="Diagon" class="center-image" /></p>
+
+<p>Definiamo la funzione <script type="math/tex">% <![CDATA[
+\mathbf{cifrasucc}(c) = \begin{cases} c+1, &c<9 \\ 0, &c=9 \\ \end{cases} %]]></script></p>
+
+<p>Costriuamo un nuovo numero <script type="math/tex">Y</script> tale che la sua i-esima cifra <script type="math/tex">= \mathbf{cifrasucc}(c_i)</script> dove <script type="math/tex">c_i</script> è l’i-esima cifra decimale del numero <script type="math/tex">X_i</script>.</p>
+
+<p>Allo stesso tempo, poichè <script type="math/tex">Y</script> è un numero reale questo sarà presente nella lista ad una certa posizione <script type="math/tex">k</script>. Quindi <script type="math/tex">X_k = Y</script>.</p>
+
+<p>Qui abbiamo una contraddizione: la k-esima cifra di <script type="math/tex">Y</script> è</p>
+<ul>
+  <li><script type="math/tex">=\mathbf{cifrasucc}(c_k)</script> per la sua costruzione,</li>
+  <li><script type="math/tex">=c_k</script> perchè gia presente nella enumerazione.</li>
+</ul>
+
+<p>Quindi l’insieme non è numerabile.</p>
+
+<h4 id="cardinalità-maggiori-di-2aleph_0">Cardinalità maggiori di <script type="math/tex">2^{\aleph_0}</script></h4>
+
+<script type="math/tex; mode=display">% <![CDATA[
+2^{\aleph_0} = P(\mathbb{N}) < P(P(\mathbb{N})) < P(P(P(\mathbb{N}))) < \cdots %]]></script>
+
+<p>Non c’è una cardinalità massima. Solo <em>l’insieme di tutte le cose</em> avrebbe cardinalità massima, ma non viene considerato un insieme poichè porta alla creazione di paradossi.</p>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      <small>
+<!-- licence -->
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+<img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+Quest'opera è distribuita con Licenza <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+Creative Commons Attribuzione - Non commerciale - Non opere derivate 4.0 Internazionale</a>.
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.<br/>
+
+&copy;  - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a>
+</small>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
