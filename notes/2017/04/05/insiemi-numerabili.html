@@ -88,7 +88,7 @@
 
 <p>Le seguenti note vogliono chiarire questi concetti che compaiono in tutti i libri che mi capita di sfogliare. Sono fatte a mio uso e consumo, se possono essere utili ad altri tanto meglio.</p>
 
-<p>Non è detto che tutto quello che ci sia scritto sia giusto, anzi… In ogni caso, il lettore che trova errori in quel che ho scritto e che mi avvisa vince una menzione in fondo al post.</p>
+<p>Non è detto che tutto quello che ci sia scritto sia giusto, anzi… In ogni caso, il lettore che trova errori in quel che ho scritto e che mi avvisa vince una menzione in fondo al post. Buona parte delle note sono riassunte dalla dispensa “I Numeri Transfiniti” di Alessandro Berarducci (UniPi).</p>
 
 <ul id="markdown-toc">
   <li><a href="#cardinalità-di-mathbbn" id="markdown-toc-cardinalità-di-mathbbn">Cardinalità di <script type="math/tex">\mathbb{N}</script></a>    <ul>
@@ -224,24 +224,26 @@
 
 <p>Per dimostrare che <script type="math/tex">\mathbb{R}</script> non è numerabile, dimostreremo che non lo è il suo sottoinsieme <script type="math/tex">\lbrack 0, 1 \rbrack</script>.</p>
 
-<p>Supponiamo l’insieme sia enumerabile. Enumeriamo tutti gli elementi dell’insieme <script type="math/tex">\lbrack 0, 1 \rbrack</script>, otteniamo una sequenza di numeri <script type="math/tex">X_1, X_2, X_3, ...</script> ognuno di infinite cifre nella forma <script type="math/tex">0,c_1c_2c_3c_4...</script> dove <script type="math/tex">c_1</script> è la prima cifra decimale, <script type="math/tex">c_2</script> la seconda e così via.</p>
+<p>Supponiamo l’insieme sia enumerabile. Enumeriamo tutti gli elementi dell’insieme <script type="math/tex">\lbrack 0, 1 \rbrack</script>, otteniamo una sequenza di numeri <script type="math/tex">X_1, X_2, X_3, ...</script> ognuno di infinite cifre nella forma</p>
+
+<script type="math/tex; mode=display">X_i = 0,c_{i,1} \, c_{i,2} \, c_{i,3} \, c_{i,4}...</script>
+
+<p>dove <script type="math/tex">c_{i,1}</script> è la prima cifra decimale del numero <script type="math/tex">X_i</script>.</p>
 
 <p><img src="/assets/transfiniti/diagonalizzazione.png" alt="Diagon" class="center-image" /></p>
 
 <p>Definiamo la funzione <script type="math/tex">% <![CDATA[
-\mathbf{cifrasucc}(c) = \begin{cases} c+1, &c<9 \\ 0, &c=9 \\ \end{cases} %]]></script></p>
+\mathbf{cifrasucc}(c) = \begin{cases} c+1, &c<9 \\ 0, &c=9 \\ \end{cases} %]]></script>. In realtà basterebbe una qualsiasi funzione che non sia l’identità.</p>
 
-<p>Costriuamo un nuovo numero <script type="math/tex">Y</script> tale che la sua i-esima cifra <script type="math/tex">= \mathbf{cifrasucc}(c_i)</script> dove <script type="math/tex">c_i</script> è l’i-esima cifra decimale del numero <script type="math/tex">X_i</script>.</p>
+<p>Costriuamo un nuovo numero <script type="math/tex">Y</script> tale che <script type="math/tex">c_{y,i} = \mathbf{cifrasucc}(c_{i,i})</script> per ogni <script type="math/tex">i</script>. Allo stesso tempo, poichè <script type="math/tex">Y</script> è un numero reale questo sarà presente nella lista ad una certa posizione <script type="math/tex">k</script>, quindi <script type="math/tex">X_k = Y</script>.</p>
 
-<p>Allo stesso tempo, poichè <script type="math/tex">Y</script> è un numero reale questo sarà presente nella lista ad una certa posizione <script type="math/tex">k</script>. Quindi <script type="math/tex">X_k = Y</script>.</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+	Y 	&= 0, \mathbf{cifrasucc}(c_{1,1}) \; \mathbf{cifrasucc}(c_{2,2}) \; ... \; \mathbf{cifrasucc}(c_{k, k}) \; ... \\
+	X_k &= 0, c_{k, 1} \; c_{k, 2} \; ... \; c_{k, k} \; ...
+\end{align} %]]></script>
 
-<p>Qui abbiamo una contraddizione: la k-esima cifra di <script type="math/tex">Y</script> è</p>
-<ul>
-  <li><script type="math/tex">=\mathbf{cifrasucc}(c_k)</script> per la sua costruzione,</li>
-  <li><script type="math/tex">=c_k</script> perchè gia presente nella enumerazione.</li>
-</ul>
-
-<p>Quindi l’insieme non è numerabile.</p>
+<script type="math/tex; mode=display">\mathbf{cifrasucc}(c_{k, k}) \neq c_{k,k} \Rightarrow \text{contraddizione} \Rightarrow \text{l'insieme non è numerabile}</script>
 
 <h4 id="cardinalità-maggiori-di-2aleph_0">Cardinalità maggiori di <script type="math/tex">2^{\aleph_0}</script></h4>
 

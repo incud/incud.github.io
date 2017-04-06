@@ -1,51 +1,102 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-04-06T08:43:44+02:00</updated><id>/</id><title type="html">Incud’s blog</title><subtitle>Here's where I collect my notes. 
-</subtitle><entry><title type="html">Funzioni ricorsive parziali</title><link href="/notes/2017/04/05/funzioni-ricorsive-parziali.html" rel="alternate" type="text/html" title="Funzioni ricorsive parziali" /><published>2017-04-05T20:49:00+02:00</published><updated>2017-04-05T20:49:00+02:00</updated><id>/notes/2017/04/05/funzioni-ricorsive-parziali</id><content type="html" xml:base="/notes/2017/04/05/funzioni-ricorsive-parziali.html">&lt;h1 id=&quot;funzioni-ricorsive-primitive&quot;&gt;Funzioni ricorsive primitive&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-04-06T23:06:25+02:00</updated><id>/</id><title type="html">Incud’s blog</title><subtitle>Here's where I collect my notes. 
+</subtitle><entry><title type="html">Formalismi e Tesi di Church-Turing</title><link href="/notes/2017/04/05/formalismi.html" rel="alternate" type="text/html" title="Formalismi e Tesi di Church-Turing" /><published>2017-04-05T22:28:00+02:00</published><updated>2017-04-05T22:28:00+02:00</updated><id>/notes/2017/04/05/formalismi</id><content type="html" xml:base="/notes/2017/04/05/formalismi.html"></content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Funzioni ricorsive parziali</title><link href="/notes/2017/04/05/funzioni-ricorsive-parziali.html" rel="alternate" type="text/html" title="Funzioni ricorsive parziali" /><published>2017-04-05T20:49:00+02:00</published><updated>2017-04-05T20:49:00+02:00</updated><id>/notes/2017/04/05/funzioni-ricorsive-parziali</id><content type="html" xml:base="/notes/2017/04/05/funzioni-ricorsive-parziali.html">&lt;p&gt;Un insieme &lt;script type=&quot;math/tex&quot;&gt;I&lt;/script&gt; è chiuso rispetto ad una generica operazione &lt;script type=&quot;math/tex&quot;&gt;\times&lt;/script&gt; se e solo se &lt;script type=&quot;math/tex&quot;&gt;\forall x,y \in I&lt;/script&gt; si ha &lt;script type=&quot;math/tex&quot;&gt;x \times y \in I&lt;/script&gt;.&lt;/p&gt;
 
-&lt;p&gt;Definiamo l’insieme &lt;script type=&quot;math/tex&quot;&gt;\mathcal{C}&lt;/script&gt; delle funzioni ricorsive primitive il più piccolo insieme contenente&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;le tre &lt;em&gt;funzioni base&lt;/em&gt;:
-    &lt;ol&gt;
-      &lt;li&gt;La funzione zero &lt;script type=&quot;math/tex&quot;&gt;Z(x_1, x_2, ..., x_n)=0&lt;/script&gt;&lt;/li&gt;
-      &lt;li&gt;La funzione successivo &lt;script type=&quot;math/tex&quot;&gt;S(x)=x+1&lt;/script&gt;&lt;/li&gt;
-      &lt;li&gt;Le funzioni proiezione &lt;script type=&quot;math/tex&quot;&gt;P_1(x_1, x_2, ..., x_n) = x_1, P_2(x_1, x_2, ..., x_n)=x_2, ...&lt;/script&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;le funzione ottenute applicando l’operazione di composizione o di ricorsione primitiva ad altre funzioni &lt;script type=&quot;math/tex&quot;&gt;\in \mathcal{C}&lt;/script&gt;:
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;Sia &lt;script type=&quot;math/tex&quot;&gt;X = (x_1, ..., x_n)&lt;/script&gt;. Siano &lt;script type=&quot;math/tex&quot;&gt;g_1, ..., g_k&lt;/script&gt; funzioni di arità &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;h&lt;/script&gt; funzione di arità &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt;. Allora possiamo definire:&lt;/p&gt;
+&lt;p&gt;Un predicato è una espressione che ha senso dire essere &lt;em&gt;vera&lt;/em&gt; o &lt;em&gt;falsa&lt;/em&gt;.&lt;/p&gt;
 
-        &lt;script type=&quot;math/tex; mode=display&quot;&gt;f(X) = h(g_1(X), g_2(X), ..., g_k(X))&lt;/script&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;Sia &lt;script type=&quot;math/tex&quot;&gt;X = (x_1, ..., x_n)&lt;/script&gt;. Siano &lt;script type=&quot;math/tex&quot;&gt;g, h&lt;/script&gt; funzioni di &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; e &lt;script type=&quot;math/tex&quot;&gt;n+2&lt;/script&gt; argomenti rispettivamente. Possiamo definire la funzione &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; di &lt;script type=&quot;math/tex&quot;&gt;n+1&lt;/script&gt; argomenti:&lt;/p&gt;
+&lt;h1 id=&quot;funzioni-ricorsive-primitive&quot;&gt;Funzioni ricorsive primitive&lt;/h1&gt;
 
-        &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-f: \begin{cases} f(0, X) &amp;= g(X) \\ f(y+1, X) &amp;= h(y, f(y, X), X) \end{cases} %]]&gt;&lt;/script&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Esempi di funzioni ricorsive primitive sono:&lt;/p&gt;
+&lt;p&gt;Definiamo l’insieme &lt;script type=&quot;math/tex&quot;&gt;\mathcal{C}&lt;/script&gt; delle funzioni ricorsive primitive il più piccolo insieme contenente le tre &lt;em&gt;funzioni base&lt;/em&gt;:&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;a&lt;/li&gt;
-  &lt;li&gt;b&lt;/li&gt;
-  &lt;li&gt;c&lt;/li&gt;
+  &lt;li&gt;La funzione zero &lt;script type=&quot;math/tex&quot;&gt;Z(x_1, x_2, ..., x_n)=0&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;La funzione successivo &lt;script type=&quot;math/tex&quot;&gt;S(x)=x+1&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;Le funzioni proiezione &lt;script type=&quot;math/tex&quot;&gt;P_i(x_1, x_2, ..., x_n) = x_i \quad \forall i&lt;/script&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Si dice che l’insieme &lt;script type=&quot;math/tex&quot;&gt;\mathcal{C}&lt;/script&gt; è chiuso rispetto alle operazioni di composizione e ricorsione primitiva. Un insieme &lt;script type=&quot;math/tex&quot;&gt;I&lt;/script&gt; è chiuso rispetto ad una generica operazione &lt;script type=&quot;math/tex&quot;&gt;\cdot&lt;/script&gt; se e solo se &lt;script type=&quot;math/tex&quot;&gt;\forall x,y \in I&lt;/script&gt; si ha &lt;script type=&quot;math/tex&quot;&gt;x \cdot y \in I&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;L’insieme &lt;script type=&quot;math/tex&quot;&gt;\mathcal{C}&lt;/script&gt; è chiuso anche rispetto alle operazioni di &lt;em&gt;somma limitata&lt;/em&gt; e &lt;em&gt;prodotto limitato&lt;/em&gt;:&lt;/p&gt;
+&lt;p&gt;ed è chiuso rispetto alle operazioni di&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;a&lt;/li&gt;
-  &lt;li&gt;b&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;composizione:&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;f(\vec{x}) = h(g_1(\vec{x}), g_2(\vec{x}), ..., g_k(\vec{x}))&lt;/script&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ricorsione primitiva:&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+f: \begin{cases} f(0, \vec{x}) &amp;= g(\vec{x}) \\ f(y+1, \vec{x}) &amp;= h(y, f(y, \vec{x}), \vec{x}) \end{cases} %]]&gt;&lt;/script&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Si può creare l’equivalente della &lt;em&gt;formation sequence&lt;/em&gt; delle formule logiche per le funzioni ricorsive primitive: &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; è ricorsiva primitiva solo se si può scrivere una lista &lt;script type=&quot;math/tex&quot;&gt;f_1, f_2, ..., f_n = f&lt;/script&gt; dove per ogni &lt;script type=&quot;math/tex&quot;&gt;i \in \lbrack 1, n \rbrack&lt;/script&gt; abbiamo che &lt;script type=&quot;math/tex&quot;&gt;f_i&lt;/script&gt; è una funzione base oppure ottenuta da funzioni &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
-f_j, j&lt;i %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+&lt;h4 id=&quot;predicati-ricorsivi-primitivi&quot;&gt;Predicati ricorsivi primitivi&lt;/h4&gt;
 
-&lt;h4 id=&quot;predicati-primitivi-ricorsivi&quot;&gt;Predicati primitivi ricorsivi&lt;/h4&gt;</content><author><name></name></author><summary type="html">Funzioni ricorsive primitive</summary></entry><entry><title type="html">Latex</title><link href="/notes/2017/04/05/latex.html" rel="alternate" type="text/html" title="Latex" /><published>2017-04-05T00:23:00+02:00</published><updated>2017-04-05T00:23:00+02:00</updated><id>/notes/2017/04/05/latex</id><content type="html" xml:base="/notes/2017/04/05/latex.html">&lt;h1 id=&quot;latex-snippets&quot;&gt;Latex snippets&lt;/h1&gt;
+&lt;h4 id=&quot;proprietà-di-chiusura-delle-funzioni-ricorsive-parziali&quot;&gt;Proprietà di chiusura delle funzioni ricorsive parziali&lt;/h4&gt;
+
+&lt;p&gt;L’insieme funzioni ricorsive parziali è chiuso rispetto alle operazioni di:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;somma limitata:&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\sigma_f(z, \vec{x}) \equiv
+ \sum\limits_{y \le z} f(y, \vec{x}) = 
+ \begin{cases} 
+     \sigma_f(0, \vec{x}) &amp; = f(0, \vec{x}) \\
+     \sigma_f(z+1, \vec{x}) &amp; = \sigma_f(z, \vec{x}) + f(z+1, \vec{x}) \\
+ \end{cases} %]]&gt;&lt;/script&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;prodotto limitato:&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\pi_f(z, \vec{x}) \equiv
+ \prod\limits_{y \le z} f(y, \vec{x}) = 
+ \begin{cases} 
+     \pi_f(0, \vec{x}) &amp; = f(0, \vec{x}) \\
+     \pi_f(z+1, \vec{x}) &amp; = \pi_f(z, \vec{x}) \cdot f(z+1, \vec{x}) \\
+ \end{cases} %]]&gt;&lt;/script&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;minimizzazione limitata:&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\mu_{y \le z} \; R(y, \vec{x}) = \begin{cases}
+     \text{minimo } n &lt; z \text{ che fa valere } R(n, \vec{x}), &amp; \text{se } n \text{ esiste} \\
+     z, &amp; \text{altrimenti} \\
+ \end{cases} %]]&gt;&lt;/script&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;La &lt;em&gt;minimizzazione&lt;/em&gt; potrebbe non terminare (esempio: il predicato &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; sempre falso), per questo và limitata. Se si raggiunge un certo limite, viene bloccata l’esecuzione e ritornato un valore arbitrario (qui è il limite stesso).&lt;/p&gt;
+
+&lt;h4 id=&quot;ricorsione-multipla&quot;&gt;Ricorsione multipla&lt;/h4&gt;
+
+&lt;h4 id=&quot;iterazione&quot;&gt;Iterazione&lt;/h4&gt;
+
+&lt;p&gt;Eliminazione ric di coda&lt;/p&gt;
+
+&lt;h4 id=&quot;algo-incompleto&quot;&gt;Algo incompleto&lt;/h4&gt;
+
+&lt;h4 id=&quot;funzione-di-ackermann&quot;&gt;Funzione di Ackermann&lt;/h4&gt;
+
+&lt;p&gt;http://www.cs.tau.ac.il/~nachumd/term/42019.pdf&lt;/p&gt;
+
+&lt;h1 id=&quot;funzioni-ricorsive-parziali&quot;&gt;Funzioni ricorsive parziali&lt;/h1&gt;
+
+&lt;h4 id=&quot;mu-ricorsione&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;\mu&lt;/script&gt;-ricorsione&lt;/h4&gt;
+
+&lt;p&gt;Una funzione &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; si dice &lt;em&gt;definita per minimizzazione&lt;/em&gt; oppure &lt;script type=&quot;math/tex&quot;&gt;\mu&lt;/script&gt;-ricorsiva se definita come&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(\vec{x}) = \mu \, y.\!\big(g(\vec{x}, y) = 0 \big)&lt;/script&gt;
+
+&lt;p&gt;con &lt;script type=&quot;math/tex&quot;&gt;\mu \, y.\!\big(g(\vec{x}, y) = 0 \big)&lt;/script&gt; pari al più piccolo numero &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; che soddisfa il predicato &lt;script type=&quot;math/tex&quot;&gt;g(\vec{x}, y) = 0&lt;/script&gt;. Può essere che &lt;script type=&quot;math/tex&quot;&gt;f(\vec{x})&lt;/script&gt; sia indefinita se non esiste &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; ce rende vero il predicato oppure se per qualche &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+m&lt;n %]]&gt;&lt;/script&gt; il calcolo di &lt;script type=&quot;math/tex&quot;&gt;g(\vec{x}, m)&lt;/script&gt; diverge (la chiamata non termina).&lt;/p&gt;
+
+&lt;p&gt;Aggiungendo la minimizzazione (non limitata) il formalismo diventa algoritmicamente completo.&lt;/p&gt;
+
+&lt;h4 id=&quot;costrutto-if-then-else&quot;&gt;Costrutto &lt;em&gt;if-then-else&lt;/em&gt;&lt;/h4&gt;
+
+&lt;p&gt;Alternativamente (non in aggiunta!) ad un metodo di iterazione illimitata quale la minimizzazione, si può introdurre il costrutto:
+….&lt;/p&gt;</content><author><name></name></author><summary type="html">Un insieme è chiuso rispetto ad una generica operazione se e solo se si ha .</summary></entry><entry><title type="html">Latex</title><link href="/notes/2017/04/05/latex.html" rel="alternate" type="text/html" title="Latex" /><published>2017-04-05T00:23:00+02:00</published><updated>2017-04-05T00:23:00+02:00</updated><id>/notes/2017/04/05/latex</id><content type="html" xml:base="/notes/2017/04/05/latex.html">&lt;h1 id=&quot;latex-snippets&quot;&gt;Latex snippets&lt;/h1&gt;
 
 &lt;h3 id=&quot;zig-zag-method&quot;&gt;Zig-zag method&lt;/h3&gt;
 &lt;p&gt;Taken from &lt;a href=&quot;http://tex.stackexchange.com/questions/129480/countability-of-the-rationals-a-pictorial-diagram&quot;&gt;Tex.Stackexchange&lt;/a&gt; and slightly modified.&lt;/p&gt;
@@ -148,7 +199,7 @@ f_j, j&lt;i %]]&gt;&lt;/script&gt;.&lt;/p&gt;
 
 &lt;p&gt;Le seguenti note vogliono chiarire questi concetti che compaiono in tutti i libri che mi capita di sfogliare. Sono fatte a mio uso e consumo, se possono essere utili ad altri tanto meglio.&lt;/p&gt;
 
-&lt;p&gt;Non è detto che tutto quello che ci sia scritto sia giusto, anzi… In ogni caso, il lettore che trova errori in quel che ho scritto e che mi avvisa vince una menzione in fondo al post.&lt;/p&gt;
+&lt;p&gt;Non è detto che tutto quello che ci sia scritto sia giusto, anzi… In ogni caso, il lettore che trova errori in quel che ho scritto e che mi avvisa vince una menzione in fondo al post. Buona parte delle note sono riassunte dalla dispensa “I Numeri Transfiniti” di Alessandro Berarducci (UniPi).&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#cardinalità-di-mathbbn&quot; id=&quot;markdown-toc-cardinalità-di-mathbbn&quot;&gt;Cardinalità di &lt;script type=&quot;math/tex&quot;&gt;\mathbb{N}&lt;/script&gt;&lt;/a&gt;    &lt;ul&gt;
@@ -284,24 +335,26 @@ f_j, j&lt;i %]]&gt;&lt;/script&gt;.&lt;/p&gt;
 
 &lt;p&gt;Per dimostrare che &lt;script type=&quot;math/tex&quot;&gt;\mathbb{R}&lt;/script&gt; non è numerabile, dimostreremo che non lo è il suo sottoinsieme &lt;script type=&quot;math/tex&quot;&gt;\lbrack 0, 1 \rbrack&lt;/script&gt;.&lt;/p&gt;
 
-&lt;p&gt;Supponiamo l’insieme sia enumerabile. Enumeriamo tutti gli elementi dell’insieme &lt;script type=&quot;math/tex&quot;&gt;\lbrack 0, 1 \rbrack&lt;/script&gt;, otteniamo una sequenza di numeri &lt;script type=&quot;math/tex&quot;&gt;X_1, X_2, X_3, ...&lt;/script&gt; ognuno di infinite cifre nella forma &lt;script type=&quot;math/tex&quot;&gt;0,c_1c_2c_3c_4...&lt;/script&gt; dove &lt;script type=&quot;math/tex&quot;&gt;c_1&lt;/script&gt; è la prima cifra decimale, &lt;script type=&quot;math/tex&quot;&gt;c_2&lt;/script&gt; la seconda e così via.&lt;/p&gt;
+&lt;p&gt;Supponiamo l’insieme sia enumerabile. Enumeriamo tutti gli elementi dell’insieme &lt;script type=&quot;math/tex&quot;&gt;\lbrack 0, 1 \rbrack&lt;/script&gt;, otteniamo una sequenza di numeri &lt;script type=&quot;math/tex&quot;&gt;X_1, X_2, X_3, ...&lt;/script&gt; ognuno di infinite cifre nella forma&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;X_i = 0,c_{i,1} \, c_{i,2} \, c_{i,3} \, c_{i,4}...&lt;/script&gt;
+
+&lt;p&gt;dove &lt;script type=&quot;math/tex&quot;&gt;c_{i,1}&lt;/script&gt; è la prima cifra decimale del numero &lt;script type=&quot;math/tex&quot;&gt;X_i&lt;/script&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/transfiniti/diagonalizzazione.png&quot; alt=&quot;Diagon&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Definiamo la funzione &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
-\mathbf{cifrasucc}(c) = \begin{cases} c+1, &amp;c&lt;9 \\ 0, &amp;c=9 \\ \end{cases} %]]&gt;&lt;/script&gt;&lt;/p&gt;
+\mathbf{cifrasucc}(c) = \begin{cases} c+1, &amp;c&lt;9 \\ 0, &amp;c=9 \\ \end{cases} %]]&gt;&lt;/script&gt;. In realtà basterebbe una qualsiasi funzione che non sia l’identità.&lt;/p&gt;
 
-&lt;p&gt;Costriuamo un nuovo numero &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; tale che la sua i-esima cifra &lt;script type=&quot;math/tex&quot;&gt;= \mathbf{cifrasucc}(c_i)&lt;/script&gt; dove &lt;script type=&quot;math/tex&quot;&gt;c_i&lt;/script&gt; è l’i-esima cifra decimale del numero &lt;script type=&quot;math/tex&quot;&gt;X_i&lt;/script&gt;.&lt;/p&gt;
+&lt;p&gt;Costriuamo un nuovo numero &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; tale che &lt;script type=&quot;math/tex&quot;&gt;c_{y,i} = \mathbf{cifrasucc}(c_{i,i})&lt;/script&gt; per ogni &lt;script type=&quot;math/tex&quot;&gt;i&lt;/script&gt;. Allo stesso tempo, poichè &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; è un numero reale questo sarà presente nella lista ad una certa posizione &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt;, quindi &lt;script type=&quot;math/tex&quot;&gt;X_k = Y&lt;/script&gt;.&lt;/p&gt;
 
-&lt;p&gt;Allo stesso tempo, poichè &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; è un numero reale questo sarà presente nella lista ad una certa posizione &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt;. Quindi &lt;script type=&quot;math/tex&quot;&gt;X_k = Y&lt;/script&gt;.&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+	Y 	&amp;= 0, \mathbf{cifrasucc}(c_{1,1}) \; \mathbf{cifrasucc}(c_{2,2}) \; ... \; \mathbf{cifrasucc}(c_{k, k}) \; ... \\
+	X_k &amp;= 0, c_{k, 1} \; c_{k, 2} \; ... \; c_{k, k} \; ...
+\end{align} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;Qui abbiamo una contraddizione: la k-esima cifra di &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; è&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;=\mathbf{cifrasucc}(c_k)&lt;/script&gt; per la sua costruzione,&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;=c_k&lt;/script&gt; perchè gia presente nella enumerazione.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Quindi l’insieme non è numerabile.&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{cifrasucc}(c_{k, k}) \neq c_{k,k} \Rightarrow \text{contraddizione} \Rightarrow \text{l'insieme non è numerabile}&lt;/script&gt;
 
 &lt;h4 id=&quot;cardinalità-maggiori-di-2aleph_0&quot;&gt;Cardinalità maggiori di &lt;script type=&quot;math/tex&quot;&gt;2^{\aleph_0}&lt;/script&gt;&lt;/h4&gt;
 

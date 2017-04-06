@@ -10,7 +10,7 @@
   
   
   <title>Funzioni ricorsive parziali</title>
-  <meta name="description" content="Funzioni ricorsive primitive">
+  <meta name="description" content="Un insieme è chiuso rispetto ad una generica operazione se e solo se si ha .">
   
 
   <link rel="stylesheet" href="/assets/main.css">
@@ -25,7 +25,7 @@
   <meta name="twitter:card" content="summary">
   
   <meta name="twitter:title" content="Funzioni ricorsive parziali">
-  <meta name="twitter:description" content="Funzioni ricorsive primitive">
+  <meta name="twitter:description" content="Un insieme è chiuso rispetto ad una generica operazione se e solo se si ha .">
   
   
 
@@ -82,54 +82,104 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h1 id="funzioni-ricorsive-primitive">Funzioni ricorsive primitive</h1>
+    <p>Un insieme <script type="math/tex">I</script> è chiuso rispetto ad una generica operazione <script type="math/tex">\times</script> se e solo se <script type="math/tex">\forall x,y \in I</script> si ha <script type="math/tex">x \times y \in I</script>.</p>
 
-<p>Definiamo l’insieme <script type="math/tex">\mathcal{C}</script> delle funzioni ricorsive primitive il più piccolo insieme contenente</p>
-<ul>
-  <li>le tre <em>funzioni base</em>:
-    <ol>
-      <li>La funzione zero <script type="math/tex">Z(x_1, x_2, ..., x_n)=0</script></li>
-      <li>La funzione successivo <script type="math/tex">S(x)=x+1</script></li>
-      <li>Le funzioni proiezione <script type="math/tex">P_1(x_1, x_2, ..., x_n) = x_1, P_2(x_1, x_2, ..., x_n)=x_2, ...</script></li>
-    </ol>
-  </li>
-  <li>le funzione ottenute applicando l’operazione di composizione o di ricorsione primitiva ad altre funzioni <script type="math/tex">\in \mathcal{C}</script>:
-    <ul>
-      <li>
-        <p>Sia <script type="math/tex">X = (x_1, ..., x_n)</script>. Siano <script type="math/tex">g_1, ..., g_k</script> funzioni di arità <script type="math/tex">n</script>, <script type="math/tex">h</script> funzione di arità <script type="math/tex">k</script>. Allora possiamo definire:</p>
+<p>Un predicato è una espressione che ha senso dire essere <em>vera</em> o <em>falsa</em>.</p>
 
-        <script type="math/tex; mode=display">f(X) = h(g_1(X), g_2(X), ..., g_k(X))</script>
-      </li>
-      <li>
-        <p>Sia <script type="math/tex">X = (x_1, ..., x_n)</script>. Siano <script type="math/tex">g, h</script> funzioni di <script type="math/tex">n</script> e <script type="math/tex">n+2</script> argomenti rispettivamente. Possiamo definire la funzione <script type="math/tex">f</script> di <script type="math/tex">n+1</script> argomenti:</p>
+<h1 id="funzioni-ricorsive-primitive">Funzioni ricorsive primitive</h1>
 
-        <script type="math/tex; mode=display">% <![CDATA[
-f: \begin{cases} f(0, X) &= g(X) \\ f(y+1, X) &= h(y, f(y, X), X) \end{cases} %]]></script>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p>Esempi di funzioni ricorsive primitive sono:</p>
+<p>Definiamo l’insieme <script type="math/tex">\mathcal{C}</script> delle funzioni ricorsive primitive il più piccolo insieme contenente le tre <em>funzioni base</em>:</p>
 <ol>
-  <li>a</li>
-  <li>b</li>
-  <li>c</li>
+  <li>La funzione zero <script type="math/tex">Z(x_1, x_2, ..., x_n)=0</script></li>
+  <li>La funzione successivo <script type="math/tex">S(x)=x+1</script></li>
+  <li>Le funzioni proiezione <script type="math/tex">P_i(x_1, x_2, ..., x_n) = x_i \quad \forall i</script></li>
 </ol>
 
-<p>Si dice che l’insieme <script type="math/tex">\mathcal{C}</script> è chiuso rispetto alle operazioni di composizione e ricorsione primitiva. Un insieme <script type="math/tex">I</script> è chiuso rispetto ad una generica operazione <script type="math/tex">\cdot</script> se e solo se <script type="math/tex">\forall x,y \in I</script> si ha <script type="math/tex">x \cdot y \in I</script>.</p>
-
-<p>L’insieme <script type="math/tex">\mathcal{C}</script> è chiuso anche rispetto alle operazioni di <em>somma limitata</em> e <em>prodotto limitato</em>:</p>
+<p>ed è chiuso rispetto alle operazioni di</p>
 <ol>
-  <li>a</li>
-  <li>b</li>
+  <li>
+    <p>composizione:</p>
+
+    <script type="math/tex; mode=display">f(\vec{x}) = h(g_1(\vec{x}), g_2(\vec{x}), ..., g_k(\vec{x}))</script>
+  </li>
+  <li>
+    <p>ricorsione primitiva:</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+f: \begin{cases} f(0, \vec{x}) &= g(\vec{x}) \\ f(y+1, \vec{x}) &= h(y, f(y, \vec{x}), \vec{x}) \end{cases} %]]></script>
+  </li>
 </ol>
 
-<p>Si può creare l’equivalente della <em>formation sequence</em> delle formule logiche per le funzioni ricorsive primitive: <script type="math/tex">f</script> è ricorsiva primitiva solo se si può scrivere una lista <script type="math/tex">f_1, f_2, ..., f_n = f</script> dove per ogni <script type="math/tex">i \in \lbrack 1, n \rbrack</script> abbiamo che <script type="math/tex">f_i</script> è una funzione base oppure ottenuta da funzioni <script type="math/tex">% <![CDATA[
-f_j, j<i %]]></script>.</p>
+<h4 id="predicati-ricorsivi-primitivi">Predicati ricorsivi primitivi</h4>
 
-<h4 id="predicati-primitivi-ricorsivi">Predicati primitivi ricorsivi</h4>
+<h4 id="proprietà-di-chiusura-delle-funzioni-ricorsive-parziali">Proprietà di chiusura delle funzioni ricorsive parziali</h4>
 
+<p>L’insieme funzioni ricorsive parziali è chiuso rispetto alle operazioni di:</p>
+<ol>
+  <li>
+    <p>somma limitata:</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\sigma_f(z, \vec{x}) \equiv
+ \sum\limits_{y \le z} f(y, \vec{x}) = 
+ \begin{cases} 
+     \sigma_f(0, \vec{x}) & = f(0, \vec{x}) \\
+     \sigma_f(z+1, \vec{x}) & = \sigma_f(z, \vec{x}) + f(z+1, \vec{x}) \\
+ \end{cases} %]]></script>
+  </li>
+  <li>
+    <p>prodotto limitato:</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\pi_f(z, \vec{x}) \equiv
+ \prod\limits_{y \le z} f(y, \vec{x}) = 
+ \begin{cases} 
+     \pi_f(0, \vec{x}) & = f(0, \vec{x}) \\
+     \pi_f(z+1, \vec{x}) & = \pi_f(z, \vec{x}) \cdot f(z+1, \vec{x}) \\
+ \end{cases} %]]></script>
+  </li>
+  <li>
+    <p>minimizzazione limitata:</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\mu_{y \le z} \; R(y, \vec{x}) = \begin{cases}
+     \text{minimo } n < z \text{ che fa valere } R(n, \vec{x}), & \text{se } n \text{ esiste} \\
+     z, & \text{altrimenti} \\
+ \end{cases} %]]></script>
+  </li>
+</ol>
+
+<p>La <em>minimizzazione</em> potrebbe non terminare (esempio: il predicato <script type="math/tex">R</script> sempre falso), per questo và limitata. Se si raggiunge un certo limite, viene bloccata l’esecuzione e ritornato un valore arbitrario (qui è il limite stesso).</p>
+
+<h4 id="ricorsione-multipla">Ricorsione multipla</h4>
+
+<h4 id="iterazione">Iterazione</h4>
+
+<p>Eliminazione ric di coda</p>
+
+<h4 id="algo-incompleto">Algo incompleto</h4>
+
+<h4 id="funzione-di-ackermann">Funzione di Ackermann</h4>
+
+<p>http://www.cs.tau.ac.il/~nachumd/term/42019.pdf</p>
+
+<h1 id="funzioni-ricorsive-parziali">Funzioni ricorsive parziali</h1>
+
+<h4 id="mu-ricorsione"><script type="math/tex">\mu</script>-ricorsione</h4>
+
+<p>Una funzione <script type="math/tex">f</script> si dice <em>definita per minimizzazione</em> oppure <script type="math/tex">\mu</script>-ricorsiva se definita come</p>
+
+<script type="math/tex; mode=display">f(\vec{x}) = \mu \, y.\!\big(g(\vec{x}, y) = 0 \big)</script>
+
+<p>con <script type="math/tex">\mu \, y.\!\big(g(\vec{x}, y) = 0 \big)</script> pari al più piccolo numero <script type="math/tex">n</script> che soddisfa il predicato <script type="math/tex">g(\vec{x}, y) = 0</script>. Può essere che <script type="math/tex">f(\vec{x})</script> sia indefinita se non esiste <script type="math/tex">n</script> ce rende vero il predicato oppure se per qualche <script type="math/tex">% <![CDATA[
+m<n %]]></script> il calcolo di <script type="math/tex">g(\vec{x}, m)</script> diverge (la chiamata non termina).</p>
+
+<p>Aggiungendo la minimizzazione (non limitata) il formalismo diventa algoritmicamente completo.</p>
+
+<h4 id="costrutto-if-then-else">Costrutto <em>if-then-else</em></h4>
+
+<p>Alternativamente (non in aggiunta!) ad un metodo di iterazione illimitata quale la minimizzazione, si può introdurre il costrutto:
+….</p>
 
   </div>
 
