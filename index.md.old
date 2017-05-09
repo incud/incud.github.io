@@ -14,7 +14,7 @@
   
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/">
+  <link rel="canonical" href="/index.md.old">
   
   
   <link rel="alternate" type="application/rss+xml" title="Incud&#39;s blog" href="/feed.xml">
@@ -70,17 +70,45 @@
       <div class="wrapper">
         <div class="home">
 
-  <blockquote>
-  <p>Le costruzioni della mente matematica sono allo stesso tempo libere e necessarie. Il matematico si sente libero di definire le sue nozioni e di stabilire i suoi assiomi come più gli piace. 
-Ma il punto è: riuscirà ad interessare i suoi colleghi matematici alle costruzioni della sua immaginazione?</p>
-</blockquote>
+  # About me
 
-<h1 id="about-me">About me</h1>
+# Notes
 
-<p>I have a diploma in Computer Science, and I’m currently progressing my bachelor’s degree studies at the University of Verona.</p>
+### Calcolabilità (notes in Italian)
 
-<p>Logic &amp; functional programmer enthusiast.</p>
+All the material is a summary of material found online. Particulary userful is the "I Numeri Transfiniti" notes from Alessandro Berarducci (UniPi) and "Teoria della calcolabilità" notes from Andrea Asperti. Search for it on Google. The notes are in Italian.
 
+[Insiemi numerabili](/notes/2017/04/05/insiemi-numerabili.html)
+
+[Funzioni ricorsive parziali](/notes/2017/04/05/funzioni-ricorsive-parziali.html)
+
+[Formalismi e Tesi di Church-Turing](/notes/2017/04/05/formalismi.html) 
+* ...
+* ...
+* ...
+
+Funzioni non calcolabili
+
+Teoria della ricorsione
+
+Classi di complessità e riduzioni
+
+### Logica
+
+Sistemi di riscrittura (eager, lazy, ...)
+
+### Algorithms
+[Solution of 'Algorithm Design Manual'](/notes/2017/04/04/solution-of-algorithm-design-manual.html)
+
+[Solution of exercises found online](/notes/2017/04/04/algo-exercises.html)
+
+# Utilities
+
+Bash usage
+
+[Docker usage](/utilities/2017/04/04/docker-usage.html)
+
+[Latex snippets](/notes/2017/04/05/latex.html)
 
   
 
