@@ -10,5 +10,5 @@ title: Userful resources
 
 ## Bartosz Milewski's Programming Cafe
 [Personal website](https://bartoszmilewski.com/) - 
-[Category theory blog posts](https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/)
+[Category theory blog posts](https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/) - 
 [Youtube lectures](https://www.youtube.com/user/DrBartosz/playlists)
