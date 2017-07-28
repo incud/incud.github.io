@@ -26,8 +26,9 @@ The list of book I'm reading, I've read or I'm going to read as soon as possible
     - Very clever introduction to category theory
 * Topoi - The categorical analysis of logic, Goldblatt
     - Book that focuses on topoi, contains an overview of category theory that seems easier than reading the whole Awodey's one
-* Basic category theory for computer scientists, Pierce
-    - Todo, I haven't read it yet
+* (Blog + Youtube videos) [Abstract Nonsense](https://abstract-nonsense.com/category-theory/)
+    - Functors, Natural transformation, Adjoint
+    - Other stuff related (algebra, topology, ...)
 
 ## Categorical logic
 * (Course) [Introduction to categorical logic (Fall 2009, Awodey)](https://www.andrew.cmu.edu/user/awodey/catlog/)
