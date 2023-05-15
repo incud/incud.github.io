@@ -2,9 +2,21 @@
 
 ## About Me
 
-I am a PhD student at the University of Verona, specializing in the intersection of quantum computing and machine learning. My research focuses on the practical applications of quantum computing to solve complex machine learning problems.
+I am a PhD student at the University of Verona, specializing in the Quantum Computing for machine learning and optimization. 
+Currenty, I'm focusing my research on Quantum Kernels.
 
-### Ongoing projects
+1. [Ongoing Projects](#ongoing-projects)
+2. [Work Experience](#work-experience)
+3. [Education](#education)
+4. [Publications](#publications)
+5. [Conferences & Workshops](#conferences--workshops)
+6. [Invited Talks](#invited-talks)
+7. [Teaching](#teaching)
+8. [Academic service](#academic-service)
+9. [Student supervision](#student-supervision)
+10. [Contact Information](#contact-information)
+
+## Ongoing Projects
 
 - [QUASK](https://quask.readthedocs.io/en/latest/) is a quantum machine learning software written in Python that supports researchers in designing, experimenting, and assessing different quantum and classic kernels performance.
 
@@ -118,6 +130,11 @@ I am a PhD student at the University of Verona, specializing in the intersection
     - May 23rd, 2023 at IBS Center for Theoretical Physics of Complex Systems (PCS), Daejeon, South Korea (remote talk)
     - Talk recorded on [Youtube](TODO) and abstract available [here](https://pcs.ibs.re.kr/PCS_Talks/PCS_Resource_Saving_via_Ensemble_Techniques_for_Quantum_Neural_Networks.html)
       (archive [1](https://web.archive.org/web/20230512093505/https://pcs.ibs.re.kr/PCS_Main_Home/PCS_Talks_and_Colloquia.html) [2](https://web.archive.org/web/20230512093734/https://pcs.ibs.re.kr/PCS_Talks/PCS_Resource_Saving_via_Ensemble_Techniques_for_Quantum_Neural_Networks.html))
+
+- Institute for Computational Systems Biology, University of Hamburg
+    - Talk title: *(Markus Hoffmann & Massimiliano Incudini & Amelie Fitz) Combining network-medicine and quantum computing to unravel the genetic architecture of heritable diseases in the future*
+    - 15 May 2023 at Univeristy of Hamburg (remove event) 
+    - Group website [here](https://www.cosy.bio/education)
 
 - CERN QTI Lectures
     - Talk title: *On the construction of useful quantum kernels*
