@@ -93,7 +93,7 @@ Currenty, I'm focusing my research on Quantum Kernels.
 
 - Quantum Science Days (QSD) 2023
     - Talk title: *Quantum Advantage Seeker with Kernels (QuASK): a software framework to speed up the research in quantum machine learning*
-    - 29? May 2023, remote workshop
+    - 30 May 2023, remote workshop
     - Abstract will be added soon
 
 - Quantum Techniques for Machine Learning (QTML) 2022
@@ -122,28 +122,28 @@ Currenty, I'm focusing my research on Quantum Kernels.
 
 - CISM-UNIUD joint advanced school on Quantum Machine and Deep Learning 2023
     - Talk title: *Introduction to the Qiskit Framework and its Application in Machine Learning*
-    - May 29th and 31st, 2023 at International Centre for Mechanical Sciences (CISM), Udine, Italy  (in presence event)
+    - 29-31 May 2023 at International Centre for Mechanical Sciences (CISM), Udine, Italy  (in presence event)
     - Abstract available [here](http://eqai.eu/speakers/)
     
 - IBS Physics Colloquium 2023 @ Daejeon
     - Talk title: *Resource Saving via Ensemble Techniques for Quantum Neural Networks*
-    - May 23rd, 2023 at IBS Center for Theoretical Physics of Complex Systems (PCS), Daejeon, South Korea (remote talk)
-    - Talk recorded on [Youtube](TODO) and abstract available [here](https://pcs.ibs.re.kr/PCS_Talks/PCS_Resource_Saving_via_Ensemble_Techniques_for_Quantum_Neural_Networks.html)
+    - 23 May 2023 at IBS Center for Theoretical Physics of Complex Systems (PCS), Daejeon, South Korea (remote talk)
+    - Talk recorded on [Youtube](https://www.youtube.com/watch?v=5eHUfxN8LMY) and abstract available [here](https://pcs.ibs.re.kr/PCS_Talks/PCS_Resource_Saving_via_Ensemble_Techniques_for_Quantum_Neural_Networks.html)
       (archive [1](https://web.archive.org/web/20230512093505/https://pcs.ibs.re.kr/PCS_Main_Home/PCS_Talks_and_Colloquia.html) [2](https://web.archive.org/web/20230512093734/https://pcs.ibs.re.kr/PCS_Talks/PCS_Resource_Saving_via_Ensemble_Techniques_for_Quantum_Neural_Networks.html))
 
 - Institute for Computational Systems Biology, University of Hamburg
     - Talk title: *(Markus Hoffmann & Massimiliano Incudini & Amelie Fitz) Combining network-medicine and quantum computing to unravel the genetic architecture of heritable diseases in the future*
-    - 15 May 2023 at Univeristy of Hamburg (remove event) 
+    - 15 May 2023 at Univeristy of Hamburg (remote talk) 
     - Group website [here](https://www.cosy.bio/education)
 
 - CERN QTI Lectures
     - Talk title: *On the construction of useful quantum kernels*
-    - March 29th, 2023 in CERN, Meyrin, Switzerland (in presence event)
+    - 29 March 2023 in CERN, Meyrin, Switzerland (in presence event)
     - Talk recorded [on CERN Indico](https://indico.cern.ch/event/1251853/) and [Youtube](TODO)
     
 - CISM-UNIUD joint advanced school on Quantum Machine Learning 2022
     - Talk title: *Seeking advantage with Quantum Kernels*
-    - September 16th, 2022 at International Centre for Mechanical Sciences (CISM), Udine, Italy (in presence event)
+    - 16 September 2022 at International Centre for Mechanical Sciences (CISM), Udine, Italy (in presence event)
     - Abstract available [here](http://eqai.eu/eqai-2022/speakers/)
     ([archive](https://web.archive.org/web/20230512091944/http://eqai.eu/eqai-2022/speakers/))
 
@@ -161,7 +161,7 @@ Currenty, I'm focusing my research on Quantum Kernels.
     - Quantum Machine Intelligence 
     - IEEE Transactions on Neural Networks and Learning Systems
 - Program Committee: 
-    - Quantum Techniques for Machine Learning (QTML) 2023
+    - [Quantum Techniques for Machine Learning (QTML) 2023](https://qtml-2023.web.cern.ch/) ([archive](https://web.archive.org/web/20230523195227/https://qtml-2023.web.cern.ch/committees/))
 
 ## Student supervision 
 
