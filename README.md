@@ -68,7 +68,7 @@ Currenty, I'm focusing my research on Quantum Kernels.
   
 - *Facial expression recognition on a quantum computer* (2021)
   - Authors: Riccardo Mengoni, Massimiliano Incudini, and Alessandra Di Pierro. 
-  - Journal: Quantum Machine Intelligence 3 (2021): 1-11.
+  - Journal: Quantum Machine Intelligence
   - DOI: https://doi.org/10.1007/s42484-020-00035-5
   
 ### Conference papers
