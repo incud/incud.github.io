@@ -149,12 +149,20 @@ Currenty, I'm focusing my research on Quantum Kernels.
 
 ## Teaching
 
+### Courses
+
 - Teaching Assistant for *Quantum Computing* course (6 CFU, April-June 2022), *MSc Computer Science* at *University of Verona*
     - Laboratory part: *Introduction to the Qiskit Framework and its applications* (12 hours)
     
 - Teaching Assistant for *Quantum Computing* course (6 CFU, April-June 2021), *MSc Computer Science* at *University of Verona*
     - Laboratory part: *Introduction to the Qiskit Framework and its applications* (12 hours)
 
+### Workshop and summer schools
+
+- CISM-UNIUD joint advanced school on Quantum Machine and Deep Learning 2023
+    - Lecture 1: [First steps in Quantum Programming using Qiskit](talks/2023-05-29-CISM/Lecture_Incudini_2023_05_29.md)
+    - Lecture 2: TODO
+  
 ## Academic service
 
 - Reviewer for: 

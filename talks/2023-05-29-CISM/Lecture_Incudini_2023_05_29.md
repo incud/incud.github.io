@@ -765,7 +765,3 @@ options.optimization_level = 0  # no optimization
 options.resilience_level = 2  # ZNE, Zero noise extrapolation
 ```
 
-
-```python
-
-```
