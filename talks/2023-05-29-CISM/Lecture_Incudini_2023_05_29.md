@@ -1,5 +1,10 @@
 # First steps in Quantum Programming using Qiskit
 
+<script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript">
+</script>
+
 ## Introduction
 
 Qiskit is an open-source framework for developing quantum computing applications, algorithms, and software. It is designed to be accessible and easy to use for both beginners and experts in quantum computing. The framework is developed by IBM and offers a comprehensive set of tools for quantum circuit design, simulation, and execution on real quantum devices.
@@ -314,7 +319,9 @@ q_1: ┤1     ├┤1      ├
 
 ### State initialization
 
-Initialize a quantum state $|0^n\rangle$ with the complex amplitudes of $v \in \mathbb{C}^{2^n}$ normalized.
+
+Initialize a quantum state $|0^n\rangle$ 
+with the complex amplitudes of $v \in \mathbb{C}^{2^n}$ normalized.
 
 
 ```python
