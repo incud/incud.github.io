@@ -160,8 +160,8 @@ Currenty, I'm focusing my research on Quantum Kernels.
 ### Workshop and summer schools
 
 - CISM-UNIUD joint advanced school on Quantum Machine and Deep Learning 2023
-    - Lecture 1: [First steps in Quantum Programming using Qiskit](talks/2023-05-29-CISM/Lecture_Incudini_2023_05_29.md)
-    - Lecture 2: TODO
+    - Lecture 1: [First steps in Quantum Programming using Qiskit](talks/2023-05-29-CISM/Lecture_Incudini_2023_05_29.html)
+    - Lecture 2: [Implementation of quantum kernels with Qiskit and scikit-learn](talks/2023-05-29-CISM/Lecture_Incudini_2023_05_31.html)
   
 ## Academic service
 
