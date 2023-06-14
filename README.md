@@ -3,7 +3,7 @@
 ## About Me
 
 I am a PhD student at the University of Verona, specializing in the Quantum Computing for machine learning and optimization. 
-Currenty, I'm focusing my research on Quantum Kernels.
+Currently, I'm focusing my research on Quantum Kernels.
 
 1. [Ongoing Projects](#ongoing-projects)
 2. [Work Experience](#work-experience)
@@ -80,12 +80,14 @@ Currenty, I'm focusing my research on Quantum Kernels.
 
 ### Preprints
 
+- *Amplitude-assisted tagging of longitudinally polarised bosons using wide neural networks* (2023)
+  - Available at arXiv:2306.07726, w/ M. Grossi, M. Pellen, G. Pelliccioli
 - *Resource saving via ensemble techniques for quantum neural networks* (2023)
-  - Available at arXiv:2303.11283
+  - Available at arXiv:2303.11283, w/ M. Grossi, A. Ceschini, A. Mandarino, M. Panella, S. Vallecorsa, D. Windridge
 - *The quantum path kernel: a generalized quantum neural tangent kernel for deep quantum machine learning* (2022)
-  - Available at arXiv:2212.11826
+  - Available at arXiv:2212.11826, w/ M. Grossi, A. Mandarino, S. Vallecorsa, A. Di Pierro, D. Windridge
 - *Structure learning of quantum embeddings* (2022)
-  - Available at arXiv:2209.11144
+  - Available at arXiv:2209.11144, w/ F. Martini, A. Di Pierro
 
 ## Conferences & Workshops
 
