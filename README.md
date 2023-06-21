@@ -56,7 +56,7 @@ Currently, I'm focusing my research on Quantum Kernels.
 
 ### Journal papers
 
-- *[The quantum path kernel: a generalized quantum neural tangent kernel for deep quantum machine learning](https://doi.org/10.1109/TQE.2023.3287736)* (2023)
+- *[The Quantum Path Kernel: a generalized neural tangent kernel for deep quantum machine learning](https://doi.org/10.1109/TQE.2023.3287736)* (2023)
   - Authors: Massimiliano Incudini, Michele Grossi, Antonio Mandarino, Sofia Vallecorsa, Alessandra Di Pierro, and David Windridge
   - Journal: IEEE Transactions on Quantum Engineering
   - DOI: 10.1109/TQE.2023.3287736
