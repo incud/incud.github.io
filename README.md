@@ -56,27 +56,32 @@ Currently, I'm focusing my research on Quantum Kernels.
 
 ### Journal papers
 
-- *Quantum Advantage Seeker with Kernels (QuASK): a software framework to speed up the research in quantum machine learning* (2023)
+- *[The quantum path kernel: a generalized quantum neural tangent kernel for deep quantum machine learning](https://doi.org/10.1109/TQE.2023.3287736)* (2023)
+  - Authors: Massimiliano Incudini, Michele Grossi, Antonio Mandarino, Sofia Vallecorsa, Alessandra Di Pierro, and David Windridge
+  - Journal: IEEE Transactions on Quantum Engineering
+  - DOI: 10.1109/TQE.2023.3287736
+ 
+- *[Quantum Advantage Seeker with Kernels (QuASK): a software framework to speed up the research in quantum machine learning](https://doi.org/10.1007/s42484-023-00107-2)* (2023)
   - Authors: Francesco Di Marcantonio, Massimiliano Incudini, Davide Tezza, and Michele Grossi 
   - Journal: Quantum Machine Intelligence
-  - DOI: https://doi.org/10.1007/s42484-023-00107-2
+  - DOI: 10.1007/s42484-023-00107-2
   
-- *Computing graph edit distance on quantum devices* (2022)
+- *[Computing graph edit distance on quantum devices](https://doi.org/10.1007/s42484-022-00077-x)* (2022)
   - Authors: Massimiliano Incudini, Fabio Tarocco, Riccardo Mengoni, Alessandra Di Pierro, and Antonio Mandarino
   - Journal: Quantum Machine Intelligence
-  - DOI: https://doi.org/10.1007/s42484-022-00077-x
+  - DOI: 10.1007/s42484-022-00077-x
   
-- *Facial expression recognition on a quantum computer* (2021)
+- *[Facial expression recognition on a quantum computer](https://doi.org/10.1007/s42484-020-00035-5)* (2021)
   - Authors: Riccardo Mengoni, Massimiliano Incudini, and Alessandra Di Pierro. 
   - Journal: Quantum Machine Intelligence
-  - DOI: https://doi.org/10.1007/s42484-020-00035-5
+  - DOI: 10.1007/s42484-020-00035-5
   
 ### Conference papers
 
-- *Quantum machine learning and fraud detection* (2021)
+- *[Quantum machine learning and fraud detection](https://doi.org/10.1007/978-3-030-91631-2_8)* (2021)
   - Authors: Alessandra Di Pierro and Massimiliano Incudini. 
   - Proceeding: Protocols, Strands, and Logic (Springer)
-  - DOI: https://doi.org/10.1007/978-3-030-91631-2_8
+  - DOI: 10.1007/978-3-030-91631-2_8
 
 ### Preprints
 
@@ -84,8 +89,6 @@ Currently, I'm focusing my research on Quantum Kernels.
   - Available at arXiv:2306.07726, w/ M. Grossi, M. Pellen, G. Pelliccioli
 - *Resource saving via ensemble techniques for quantum neural networks* (2023)
   - Available at arXiv:2303.11283, w/ M. Grossi, A. Ceschini, A. Mandarino, M. Panella, S. Vallecorsa, D. Windridge
-- *The quantum path kernel: a generalized quantum neural tangent kernel for deep quantum machine learning* (2022)
-  - Available at arXiv:2212.11826, w/ M. Grossi, A. Mandarino, S. Vallecorsa, A. Di Pierro, D. Windridge
 - *Structure learning of quantum embeddings* (2022)
   - Available at arXiv:2209.11144, w/ F. Martini, A. Di Pierro
 
