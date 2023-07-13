@@ -78,6 +78,12 @@ Currently, I'm focusing my research on Quantum Kernels.
   
 ### Conference papers
 
+- *Higher-order topological kernels via quantum computation* (2023)
+  - Authors: Massimiliano Incudini, Francesco Martini and Alessandra Di Pierro
+  - To appear at the Proceeding of the 2023 IEEE International Conference on Quantum Computing and Engineering (QCE)
+- *The maximum-likelihood quantum amplitude estimation algorithm provides the best tradeoff between accuracy and circuit depth among quantum solutions for integral estimation* (2023)
+  - Authors: Marco Maronese, Enrico Prati, Massimiliano Incudini and Luca Asproni
+  - To appear at the Proceeding of the 2023 IEEE International Conference on Quantum Computing and Engineering (QCE)
 - *[Quantum machine learning and fraud detection](https://doi.org/10.1007/978-3-030-91631-2_8)* (2021)
   - Authors: Alessandra Di Pierro and Massimiliano Incudini. 
   - Proceeding: Protocols, Strands, and Logic (Springer)
@@ -138,7 +144,7 @@ Currently, I'm focusing my research on Quantum Kernels.
 
 - Institute for Computational Systems Biology, University of Hamburg
     - Talk title: *(Markus Hoffmann & Massimiliano Incudini & Amelie Fitz) Combining network-medicine and quantum computing to unravel the genetic architecture of heritable diseases in the future*
-    - 15 May 2023 at Univeristy of Hamburg (remote talk) 
+    - 15 May 2023 at the University of Hamburg (remote talk) 
     - Group website [here](https://www.cosy.bio/education)
 
 - CERN QTI Lectures
