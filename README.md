@@ -9,12 +9,10 @@ Currently, I'm focusing my research on Quantum Kernels.
 2. [Work Experience](#work-experience)
 3. [Education](#education)
 4. [Publications](#publications)
-5. [Conferences & Workshops](#conferences--workshops)
-6. [Invited Talks](#invited-talks)
-7. [Teaching](#teaching)
-8. [Academic service](#academic-service)
-9. [Student supervision](#student-supervision)
-10. [Contact Information](#contact-information)
+5. [Talks](#talks)
+6. [Teaching](#teaching)
+7. [Academic service](#academic-service)
+8. [Contact Information](#contact-information)
 
 ## Ongoing Projects
 
@@ -98,9 +96,19 @@ Currently, I'm focusing my research on Quantum Kernels.
 - *Structure learning of quantum embeddings* (2022)
   - Available at arXiv:2209.11144, w/ F. Martini, A. Di Pierro
 
-## Conferences & Workshops
+## Talks
 
-### Talk presentations
+### Conferences and workshops
+
+- Quantum Techniques for Machine Learning (QTML) 2022
+    - Talk title: *A Topological Features Based Quantum Kernel*
+    - November 2023, Meyrin
+    - Abstract will be added soon
+ 
+- EurOPT 2023
+    - Talk title: *Computing graph edit distance on quantum devices*
+    - 25 August 2023, Budapest
+    - Abstract will be added soon
 
 - Quantum Science Days (QSD) 2023
     - Talk title: *Quantum Advantage Seeker with Kernels (QuASK): a software framework to speed up the research in quantum machine learning*
@@ -119,22 +127,7 @@ Currently, I'm focusing my research on Quantum Kernels.
     - Conference program available [here](https://easychair.org/smart-program/FLoC2022/GuttmanFest-index.html) 
       ([archive](https://web.archive.org/web/20230512091245/https://easychair.org/smart-program/FLoC2022/GuttmanFest-index.html))
 
-### Poster presentations
-
-- Theory of Quantum Computation, Communication and Cryptography (TQC) 2023
-    - Poster title: *The Quantum Path Kernel: a Generalized Quantum Neural Tangent Kernel for Deep Quantum Machine Learning*
-    - 24-28 July 2023 in Aveiro, Portugal
-    
-- International Conference on Quantum Technologies for High-Energy Physics (QT4HEP) 2022
-    - Poster title: *Genetic Algorithms for Constructing Quantum Embeddings*
-    - 1-4 November 2022 at CERN, Meyrin, Switzerland
-
-## Invited Talks
-
-- CISM-UNIUD joint advanced school on Quantum Machine and Deep Learning 2023
-    - Talk title: *Introduction to the Qiskit Framework and its Application in Machine Learning*
-    - 29-31 May 2023 at International Centre for Mechanical Sciences (CISM), Udine, Italy  (in presence event)
-    - Abstract available [here](http://eqai.eu/speakers/)
+### Seminars
     
 - IBS Physics Colloquium 2023 @ Daejeon
     - Talk title: *Resource Saving via Ensemble Techniques for Quantum Neural Networks*
@@ -152,11 +145,29 @@ Currently, I'm focusing my research on Quantum Kernels.
     - 29 March 2023 in CERN, Meyrin, Switzerland (in presence event)
     - Talk recorded [on CERN Indico](https://indico.cern.ch/event/1251853/) and [Youtube](TODO)
     
+
+### Summer schools
+
+- CISM-UNIUD joint advanced school on Quantum Machine and Deep Learning 2023
+    - Talk title: *Introduction to the Qiskit Framework and its Application in Machine Learning*
+    - 29-31 May 2023 at International Centre for Mechanical Sciences (CISM), Udine, Italy  (in presence event)
+    - Abstract available [here](http://eqai.eu/speakers/)
+
 - CISM-UNIUD joint advanced school on Quantum Machine Learning 2022
     - Talk title: *Seeking advantage with Quantum Kernels*
     - 16 September 2022 at International Centre for Mechanical Sciences (CISM), Udine, Italy (in presence event)
     - Abstract available [here](http://eqai.eu/eqai-2022/speakers/)
     ([archive](https://web.archive.org/web/20230512091944/http://eqai.eu/eqai-2022/speakers/))
+
+### Poster presentations
+
+- Theory of Quantum Computation, Communication and Cryptography (TQC) 2023
+    - Poster title: *The Quantum Path Kernel: a Generalized Quantum Neural Tangent Kernel for Deep Quantum Machine Learning*
+    - 24-28 July 2023 in Aveiro, Portugal
+    
+- International Conference on Quantum Technologies for High-Energy Physics (QT4HEP) 2022
+    - Poster title: *Genetic Algorithms for Constructing Quantum Embeddings*
+    - 1-4 November 2022 at CERN, Meyrin, Switzerland
 
 ## Teaching
 
@@ -168,7 +179,7 @@ Currently, I'm focusing my research on Quantum Kernels.
 - Teaching Assistant for *Quantum Computing* course (6 CFU, April-June 2021), *MSc Computer Science* at *University of Verona*
     - Laboratory part: *Introduction to the Qiskit Framework and its applications* (12 hours)
 
-### Workshop and summer schools
+### Summer schools
 
 - CISM-UNIUD joint advanced school on Quantum Machine and Deep Learning 2023
     - Lecture 1: [First steps in Quantum Programming using Qiskit](talks/2023-05-29-CISM/Lecture_Incudini_2023_05_29.html)
@@ -176,23 +187,16 @@ Currently, I'm focusing my research on Quantum Kernels.
   
 ## Academic service
 
-- Reviewer for: 
-    - Quantum Machine Intelligence 
-    - IEEE Transactions on Neural Networks and Learning Systems
-- Program Committee: 
-    - [Quantum Techniques for Machine Learning (QTML) 2023](https://qtml-2023.web.cern.ch/) ([archive](https://web.archive.org/web/20230523195227/https://qtml-2023.web.cern.ch/committees/))
-
-## Student supervision 
-
-- *Davide Tezza*, MSc Mathematics at University of Trento
-    - Thesis title: *Design automatization of quantum machine learning algorithms*
-    - I have been co-supervisor of Davide as part of its internship at Data Reply, together with Alessandro Oneto (professor at University of Trento) in January - October 2022
-
-- *FM* 
-- *AS*
-- *DDB*
-- *SL*
-- *LB*
+- Reviewer for: [Quantum Machine Intelligence](https://www.springer.com/journal/42484), [IEEE Transactions on Neural Networks and Learning Systems](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385), [IOP Quantum Science and Technology](https://iopscience.iop.org/journal/2058-9565), [IOP Journal of Physics A](https://iopscience.iop.org/journal/1751-8121)
+- Program Committee member for: [Quantum Techniques for Machine Learning (QTML) 2023](https://qtml-2023.web.cern.ch/) ([archive](https://web.archive.org/web/20230523195227/https://qtml-2023.web.cern.ch/committees/))
+- Supervisor for: 
+    - *Davide Tezza*, MSc Mathematics at the University of Trento
+        - Thesis title: *Design automatization of quantum machine learning algorithms*
+        - I have been co-supervisor of Davide as part of its internship at Data Reply, together with Alessandro Oneto (professor at the University of Trento) in January - October 2022
+    - *Andrea Senese*, Msc Computer Science Engineering at the University of Torino
+        - Thesis title: *Quantum unsupervised kernel learning applied to LHCb*
+        - I have been co-supervisor of Andrea together with Luca Roversi (professor at the University of Torino) and Alessandra di Pierro (professor at the University of Verona)
+    - *DDB*
 
 ## Contact Information
 
