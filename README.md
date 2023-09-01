@@ -2,7 +2,7 @@
 
 ## About Me
 
-I am a PhD student at the University of Verona, specializing in the Quantum Computing for machine learning and optimization. 
+I am a PhD student at the University of Verona, specializing in Quantum Computing for machine learning and optimization. 
 Currently, I'm focusing my research on Quantum Kernels.
 
 1. [Ongoing Projects](#ongoing-projects)
@@ -16,7 +16,7 @@ Currently, I'm focusing my research on Quantum Kernels.
 
 ## Ongoing Projects
 
-- [QUASK](https://quask.readthedocs.io/en/latest/) is a quantum machine learning software written in Python that supports researchers in designing, experimenting, and assessing different quantum and classic kernels performance.
+- [QUASK](https://quask.readthedocs.io/en/latest/) is a quantum machine learning software written in Python that supports researchers in designing, experimenting, and assessing different quantum and classic kernel performances.
 
 ## Work Experience 
 
@@ -33,13 +33,13 @@ Currently, I'm focusing my research on Quantum Kernels.
 
 - *Data Reply* (Milan, Italy, 07/2021-07/2023)
     - Role: *Consultant for Quantum and Accelerated Computing*
-    - Development of Quantum Computing solutions for problem in the financial industry
+    - Development of Quantum Computing solutions for problems in the financial industry
 - *Technology Reply* (Verona, Italy, 02/2019-07/2022)
     - Role: *Consultant*
-    - Web services development and maintenance for financial sector
+    - Web services development and maintenance for the financial sector
 - *Edulife* (Verona, Italy, 09/2018-01/2019)
     - Role: *Full-Stack Developer*
-    - Development of e-learning platform based on Microsoft software stack (C#, SQL Server, ASPX)
+    - Development of e-learning platforms based on Microsoft software stack (C#, SQL Server, ASPX)
 - *Antek* (Mantova, Italy, 07/2015-02/2016)
     - Role: *Full-Stack Developer*
     - Device driver development for telecommunication systems
@@ -53,46 +53,46 @@ Currently, I'm focusing my research on Quantum Kernels.
 ## Publications
 
 ### Journal papers
+- *[Resource saving via ensemble techniques for quantum neural networks](https://doi.org/)* (2023)
+  - Authors: Massimiliano Incudini, Michele Grossi, Andrea Ceschini, Antonio Mandarino, Massimo Panella, Sofia Vallecorsa, David Windridge
+  - To appear on Quantum Machine Intelligence
+
+- *[Amplitude-assisted tagging of longitudinally polarised bosons using wide neural networks](https://doi.org/10.1140/epjc/s10052-023-11931-y)* (2023)
+  - Authors: Michele Grossi, Massimiliano Incudini, Mathieu Pellen & Giovanni Pelliccioli 
+  - Journal: The European Physical Journal C
 
 - *[The Quantum Path Kernel: a generalized neural tangent kernel for deep quantum machine learning](https://doi.org/10.1109/TQE.2023.3287736)* (2023)
   - Authors: Massimiliano Incudini, Michele Grossi, Antonio Mandarino, Sofia Vallecorsa, Alessandra Di Pierro, and David Windridge
   - Journal: IEEE Transactions on Quantum Engineering
-  - DOI: 10.1109/TQE.2023.3287736
  
 - *[Quantum Advantage Seeker with Kernels (QuASK): a software framework to speed up the research in quantum machine learning](https://doi.org/10.1007/s42484-023-00107-2)* (2023)
   - Authors: Francesco Di Marcantonio, Massimiliano Incudini, Davide Tezza, and Michele Grossi 
   - Journal: Quantum Machine Intelligence
-  - DOI: 10.1007/s42484-023-00107-2
   
 - *[Computing graph edit distance on quantum devices](https://doi.org/10.1007/s42484-022-00077-x)* (2022)
   - Authors: Massimiliano Incudini, Fabio Tarocco, Riccardo Mengoni, Alessandra Di Pierro, and Antonio Mandarino
   - Journal: Quantum Machine Intelligence
-  - DOI: 10.1007/s42484-022-00077-x
   
 - *[Facial expression recognition on a quantum computer](https://doi.org/10.1007/s42484-020-00035-5)* (2021)
   - Authors: Riccardo Mengoni, Massimiliano Incudini, and Alessandra Di Pierro. 
   - Journal: Quantum Machine Intelligence
-  - DOI: 10.1007/s42484-020-00035-5
   
 ### Conference papers
 
 - *Higher-order topological kernels via quantum computation* (2023)
   - Authors: Massimiliano Incudini, Francesco Martini and Alessandra Di Pierro
   - To appear at the Proceeding of the 2023 IEEE International Conference on Quantum Computing and Engineering (QCE)
+    
 - *The maximum-likelihood quantum amplitude estimation algorithm provides the best tradeoff between accuracy and circuit depth among quantum solutions for integral estimation* (2023)
   - Authors: Marco Maronese, Enrico Prati, Massimiliano Incudini and Luca Asproni
   - To appear at the Proceeding of the 2023 IEEE International Conference on Quantum Computing and Engineering (QCE)
+    
 - *[Quantum machine learning and fraud detection](https://doi.org/10.1007/978-3-030-91631-2_8)* (2021)
   - Authors: Alessandra Di Pierro and Massimiliano Incudini. 
   - Proceeding: Protocols, Strands, and Logic (Springer)
-  - DOI: 10.1007/978-3-030-91631-2_8
 
 ### Preprints
 
-- *Amplitude-assisted tagging of longitudinally polarised bosons using wide neural networks* (2023)
-  - Available at arXiv:2306.07726, w/ M. Grossi, M. Pellen, G. Pelliccioli
-- *Resource saving via ensemble techniques for quantum neural networks* (2023)
-  - Available at arXiv:2303.11283, w/ M. Grossi, A. Ceschini, A. Mandarino, M. Panella, S. Vallecorsa, D. Windridge
 - *Structure learning of quantum embeddings* (2022)
   - Available at arXiv:2209.11144, w/ F. Martini, A. Di Pierro
 
@@ -100,7 +100,7 @@ Currently, I'm focusing my research on Quantum Kernels.
 
 ### Conferences and workshops
 
-- Quantum Techniques for Machine Learning (QTML) 2022
+- Quantum Techniques for Machine Learning (QTML) 2023
     - Talk title: *A Topological Features Based Quantum Kernel*
     - November 2023, Meyrin
     - Abstract will be added soon
@@ -108,12 +108,12 @@ Currently, I'm focusing my research on Quantum Kernels.
 - EurOPT 2023
     - Talk title: *Computing graph edit distance on quantum devices*
     - 25 August 2023, Budapest
-    - Abstract will be added soon
+    - Abstract available [here](https://www.euro-online.org/conf/admin/tmp/program-europt2023.pdf)
 
 - Quantum Science Days (QSD) 2023
     - Talk title: *Quantum Advantage Seeker with Kernels (QuASK): a software framework to speed up the research in quantum machine learning*
     - 30 May 2023, remote workshop
-    - Abstract will be added soon
+    - Abstract available [here](https://qworld.net/qscience-days-2023/) ([archive](https://web.archive.org/web/20230901070212/https://qworld.net/qscience-days-2023/)) and talk recorded on [Youtube](https://www.youtube.com/watch?v=sPyIJPpAG9A)
 
 - Quantum Techniques for Machine Learning (QTML) 2022
     - Talk title: *Genetic Algorithms for Constructing Quantum Embeddings* and *Ensembling Techniques for Quantum Neural Networks*
@@ -162,7 +162,7 @@ Currently, I'm focusing my research on Quantum Kernels.
 ### Poster presentations
 
 - Theory of Quantum Computation, Communication and Cryptography (TQC) 2023
-    - Poster title: *The Quantum Path Kernel: a Generalized Quantum Neural Tangent Kernel for Deep Quantum Machine Learning*
+    - Poster title: *The Quantum Path Kernel: a Generalized Neural Tangent Kernel for Deep Quantum Machine Learning*
     - 24-28 July 2023 in Aveiro, Portugal
     
 - International Conference on Quantum Technologies for High-Energy Physics (QT4HEP) 2022
@@ -193,7 +193,7 @@ Currently, I'm focusing my research on Quantum Kernels.
     - *Davide Tezza*, MSc Mathematics at the University of Trento
         - Thesis title: *Design automatization of quantum machine learning algorithms*
         - I have been co-supervisor of Davide as part of its internship at Data Reply, together with Alessandro Oneto (professor at the University of Trento) in January - October 2022
-    - *Andrea Senese*, Msc Computer Science Engineering at the University of Torino
+    - *Andrea Senese*, MSc Computer Science Engineering at the University of Torino
         - Thesis title: *Quantum unsupervised kernel learning applied to LHCb*
         - I have been co-supervisor of Andrea together with Luca Roversi (professor at the University of Torino) and Alessandra di Pierro (professor at the University of Verona)
     - *DDB*
