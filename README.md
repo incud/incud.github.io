@@ -128,7 +128,12 @@ Currently, I'm focusing my research on Quantum Kernels.
       ([archive](https://web.archive.org/web/20230512091245/https://easychair.org/smart-program/FLoC2022/GuttmanFest-index.html))
 
 ### Seminars
-    
+
+- Institute for Computational Systems Biology, University of Hamburg
+    - Talk title: *Quantum Computing: between the skepticism and the hype*
+    - 8 September 2023 at the University of Hamburg  (in presence event)
+    - Group website [here](https://www.cosy.bio/education)
+
 - IBS Physics Colloquium 2023 @ Daejeon
     - Talk title: *Resource Saving via Ensemble Techniques for Quantum Neural Networks*
     - 23 May 2023 at IBS Center for Theoretical Physics of Complex Systems (PCS), Daejeon, South Korea (remote talk)
@@ -142,7 +147,7 @@ Currently, I'm focusing my research on Quantum Kernels.
 
 - CERN QTI Lectures
     - Talk title: *On the construction of useful quantum kernels*
-    - 29 March 2023 in CERN, Meyrin, Switzerland (in presence event)
+    - 29 March 2023 in CERN, Meyrin, Switzerland (both in presence and remote event)
     - Talk recorded [on CERN Indico](https://indico.cern.ch/event/1251853/) and [Youtube](TODO)
     
 
