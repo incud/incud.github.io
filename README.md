@@ -53,7 +53,7 @@ Currently, I'm focusing my research on Quantum Kernels.
 ## Publications
 
 ### Journal papers
-- *[Resource saving via ensemble techniques for quantum neural networks]([https://doi.org/](https://doi.org/10.1007/s42484-023-00126-z))* (2023)
+- *[Resource saving via ensemble techniques for quantum neural networks](https://doi.org/10.1007/s42484-023-00126-z)* (2023)
   - Authors: Massimiliano Incudini, Michele Grossi, Andrea Ceschini, Antonio Mandarino, Massimo Panella, Sofia Vallecorsa, David Windridge
   - To appear on Quantum Machine Intelligence
 
