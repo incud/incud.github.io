@@ -1,0 +1,632 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Expressibility in quantum kernels" href="quantum_1_expressibility.html" /><link rel="prev" title="Intro to quantum kernels" href="index.html" />
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Quantum kernels - QuASK 2.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">QuASK 2.0.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/logo_nobg.png" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learn</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials_classical/index.html">Intro to classical kernels</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Intro to classical kernels</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_classical/classical_1_linear_to_kernel.html">Linear and Ridge regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_classical/classical_2_kernel_functions.html">Kernel machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_classical/classical_3_svm.html">Support Vector Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Intro to quantum kernels</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Intro to quantum kernels</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Quantum kernels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quantum_1_expressibility.html">Expressibility in quantum kernels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quantum_2_projected.html">Projected quantum kernels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quantum_3_spectralbias.html">Spectral bias in quantum kernels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quantum_4_beyondnisq.html">Quantum kernels beyond NISQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials_quask/index.html">Advanced use of QuASK</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Advanced use of QuASK</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_quask/quask_0_backends.html">Backends in <em>quask</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_quask/quask_1_preprocessing.html">Preprocessing techniques in <em>quask</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_quask/quask_2_evaluators.html">Criteria to evaluate a quantum kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_quask/quask_3_optimizers.html">Algorithms to optimize a quantum kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_quask/quask_4_ensemble.html">Ensemble of kernel machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_quask/quask_5_cli.html">How to use <em>quask</em> without any code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials_applications/index.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Applications</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_applications/applications_1_proton_collision.html">Anomaly detection in proton collision</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Under the hood</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../platform_overview.html">Platform overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Modules</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About quask</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="quantum-kernels">
+<h1>Quantum kernels<a class="headerlink" href="#quantum-kernels" title="Link to this heading">#</a></h1>
+<p>The quantum kernel, in its first proposal, maps the classical data into
+the Hilbert space of a quantum system. More intro…</p>
+<section id="parameterized-quantum-circuits-as-feature-maps">
+<h2>Parameterized quantum circuits as feature maps<a class="headerlink" href="#parameterized-quantum-circuits-as-feature-maps" title="Link to this heading">#</a></h2>
+<p>A parameterized quantum circuit, which is a function mapping a classical
+vector of features <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{R}^d\)</span> to a unitary
+operator <span class="math notranslate nohighlight">\(U(\mathbf{x})\)</span>, corresponds to the feature map in the
+classical machine learning setting. We start the computation in the
+initial state <span class="math notranslate nohighlight">\(\rho_0\)</span>, which is usually the <span class="math notranslate nohighlight">\(\ketbra{0}{0}\)</span>
+pure density matrix, and then evolve the initial state via the
+parametric unitary whose arguments correspond to the feature of the
+first data point,</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\rho_{\mathbf{x}} = U^\dagger(\mathbf{x}) \rho_0 U(\mathbf{x}).\]</div>
+</div>
+<section id="the-operator-class">
+<h3>The <code class="docutils literal notranslate"><span class="pre">Operator</span></code> class<a class="headerlink" href="#the-operator-class" title="Link to this heading">#</a></h3>
+<p>Firstly, we will see how to implement the feature map in <em>quask</em>. The
+object that implements <span class="math notranslate nohighlight">\(U(\cdot)\)</span> is the <code class="docutils literal notranslate"><span class="pre">Ansatz</span></code> class, and
+each of the gates of the underlying quantum circuit is an <code class="docutils literal notranslate"><span class="pre">Operation</span></code>.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">quask.core</span> <span class="kn">import</span> <span class="n">Operation</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<p>Any operation corresponds to a two-qubit gate in the form</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[U(\theta) = \exp\left(-i \frac{\beta \theta}{2} \sigma_1^{(p)} \sigma_2^{(q)}\right),\]</div>
+</div>
+<p>with <span class="math notranslate nohighlight">\(\theta \in \mathbb{R}\)</span> being the single real value that
+parameterizes the unitary rotation. The operation is also characterized
+by its generators, <span class="math notranslate nohighlight">\(\sigma_1\)</span> and <span class="math notranslate nohighlight">\(\sigma_2\)</span>, the qubits on
+which the operation is applied, <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span>, and a scaling
+constant <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<p>The parameter <span class="math notranslate nohighlight">\(\theta\)</span> corresponds to one of the components of
+<span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{R}^d\)</span> and can be identified with the index
+<span class="math notranslate nohighlight">\(i \in \{0, \ldots, d-1\}\)</span>. Some works have assigned a function of
+the parameters of <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, such as
+<span class="math notranslate nohighlight">\((\mathbf{x}_1 - \pi)(\mathbf{x}_2 - \pi)\)</span>. This can be
+accomplished by adding a calculated feature to <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>,
+<span class="math notranslate nohighlight">\(\mathbf{x}'_d \leftarrow (\mathbf{x}_1 - \pi)(\mathbf{x}_2 - \pi)\)</span>.
+Then, <span class="math notranslate nohighlight">\(\mathbf{x}' \in \mathbb{R}^{d+1}\)</span>. Furthermore, to allow
+the action of constant gates, the feature of index <span class="math notranslate nohighlight">\(i = d\)</span>
+corresponds to the constant <span class="math notranslate nohighlight">\(1\)</span>. By fixing the constant feature
+and an arbitrary value of <span class="math notranslate nohighlight">\(\beta\)</span>, one can define any rotational
+angle.</p>
+<p>The generators <span class="math notranslate nohighlight">\(\sigma_1\)</span> and <span class="math notranslate nohighlight">\(\sigma_2\)</span> correspond to one
+of the Pauli matrices: <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span>, <span class="math notranslate nohighlight">\(Z\)</span>, or
+<span class="math notranslate nohighlight">\(\mathrm{Id}\)</span>. For example, if <span class="math notranslate nohighlight">\(\sigma_1 = \sigma_2 = X\)</span>,
+the transformation corresponds to an <span class="math notranslate nohighlight">\(R_{XX}\)</span> rotation, while for
+<span class="math notranslate nohighlight">\(\sigma_1^{(p)} = X\)</span> and <span class="math notranslate nohighlight">\(\sigma_2^{(q)} = \mathrm{Id}\)</span>, the
+transformation corresponds to a single-qubit gate acting non-trivially
+on qubit <span class="math notranslate nohighlight">\(p\)</span> via an <span class="math notranslate nohighlight">\(R_X\)</span> rotation, while the transformation
+on qubit <span class="math notranslate nohighlight">\(q\)</span> is vacuous.</p>
+<p>Clearly, <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> are in <span class="math notranslate nohighlight">\(\{0, 1, \ldots, n-1\}\)</span>
+where <span class="math notranslate nohighlight">\(n\)</span> is the number of qubits in the quantum circuit, and
+<span class="math notranslate nohighlight">\(p \neq q\)</span>. Due to the design of our API, you need to always
+specify the qubit on which any transformation acts, even if the
+corresponding generator is the identity. This aspect, although
+unnecessary at this stage, simplifies other advanced operations
+available in <em>quask</em>, such as the automatic discovery of quantum
+kernels.</p>
+<p>Finally, the scaling constant <span class="math notranslate nohighlight">\(0 \leq \beta \leq 1\)</span> is a
+“bandwidth” and is used for different purposes. When used on a constant
+gate (e.g., non-rotational, with feature index equal to <span class="math notranslate nohighlight">\(d\)</span>), it
+allows arbitrary rotations. When used on parameterized gates, it can
+limit the “expressibility” of the feature map, an aspect that is studied
+in great detail later.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define some information about the parameterized quantum circuit</span>
+<span class="n">N_FEATURES</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">N_QUBITS</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="c1"># Create a random operation</span>
+<span class="n">allowed_generators</span> <span class="o">=</span> <span class="n">Operation</span><span class="o">.</span><span class="n">PAULI_GENERATORS</span>
+<span class="n">generators</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">allowed_generators</span><span class="p">)</span>
+
+<span class="n">allowed_qubits</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N_QUBITS</span><span class="p">))</span>
+<span class="n">wires</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">allowed_qubits</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">allowed_features_plus_constant_element</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N_FEATURES</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">feature</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">allowed_features_plus_constant_element</span><span class="p">)</span>
+
+<span class="n">bandwidth</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+
+<span class="n">operation</span> <span class="o">=</span> <span class="n">Operation</span><span class="p">(</span><span class="n">generators</span><span class="p">,</span> <span class="n">wires</span><span class="p">,</span> <span class="n">feature</span><span class="p">,</span> <span class="n">bandwidth</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">operation</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">i</span> <span class="mf">0.12</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">ZZ</span><span class="o">^</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="the-ansatz-class">
+<h3>The <code class="docutils literal notranslate"><span class="pre">Ansatz</span></code> class<a class="headerlink" href="#the-ansatz-class" title="Link to this heading">#</a></h3>
+<p>An <code class="docutils literal notranslate"><span class="pre">Ansatz</span></code> is a sequence of parameterized quantum gates. This class
+wraps individual operations and performs consistency checks to ensure
+the validity of each operation. To accomplish this, the Ansatz object
+contains shared information about the quantum circuit, which need not be
+redundantly repeated for each operation. This shared information
+includes: the number of features <span class="math notranslate nohighlight">\(d\)</span> in the classical data vector,
+the total number of operations in the quantum circuit, and the number of
+qubits in the quantum system.</p>
+<p>By storing these details at the <code class="docutils literal notranslate"><span class="pre">Ansatz</span></code> level, we streamline the
+management and validation of operations, ensuring coherence and
+consistency within the ansatz.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">quask.core</span> <span class="kn">import</span> <span class="n">Ansatz</span>
+<span class="n">N_FEATURES</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">N_OPERATIONS</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">N_QUBITS</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">ansatz</span> <span class="o">=</span> <span class="n">Ansatz</span><span class="p">(</span><span class="n">n_features</span><span class="o">=</span><span class="n">N_FEATURES</span><span class="p">,</span> <span class="n">n_qubits</span><span class="o">=</span><span class="n">N_QUBITS</span><span class="p">,</span> <span class="n">n_operations</span><span class="o">=</span><span class="n">N_OPERATIONS</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Ansatz</span></code> object requires to be initialized, and subsequently, each
+operation, distinct from the identity transformation, needs to be
+configured.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ansatz</span><span class="o">.</span><span class="n">initialize_to_identity</span><span class="p">()</span>
+
+<span class="c1"># parameterized rotation R_{ZZ}(x_0) on the qubits 0, 1</span>
+<span class="n">ansatz</span><span class="o">.</span><span class="n">change_operation</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">new_feature</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">new_wires</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">new_generator</span><span class="o">=</span><span class="s2">&quot;ZZ&quot;</span><span class="p">,</span> <span class="n">new_bandwidth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+
+<span class="c1"># parameterized rotation R_{XX}(x_1) on the qubits 0, 1</span>
+<span class="n">ansatz</span><span class="o">.</span><span class="n">change_operation</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">new_feature</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">new_wires</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">new_generator</span><span class="o">=</span><span class="s2">&quot;XX&quot;</span><span class="p">,</span> <span class="n">new_bandwidth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+
+<span class="c1"># constant R_x(0.123) of the qubit 1 (the second)</span>
+<span class="n">ansatz</span><span class="o">.</span><span class="n">change_operation</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">new_feature</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">new_wires</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">new_generator</span><span class="o">=</span><span class="s2">&quot;IX&quot;</span><span class="p">,</span> <span class="n">new_bandwidth</span><span class="o">=</span><span class="mf">0.123</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="decomposition-of-complex-gates-into-a-product-of-pauli-gates">
+<h3>Decomposition of complex gates into a product of Pauli gates<a class="headerlink" href="#decomposition-of-complex-gates-into-a-product-of-pauli-gates" title="Link to this heading">#</a></h3>
+<p>We have seen that the operation is specified in terms of Pauli matrix
+generators, instead of being specified as the more commonly used quantum
+gates <span class="math notranslate nohighlight">\(U_3, CNOT\)</span>. The scheme we have chosen greatly help in
+analyzing the <em>Lie algebra</em> associated with the parameterized quantum
+circuit, which can give some insight on the functioning of the quantum
+kernel, while still giving the possibility of implementing all the usual
+quantum gates. In fact, any gate can be decomposed into a product of
+many of the operations we have specified.</p>
+<p>For example, the <span class="math notranslate nohighlight">\(U_3(\alpha, \beta, \gamma)\)</span> quantum gates can be
+defined in terms of three rotations <span class="math notranslate nohighlight">\(R_Z, R_X, R_Z\)</span>:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO</span>
+</pre></div>
+</div>
+<p>As another example, the CNOT gate allows for a similar decomposition,
+requiring a <span class="math notranslate nohighlight">\(R_{XX}\)</span> gate and four <span class="math notranslate nohighlight">\(U_3\)</span> gates (each of
+which is decomposed in <span class="math notranslate nohighlight">\(ZXZ\)</span>):</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">qiskit.circuit.library</span> <span class="kn">import</span> <span class="n">CXGate</span><span class="p">,</span> <span class="n">RXXGate</span>
+<span class="kn">from</span> <span class="nn">qiskit.quantum_info.synthesis</span> <span class="kn">import</span> <span class="n">TwoQubitBasisDecomposer</span>
+
+<span class="n">decomposer</span> <span class="o">=</span> <span class="n">TwoQubitBasisDecomposer</span><span class="p">(</span><span class="n">RXXGate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="n">basis_fidelity</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">euler_basis</span><span class="o">=</span><span class="s1">&#39;ZXZ&#39;</span><span class="p">)</span>
+<span class="n">circ</span> <span class="o">=</span> <span class="n">decomposer</span><span class="p">(</span><span class="n">CXGate</span><span class="p">()</span><span class="o">.</span><span class="n">to_matrix</span><span class="p">())</span>
+<span class="n">circ</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="c1"># TODO</span>
+</pre></div>
+</div>
+</section>
+<section id="serialization-of-the-ansatz-objects">
+<h3>Serialization of the Ansatz objects<a class="headerlink" href="#serialization-of-the-ansatz-objects" title="Link to this heading">#</a></h3>
+<p>Both Operation and Ansatz can be serialized into NumPy arrays. The
+Operation is serialized into a vector of 5 elements, where a pair of
+generators corresponds to a single element. The vector includes the two
+qubits, the feature, and the bandwidth. The elements in the vector are
+of type float. Consequently, during deserialization, certain elements
+need to be transformed from float encoding back to integer encoding.</p>
+<p>On the other hand, the ansatz is serialized into a matrix of
+<span class="math notranslate nohighlight">\(5 \times p\)</span> elements, where <span class="math notranslate nohighlight">\(p\)</span> is the number of
+operations. This serialization approach represents each operation
+individually.</p>
+<p>It’s important to note that serializing an Ansatz object at this level
+results in the loss of information regarding the number of features,
+operations, and qubits.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span> <span class="o">=</span> <span class="n">ansatz</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="n">vector</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span><span class="mf">15.</span>   <span class="p">,</span>  <span class="mf">0.</span>   <span class="p">,</span>  <span class="mf">1.</span>   <span class="p">,</span>  <span class="mf">0.</span>   <span class="p">,</span>  <span class="mf">1.</span>   <span class="p">,</span>  <span class="mf">5.</span>   <span class="p">,</span>  <span class="mf">0.</span>   <span class="p">,</span>  <span class="mf">1.</span>   <span class="p">,</span>
+        <span class="mf">1.</span>   <span class="p">,</span>  <span class="mf">1.</span>   <span class="p">,</span>  <span class="mf">1.</span>   <span class="p">,</span>  <span class="mf">0.</span>   <span class="p">,</span>  <span class="mf">1.</span>   <span class="p">,</span>  <span class="mf">2.</span>   <span class="p">,</span>  <span class="mf">0.123</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ansatz_back</span> <span class="o">=</span> <span class="n">Ansatz</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="n">N_FEATURES</span><span class="p">,</span> <span class="n">n_qubits</span><span class="o">=</span><span class="n">N_QUBITS</span><span class="p">,</span> <span class="n">n_operations</span><span class="o">=</span><span class="n">N_OPERATIONS</span><span class="p">,</span> <span class="n">allow_midcircuit_measurement</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ansatz_back</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">-</span><span class="n">i</span> <span class="mf">1.00</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="n">ZZ</span><span class="o">^</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="n">i</span> <span class="mf">1.00</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">XX</span><span class="o">^</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="n">i</span> <span class="mf">0.12</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">IX</span><span class="o">^</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="quantum-circuits-for-the-calculation-of-the-inner-product">
+<h2>Quantum circuits for the calculation of the inner product<a class="headerlink" href="#quantum-circuits-for-the-calculation-of-the-inner-product" title="Link to this heading">#</a></h2>
+<p>Once implemented the feature map via the parameterized quantum circuit
+<span class="math notranslate nohighlight">\(U(\cdot)\)</span>, and used such an object to encode a pair of classical
+vectors <span class="math notranslate nohighlight">\(\mathbf{x}, \mathbf{x}'\)</span>, we can implement a kernel
+function by taking the inner product of the two vectors transformed via
+the quantum operation,</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\kappa(\mathbf{x}, \mathbf{x}') = \mathrm{Trace}[\rho_{\mathbf{x}} \rho_{\mathbf{x}'}],\]</div>
+</div>
+<p>where the Trace function corresponds to the inner product in the Hilbert
+space of density matrices <span class="math notranslate nohighlight">\(\rho\)</span>.</p>
+<section id="the-overlap-test">
+<h3>The overlap test<a class="headerlink" href="#the-overlap-test" title="Link to this heading">#</a></h3>
+<p>The transformation can be implemented, at the quantum circuit level, via
+the <em>overlap test</em> or <em>fidelity test</em>. Such a test consists of encoding
+first the data point <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> using <span class="math notranslate nohighlight">\(U\)</span>, then the second
+data point <span class="math notranslate nohighlight">\(\mathbf{x}'\)</span> using <span class="math notranslate nohighlight">\(U^\dagger\)</span>. When measuring
+in the computational basis,</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[M = \{ M_0 = \ketbra{0}{0}, M_1 = \ketbra{1}{1}, ..., M_{2^n-1} = \ketbra{2^n-1}{2^n-1} \},\]</div>
+</div>
+<p>the probability of observing the outcome <span class="math notranslate nohighlight">\(M_0\)</span> corresponds to the
+inner product. The kernel function obtained via the overlap test
+corresponds to the following equation,</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\kappa(\mathbf{x}, \mathbf{x}') = \mathrm{Trace}[U^\dagger(x')U(x) \rho_0 U^\dagger(x)U(x') M_0].\]</div>
+</div>
+<p>To estimate the inner product with precision <span class="math notranslate nohighlight">\(\varepsilon\)</span>, we
+need <span class="math notranslate nohighlight">\(O(1/\epsilon^2)\)</span> shots.</p>
+<p>The corresponding quantum circuit is:</p>
+<dl class="simple">
+<dt>..raw:: html</dt><dd><p>&lt;img src=”<a class="reference external" href="data:image/png;base64">data:image/png;base64</a>,{im}” /&gt;</p>
+</dd>
+</dl>
+</section>
+<section id="performing-the-overlap-test-via-the-kernel-object">
+<h3>Performing the overlap test via the <code class="docutils literal notranslate"><span class="pre">Kernel</span></code> object<a class="headerlink" href="#performing-the-overlap-test-via-the-kernel-object" title="Link to this heading">#</a></h3>
+<p>We can create the function that performs the overlap test using the
+Kernel class. We need to specify the ansatz and the kind of test we want
+to use to estimate the kernel function. The overlap test corresponds to
+setting a measurement parameter to “ZZ…Z” (<span class="math notranslate nohighlight">\(n\)</span> times the character
+Z), which means measuring in the computational basis, where each
+elements belongs to the eigendecomposition of the Pauli matrix
+<span class="math notranslate nohighlight">\(Z \otimes Z \otimes ... \otimes Z\)</span>. Furthermore, we need to
+specify the KernelType constant set to <em>fidelity</em>.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">quask.core</span> <span class="kn">import</span> <span class="n">Kernel</span><span class="p">,</span> <span class="n">KernelFactory</span><span class="p">,</span> <span class="n">KernelType</span>
+<span class="n">kernel</span> <span class="o">=</span> <span class="n">KernelFactory</span><span class="o">.</span><span class="n">create_kernel</span><span class="p">(</span><span class="n">ansatz</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span> <span class="o">*</span> <span class="n">N_QUBITS</span><span class="p">,</span> <span class="n">KernelType</span><span class="o">.</span><span class="n">FIDELITY</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It’s worth noting that the kernel object belongs to the
+<code class="docutils literal notranslate"><span class="pre">quask.core.Kernel</span></code> class. However, we did not instantiate it
+directly. Instead, we utilized a <code class="docutils literal notranslate"><span class="pre">KernelFactory</span></code> class to create the
+kernel. This approach is employed because the <code class="docutils literal notranslate"><span class="pre">Kernel</span></code> object deals
+with the abstract structure of the quantum kernel. At a certain point,
+we’ll need to convert this abstract representation into a concrete one
+using one of the many quantum frameworks that handle lower-level
+aspects, such as simulation and execution on quantum hardware. Prominent
+examples include Qiskit, Pennylane, and Qibo.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">KernelFactory</span></code> handles the low-level aspects of executing the
+quantum circuit, while the <code class="docutils literal notranslate"><span class="pre">Kernel</span></code> class manages the high-level
+aspects. By default, the <code class="docutils literal notranslate"><span class="pre">KernelFactory</span></code> generates a <code class="docutils literal notranslate"><span class="pre">Kernel</span></code> object
+with a backend based on the Pennylane framework. For instructions on
+setting up a different backend, please refer to the advanced <em>quask</em>
+tutorials.</p>
+<p>To calculate the kernel values, simply call the <code class="docutils literal notranslate"><span class="pre">kappa</span></code> method.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">N_FEATURES</span><span class="p">,))</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">N_FEATURES</span><span class="p">,))</span>
+<span class="n">similarity</span> <span class="o">=</span> <span class="n">kernel</span><span class="o">.</span><span class="n">kappa</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The kernel value between </span><span class="si">{</span><span class="n">x1</span><span class="si">=}</span><span class="s2"> and </span><span class="si">{</span><span class="n">x2</span><span class="si">=}</span><span class="s2"> is </span><span class="si">{</span><span class="n">similarity</span><span class="si">:</span><span class="s2">0.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">kernel</span> <span class="n">value</span> <span class="n">between</span> <span class="n">x1</span><span class="o">=</span><span class="n">array</span><span class="p">([</span><span class="mf">0.45526215</span><span class="p">,</span> <span class="mf">0.06695402</span><span class="p">])</span> <span class="ow">and</span> <span class="n">x2</span><span class="o">=</span><span class="n">array</span><span class="p">([</span><span class="mf">0.07777086</span><span class="p">,</span> <span class="mf">0.6969737</span> <span class="p">])</span> <span class="ow">is</span> <span class="mf">0.90401</span>
+</pre></div>
+</div>
+</section>
+<section id="serialization-of-the-kernel-objects">
+<h3>Serialization of the Kernel objects<a class="headerlink" href="#serialization-of-the-kernel-objects" title="Link to this heading">#</a></h3>
+<p>The kernel object can be serialized too into a Numpy array. When
+de-serializing a kernel object, the KernelFactory.create_kernel method
+is invoked and the default backend of KernelFactory is chosen. The
+defualt behaviour of the KernelFactor class can be changed via the
+KernelFactory API.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span> <span class="o">=</span> <span class="n">kernel</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
+<span class="n">kernel_back</span> <span class="o">=</span> <span class="n">Kernel</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="n">N_FEATURES</span><span class="p">,</span> <span class="n">n_qubits</span><span class="o">=</span><span class="n">N_QUBITS</span><span class="p">,</span> <span class="n">n_operations</span><span class="o">=</span><span class="n">N_OPERATIONS</span><span class="p">,</span> <span class="n">allow_midcircuit_measurement</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kernel_back</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mf">15.0</span> <span class="mf">0.0</span> <span class="mf">1.0</span> <span class="mf">0.0</span> <span class="mf">1.0</span> <span class="mf">5.0</span> <span class="mf">0.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">0.0</span> <span class="mf">1.0</span> <span class="mf">2.0</span> <span class="mf">0.123</span> <span class="mi">3</span> <span class="mi">3</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">[</span><span class="o">-</span><span class="n">i</span> <span class="mf">1.00</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="n">ZZ</span><span class="o">^</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="n">i</span> <span class="mf">1.00</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">XX</span><span class="o">^</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="n">i</span> <span class="mf">0.12</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">IX</span><span class="o">^</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span> <span class="o">-&gt;</span> <span class="n">ZZ</span>
+</pre></div>
+</div>
+</section>
+<section id="the-swap-test">
+<h3>The swap test<a class="headerlink" href="#the-swap-test" title="Link to this heading">#</a></h3>
+<p>TODO</p>
+</section>
+<section id="performing-the-swap-test-via-the-kernel-object">
+<h3>Performing the swap test via the Kernel object<a class="headerlink" href="#performing-the-swap-test-via-the-kernel-object" title="Link to this heading">#</a></h3>
+<p>TODO AND NOT IMPLEMENTED YET</p>
+</section>
+</section>
+<section id="references-and-acknowledgements">
+<h2>References and acknowledgements<a class="headerlink" href="#references-and-acknowledgements" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="quantum_1_expressibility.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Expressibility in quantum kernels</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Intro to quantum kernels</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Massimiliano Incudini, Michele Grossi
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Quantum kernels</a><ul>
+<li><a class="reference internal" href="#parameterized-quantum-circuits-as-feature-maps">Parameterized quantum circuits as feature maps</a><ul>
+<li><a class="reference internal" href="#the-operator-class">The <code class="docutils literal notranslate"><span class="pre">Operator</span></code> class</a></li>
+<li><a class="reference internal" href="#the-ansatz-class">The <code class="docutils literal notranslate"><span class="pre">Ansatz</span></code> class</a></li>
+<li><a class="reference internal" href="#decomposition-of-complex-gates-into-a-product-of-pauli-gates">Decomposition of complex gates into a product of Pauli gates</a></li>
+<li><a class="reference internal" href="#serialization-of-the-ansatz-objects">Serialization of the Ansatz objects</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#quantum-circuits-for-the-calculation-of-the-inner-product">Quantum circuits for the calculation of the inner product</a><ul>
+<li><a class="reference internal" href="#the-overlap-test">The overlap test</a></li>
+<li><a class="reference internal" href="#performing-the-overlap-test-via-the-kernel-object">Performing the overlap test via the <code class="docutils literal notranslate"><span class="pre">Kernel</span></code> object</a></li>
+<li><a class="reference internal" href="#serialization-of-the-kernel-objects">Serialization of the Kernel objects</a></li>
+<li><a class="reference internal" href="#the-swap-test">The swap test</a></li>
+<li><a class="reference internal" href="#performing-the-swap-test-via-the-kernel-object">Performing the swap test via the Kernel object</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references-and-acknowledgements">References and acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

@@ -1,0 +1,531 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Spectral bias in quantum kernels" href="quantum_3_spectralbias.html" /><link rel="prev" title="Expressibility in quantum kernels" href="quantum_1_expressibility.html" />
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Projected quantum kernels - QuASK 2.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">QuASK 2.0.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/logo_nobg.png" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learn</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials_classical/index.html">Intro to classical kernels</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Intro to classical kernels</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_classical/classical_1_linear_to_kernel.html">Linear and Ridge regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_classical/classical_2_kernel_functions.html">Kernel machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_classical/classical_3_svm.html">Support Vector Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Intro to quantum kernels</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Intro to quantum kernels</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quantum_0_intro.html">Quantum kernels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quantum_1_expressibility.html">Expressibility in quantum kernels</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Projected quantum kernels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quantum_3_spectralbias.html">Spectral bias in quantum kernels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quantum_4_beyondnisq.html">Quantum kernels beyond NISQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials_quask/index.html">Advanced use of QuASK</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Advanced use of QuASK</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_quask/quask_0_backends.html">Backends in <em>quask</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_quask/quask_1_preprocessing.html">Preprocessing techniques in <em>quask</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_quask/quask_2_evaluators.html">Criteria to evaluate a quantum kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_quask/quask_3_optimizers.html">Algorithms to optimize a quantum kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_quask/quask_4_ensemble.html">Ensemble of kernel machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_quask/quask_5_cli.html">How to use <em>quask</em> without any code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials_applications/index.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Applications</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_applications/applications_1_proton_collision.html">Anomaly detection in proton collision</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Under the hood</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../platform_overview.html">Platform overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Modules</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About quask</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="projected-quantum-kernels">
+<h1>Projected quantum kernels<a class="headerlink" href="#projected-quantum-kernels" title="Link to this heading">#</a></h1>
+<p>Use of projector / partial tracesmances.</p>
+<section id="expressibility-and-curse-of-dimensionality-in-kernel-methods">
+<h2>Expressibility and curse of dimensionality in kernel methods<a class="headerlink" href="#expressibility-and-curse-of-dimensionality-in-kernel-methods" title="Link to this heading">#</a></h2>
+<p>When dealing with kernel methods, whether classical or quantum, we must
+exercise caution when working in high-dimensional (or even
+infinite-dimensional) Hilbert spaces. This is due to the fact that in
+high dimensions, certain unfavorable phenomena can occur, resulting in a
+kernel machine that, after the training phase, becomes a complex
+function prone to overfitting. These phenomena are explored in the
+<a class="reference external" href="xxx">upcoming tutorial</a>.</p>
+<p>For instance, in the classical context, the Gaussian kernel maps any
+<span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{R}^d\)</span> to a multi-dimensional Gaussian
+distribution with an average of <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> and a covariance
+matrix of <span class="math notranslate nohighlight">\(\sigma I\)</span>. When <span class="math notranslate nohighlight">\(\sigma\)</span> is small, data points
+are mapped to different regions of this infinite-dimensional Hilbert
+space, and <span class="math notranslate nohighlight">\(\kappa(\mathbf{x}, \mathbf{x}') \approx 0\)</span> for all
+<span class="math notranslate nohighlight">\(\mathbf{x} \neq \mathbf{x}'\)</span>. To avoid this, a larger
+<span class="math notranslate nohighlight">\(\sigma\)</span> is chosen to ensure that most data points relevant to our
+task have some nontrivial overlap.</p>
+<p>As the Hilbert space for quantum systems grows exponentially with the
+number of qubits <span class="math notranslate nohighlight">\(n\)</span>, similar challenges can arise when using
+quantum kernels. This situation occurs with expressible
+<span class="math notranslate nohighlight">\(U(\cdot)\)</span>, which allows access to various regions within the
+Hilbert space. In such cases, similar to classical kernels, techniques
+must be employed to control expressibility and, consequently, the
+model’s complexity.</p>
+<section id="projection-as-expressibility-control">
+<h3>Projection as expressibility control<a class="headerlink" href="#projection-as-expressibility-control" title="Link to this heading">#</a></h3>
+<p>The authors of [Hua21], who initially addressed the challenge of the
+exponential dimensionality of Hilbert space in the context of quantum
+kernels, have introduced the concept of <em>projected quantum kernels</em> to
+mitigate this issue.</p>
+<p>The concept is straightforward: first, the unitary transformation
+<span class="math notranslate nohighlight">\(U\)</span> maps classical data into the Hilbert space of the quantum
+system. Subsequently, a projection maps these elements back to a
+lower-dimensional Hilbert space. The overall transformation, thanks to
+the contribution of <span class="math notranslate nohighlight">\(U\)</span>, remains beyond the capabilities of
+classical kernels.</p>
+<p>For a single data point encoded in the quantum system, denoted as
+<span class="math notranslate nohighlight">\(\rho_x = U(x) \rho_0 U(x)\)</span>, projected quantum kernels can be
+implemented in two different ways: - We can implement the feature map
+<span class="math notranslate nohighlight">\(\phi(x) = \mathrm{\tilde{Tr}}[\rho_x]\)</span>, with
+<span class="math notranslate nohighlight">\(\mathrm{\tilde{Tr}}\)</span> representing partial trace. - Alternatively,
+we can implement the feature map
+<span class="math notranslate nohighlight">\(\phi(x) = \{ \mathrm{Tr}[\rho_x O^{(j)}] \}_{j=1}^k\)</span>, where the
+observable <span class="math notranslate nohighlight">\(O^{(j)}\)</span> is employed for the projections.</p>
+<p>Finally, the kernel <span class="math notranslate nohighlight">\(\kappa(x, x')\)</span> is explicitly constructed as
+the inner product between <span class="math notranslate nohighlight">\(\phi(x)\)</span> and <span class="math notranslate nohighlight">\(\phi(x')\)</span>.</p>
+</section>
+<section id="implementation-of-projected-quantum-kernel-in-quask">
+<h3>Implementation of projected quantum kernel in <em>quask</em><a class="headerlink" href="#implementation-of-projected-quantum-kernel-in-quask" title="Link to this heading">#</a></h3>
+<p>We first create the parameterized quantum circuit <span class="math notranslate nohighlight">\(U\)</span> as in the
+previous tutorials.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">quask.core</span> <span class="kn">import</span> <span class="n">Ansatz</span><span class="p">,</span> <span class="n">Kernel</span><span class="p">,</span> <span class="n">KernelFactory</span><span class="p">,</span> <span class="n">KernelType</span>
+
+<span class="n">N_FEATURES</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">N_OPERATIONS</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">N_QUBITS</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">ansatz</span> <span class="o">=</span> <span class="n">Ansatz</span><span class="p">(</span><span class="n">n_features</span><span class="o">=</span><span class="n">N_FEATURES</span><span class="p">,</span> <span class="n">n_qubits</span><span class="o">=</span><span class="n">N_QUBITS</span><span class="p">,</span> <span class="n">n_operations</span><span class="o">=</span><span class="n">N_OPERATIONS</span><span class="p">)</span>
+<span class="n">ansatz</span><span class="o">.</span><span class="n">initialize_to_identity</span><span class="p">()</span>
+<span class="n">ansatz</span><span class="o">.</span><span class="n">change_operation</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">new_feature</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">new_wires</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">new_generator</span><span class="o">=</span><span class="s2">&quot;ZZ&quot;</span><span class="p">,</span> <span class="n">new_bandwidth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">ansatz</span><span class="o">.</span><span class="n">change_operation</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">new_feature</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">new_wires</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">new_generator</span><span class="o">=</span><span class="s2">&quot;XX&quot;</span><span class="p">,</span> <span class="n">new_bandwidth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">ansatz</span><span class="o">.</span><span class="n">change_operation</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">new_feature</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">new_wires</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">new_generator</span><span class="o">=</span><span class="s2">&quot;IX&quot;</span><span class="p">,</span> <span class="n">new_bandwidth</span><span class="o">=</span><span class="mf">0.123</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now, by employing the SWAP test over a subset of the <span class="math notranslate nohighlight">\(n\)</span> qubits,
+only a small and constant number of qubits are measured while the rest
+remain unmeasured. This calculation is equivalent to performing the
+inner product between partial traces of two quantum-encoded data points
+can be achieved.</p>
+<p>In the following example, the measurement is performed only on the first
+of two qubits.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kernel</span> <span class="o">=</span> <span class="n">KernelFactory</span><span class="o">.</span><span class="n">create_kernel</span><span class="p">(</span><span class="n">ansatz</span><span class="p">,</span> <span class="s2">&quot;ZI&quot;</span><span class="p">,</span> <span class="n">KernelType</span><span class="o">.</span><span class="n">SWAP_TEST</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can also obtain the kernel by projecting onto a single observable
+described by a Pauli string.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kernel</span> <span class="o">=</span> <span class="n">KernelFactory</span><span class="o">.</span><span class="n">create_kernel</span><span class="p">(</span><span class="n">ansatz</span><span class="p">,</span> <span class="s2">&quot;XY&quot;</span><span class="p">,</span> <span class="n">KernelType</span><span class="o">.</span><span class="n">OBSERVABLE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Multiple observable can be tested if we compose together kernel
+functions made of different observables. Due to the properties of
+positive semidefinite functions, the sum and product and tensor of
+positive semidefinite operators is again positive semidefinite.</p>
+</section>
+</section>
+<section id="learning-of-quantum-processes">
+<h2>Learning of quantum processes<a class="headerlink" href="#learning-of-quantum-processes" title="Link to this heading">#</a></h2>
+<p>The projected quantum kernel finds application in the realm of learning
+a quantum process, described by a function:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[f(x) = \mathrm{Tr}[U^\dagger(x) \rho_0 U(x) O]\]</div>
+</div>
+<p>Here, <span class="math notranslate nohighlight">\(U\)</span> represents a parameterized quantum circuit,
+<span class="math notranslate nohighlight">\(\rho_0\)</span> is the initial state, and <span class="math notranslate nohighlight">\(O\)</span> stands for the
+observable. This family of functions carries significant theoretical
+importance, as it has facilitated the formal demonstration of quantum
+advantages. It also holds practical significance, as certain use cases
+in physics and chemistry can be conceptualized as quantum processes.</p>
+<p>We are given a dataset, denoted as
+<span class="math notranslate nohighlight">\(\{ (x^{(j)}, y^{(j)}) \}_{j=1}^m\)</span>. Additionally, we assume that
+each label in this dataset is noise-free, meaning that
+<span class="math notranslate nohighlight">\(y^{(j)} = f(x^{(j)})\)</span>.</p>
+<section id="s-value">
+<h3>S-value<a class="headerlink" href="#s-value" title="Link to this heading">#</a></h3>
+<p>We can train a kernel machine on a dataset using a kernel
+<span class="math notranslate nohighlight">\(\kappa\)</span>. The resulting model takes the form
+<span class="math notranslate nohighlight">\(h(x) = w^\top \phi(x)\)</span>. This representation is a kernel machine
+in its primal form, and the corresponding kernel Gram matrix is defined
+as <span class="math notranslate nohighlight">\(K = [\kappa(x^{(i)}, x^{(j)})]_{i,j=1}^m\)</span>. Assuming that the
+kernel Gram matrix is normalized, i.e., <span class="math notranslate nohighlight">\(\mathrm{Tr}[K]=m\)</span>, we can
+define the <em>s-value</em>, a quantity that depends on the process <span class="math notranslate nohighlight">\(f\)</span>,
+the input data, and the kernel Gram matrix $K:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[s_K = \sum_{i,j=1}^m (K_{i,j}^{-1}) \, f(x^{(i)}) \, f(x^{(j)})\]</div>
+</div>
+<p>This value quantifies how well the kernel function captures the behavior
+of the quantum process. The kernel is indeed able to capture the
+relationship within the data if:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\kappa(x^{(i)}, x^{(j)}) \approx f(x^{(i)}) \, f(x^{(j)})\]</div>
+</div>
+<p>It’s important to note that <span class="math notranslate nohighlight">\(s_K = \lVert w \rVert\)</span>, making it a
+measure of the model’s complexity. Higher values of <span class="math notranslate nohighlight">\(s_K\)</span> suggest
+that the kernel machine <span class="math notranslate nohighlight">\(h\)</span> becomes a more complex function, which
+can lead to overfitting and poor generalization performance.</p>
+</section>
+<section id="geometric-difference">
+<h3>Geometric difference<a class="headerlink" href="#geometric-difference" title="Link to this heading">#</a></h3>
+<p>While the quantity <span class="math notranslate nohighlight">\(s_K\)</span> compare a kernel and the target function,
+the geometric difference quantifies the divergence between two kernels.</p>
+<p>Assume for the two kernel matrices <span class="math notranslate nohighlight">\(K_1, K_2\)</span> that their trace is
+equal to <span class="math notranslate nohighlight">\(m\)</span>. This is a valid assumption for quantum kernels, as
+the inner product between unitary vectors (or corresponding density
+matrices) is one, which then has to be multiplied for the <span class="math notranslate nohighlight">\(m\)</span>
+elements. For classical kernels, the Gram matrix needs to be normalized.</p>
+<p>The geometric difference is defined by</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[g(K_1, K_2) = \sqrt{\lVert \sqrt{K_2} K_1^{-1} \sqrt{K_2} \rVert_{\infty}},\]</div>
+</div>
+<p>where <span class="math notranslate nohighlight">\(\lVert \cdot \rVert_\infty\)</span> is the spectral norm, i.e. the
+largest singular value.</p>
+<p>One should use the geometric difference to compare the quantum kernel
+<span class="math notranslate nohighlight">\(K_Q\)</span> with several classical kernels
+<span class="math notranslate nohighlight">\(K_{C_1}, K_{C_2}, ...\)</span>. Then, <span class="math notranslate nohighlight">\(\min g(K_C, K_Q)\)</span> has to be
+calculated: * if this difference is small,
+<span class="math notranslate nohighlight">\(g(K_C, K_Q) \ll \sqrt{m}\)</span>, then one of the classical kernels, the
+one with the smallest geometric difference, is guaranteed to provide
+similar performances; * if the difference is high,
+<span class="math notranslate nohighlight">\(g(K_C, K_Q) \approx \sqrt{m}\)</span>, the quantum kernel might
+outperform all the classical kernels tested.</p>
+</section>
+<section id="geometry-test">
+<h3>Geometry Test<a class="headerlink" href="#geometry-test" title="Link to this heading">#</a></h3>
+<p>The geometry test, introduced by [Hua21], serves as a means to assess
+whether a particular dataset holds the potential for a quantum advantage
+or if such an advantage is unlikely. The test operates as follows:</p>
+<ul class="simple">
+<li><p>When <span class="math notranslate nohighlight">\(g(K_C, K_Q) \ll \sqrt{m}\)</span>, a classical kernel exhibits
+behavior similar to the quantum kernel, rendering the use of the
+quantum kernel redundant.</p></li>
+<li><p>When <span class="math notranslate nohighlight">\(g(K_C, K_Q) \approx \sqrt{m}\)</span>, the quantum kernel
+significantly deviates from all tested classical kernels. The outcome
+depends on the complexity of classical kernel machines:</p>
+<ul>
+<li><p>If the complexity of any classical kernel machine is low
+(<span class="math notranslate nohighlight">\(s_{K_C} \ll m\)</span>), classical kernels perform well, and the
+quantum kernel’s divergence from classical <span class="math notranslate nohighlight">\(K_C\)</span>, doesn’t
+yield superior performance.</p></li>
+<li><p>When the complexity of all classical kernel machines is high
+(<span class="math notranslate nohighlight">\(s_{K_C} \approx m\)</span>), classical models struggle to learn
+the function <span class="math notranslate nohighlight">\(f\)</span>. In this scenario:</p>
+<ul>
+<li><p>If the quantum model’s complexity is low
+(<span class="math notranslate nohighlight">\(s_{K_Q} \ll m\)</span>), the quantum kernel successfully solves
+the task while the classical models do not.</p></li>
+<li><p>If the quantum model’s complexity is high
+(<span class="math notranslate nohighlight">\(s_{K_Q} \approx m\)</span>), even the quantum model struggles
+to solve the problem.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">quask.evaluator</span> <span class="kn">import</span> <span class="n">EssEvaluator</span><span class="p">,</span> <span class="n">GeometricDifferenceEvaluator</span><span class="p">,</span> <span class="n">GeometryTestEvaluator</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">KeyboardInterrupt</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="references-acknowledgements">
+<h2>References &amp; acknowledgements<a class="headerlink" href="#references-acknowledgements" title="Link to this heading">#</a></h2>
+<p>[Hua21] Huang, HY., Broughton, M., Mohseni, M. et al. Power of data in
+quantum machine learning. Nat Commun 12, 2631 (2021).
+<a class="reference external" href="https://doi.org/10.1038/s41467-021-22539-9">https://doi.org/10.1038/s41467-021-22539-9</a></p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="quantum_3_spectralbias.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Spectral bias in quantum kernels</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="quantum_1_expressibility.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Expressibility in quantum kernels</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Massimiliano Incudini, Michele Grossi
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Projected quantum kernels</a><ul>
+<li><a class="reference internal" href="#expressibility-and-curse-of-dimensionality-in-kernel-methods">Expressibility and curse of dimensionality in kernel methods</a><ul>
+<li><a class="reference internal" href="#projection-as-expressibility-control">Projection as expressibility control</a></li>
+<li><a class="reference internal" href="#implementation-of-projected-quantum-kernel-in-quask">Implementation of projected quantum kernel in <em>quask</em></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#learning-of-quantum-processes">Learning of quantum processes</a><ul>
+<li><a class="reference internal" href="#s-value">S-value</a></li>
+<li><a class="reference internal" href="#geometric-difference">Geometric difference</a></li>
+<li><a class="reference internal" href="#geometry-test">Geometry Test</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references-acknowledgements">References &amp; acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

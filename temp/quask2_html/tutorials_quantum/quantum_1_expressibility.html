@@ -1,0 +1,482 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Projected quantum kernels" href="quantum_2_projected.html" /><link rel="prev" title="Quantum kernels" href="quantum_0_intro.html" />
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Expressibility in quantum kernels - QuASK 2.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">QuASK 2.0.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/logo_nobg.png" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learn</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials_classical/index.html">Intro to classical kernels</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Intro to classical kernels</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_classical/classical_1_linear_to_kernel.html">Linear and Ridge regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_classical/classical_2_kernel_functions.html">Kernel machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_classical/classical_3_svm.html">Support Vector Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Intro to quantum kernels</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Intro to quantum kernels</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quantum_0_intro.html">Quantum kernels</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Expressibility in quantum kernels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quantum_2_projected.html">Projected quantum kernels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quantum_3_spectralbias.html">Spectral bias in quantum kernels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quantum_4_beyondnisq.html">Quantum kernels beyond NISQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials_quask/index.html">Advanced use of QuASK</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Advanced use of QuASK</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_quask/quask_0_backends.html">Backends in <em>quask</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_quask/quask_1_preprocessing.html">Preprocessing techniques in <em>quask</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_quask/quask_2_evaluators.html">Criteria to evaluate a quantum kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_quask/quask_3_optimizers.html">Algorithms to optimize a quantum kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_quask/quask_4_ensemble.html">Ensemble of kernel machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_quask/quask_5_cli.html">How to use <em>quask</em> without any code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials_applications/index.html">Applications</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Applications</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials_applications/applications_1_proton_collision.html">Anomaly detection in proton collision</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Under the hood</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../platform_overview.html">Platform overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Modules</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About quask</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="expressibility-in-quantum-kernels">
+<h1>Expressibility in quantum kernels<a class="headerlink" href="#expressibility-in-quantum-kernels" title="Link to this heading">#</a></h1>
+<p>Intro…</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="c1"># to import quask, move from docs/source/notebooks to src</span>
+<span class="c1"># sys.path.append(&#39;../../../src&#39;)</span>
+</pre></div>
+</div>
+<section id="expressibility-of-a-parameterized-quantum-circuit">
+<h2>Expressibility of a parameterized quantum circuit<a class="headerlink" href="#expressibility-of-a-parameterized-quantum-circuit" title="Link to this heading">#</a></h2>
+<p>The concept of <em>expressibility</em> for <span class="math notranslate nohighlight">\(U(\mathbf{x})\)</span> can be
+understood as its capacity to distribute classical data throughout the
+Hilbert space of the quantum system. To formally quantify this
+expressibility, we rely on the norm of the super-operator <span class="math notranslate nohighlight">\(A\)</span>,
+given by <span class="math notranslate nohighlight">\(||A||=\mathrm{Trace}[AA^\dagger]\)</span>. This can be defined
+as:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[A = \int_\text{Haar} (\ketbra{\phi}{\phi})^{\otimes t} d\phi - \int_\Theta (U(\mathbf{\theta}) \ketbra{0}{0} U^\dagger (\mathbf{\theta}))^{\otimes t} d\mathbf{\theta},\]</div>
+</div>
+<p>where <span class="math notranslate nohighlight">\(t\)</span> is an integer with <span class="math notranslate nohighlight">\(t \ge 2\)</span>.</p>
+<p>The super-operator <span class="math notranslate nohighlight">\(A\)</span> quantifies the extent to which the ensemble
+of states, obtained by initiating the system in <span class="math notranslate nohighlight">\(\ket{0}\)</span> and
+evolving it with <span class="math notranslate nohighlight">\(U(\theta)\)</span> (where <span class="math notranslate nohighlight">\(\theta\)</span> is randomly
+chosen), deviates from the Haar-random ensemble of states. The
+Haar-random ensemble represents a uniform distribution of quantum states
+throughout the Hilbert space. When this deviation is small, we consider
+the unitary <span class="math notranslate nohighlight">\(U\)</span> to be expressible.</p>
+<p>As comparing a distribution to the true Haar-random distribution of
+states can be challenging, the concept of
+<span class="math notranslate nohighlight">\(\varepsilon\)</span>-approximate state <span class="math notranslate nohighlight">\(t\)</span>-design is employed. This
+ensemble of states closely approximates the Haar random ensemble of
+states up to the <span class="math notranslate nohighlight">\(t\)</span>-th statistical moment, hence the parameter
+<span class="math notranslate nohighlight">\(t\)</span>. For <span class="math notranslate nohighlight">\(t = 1\)</span>, only the first statistical moment (the
+average) is considered, which is generally less informative. For
+<span class="math notranslate nohighlight">\(t=2\)</span>, both the average and standard deviation are taken into
+account, making it a suitable choice for most use cases. The higher the
+value of <span class="math notranslate nohighlight">\(t\)</span>, the more precise the quantification of the
+deviation, but the more computationally expensive the calculation
+becomes.</p>
+<p>Understanding the expressibility of the parameterized quantum circuit
+<span class="math notranslate nohighlight">\(U\)</span> provides insights into the potential performance of the kernel
+that utilizes <span class="math notranslate nohighlight">\(U\)</span>. Further details on these aspects are covered in
+the tutorial <a class="reference external" href="xxx">Spectral Bias</a>.</p>
+<section id="the-kernelevaluator-object">
+<h3>The <code class="docutils literal notranslate"><span class="pre">KernelEvaluator</span></code> object<a class="headerlink" href="#the-kernelevaluator-object" title="Link to this heading">#</a></h3>
+<p>In <em>quask</em>, you can assess a kernel object based on specific criteria
+using the <code class="docutils literal notranslate"><span class="pre">KernelEvaluator</span></code>. Each sub-class of KernelEvaluator
+contains a single method, <code class="docutils literal notranslate"><span class="pre">evaluate</span></code>, which provides a cost associated
+with the given object. The kernel’s quality with respect to a particular
+criterion is indicated by a lower cost. Additionally, the cost may be
+influenced by a set of data, as is the case with accuracy.</p>
+</section>
+<section id="the-haarevaluator-object">
+<h3>The <code class="docutils literal notranslate"><span class="pre">HaarEvaluator</span></code> object<a class="headerlink" href="#the-haarevaluator-object" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">HaarEvaluator</span></code> class inherits <code class="docutils literal notranslate"><span class="pre">KernelEvaluator</span></code> and is used to
+calculate <span class="math notranslate nohighlight">\(||A||\)</span>. It can be used as follows,</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">quask.evaluator</span> <span class="kn">import</span> <span class="n">HaarEvaluator</span>
+<span class="n">he</span> <span class="o">=</span> <span class="n">HaarEvaluator</span><span class="p">(</span><span class="n">n_bins</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">cost</span> <span class="o">=</span> <span class="n">he</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="n">kernel</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">X</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cost (norm of A): </span><span class="si">{</span><span class="n">cost</span><span class="si">:</span><span class="s2">3.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cost</span> <span class="p">(</span><span class="n">norm</span> <span class="n">of</span> <span class="n">A</span><span class="p">):</span> <span class="mf">0.16714</span>
+</pre></div>
+</div>
+<p>Usually, the kernel evaluator needs only the <code class="docutils literal notranslate"><span class="pre">kernel</span></code> argument. If the
+criteria depend on the data, <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> parameters must be
+provided, which correspond to the dataset features and dataset labels,
+respectively. If the kernel Gram matrix must be calculated, it will be
+done using <code class="docutils literal notranslate"><span class="pre">kernel</span></code> and <code class="docutils literal notranslate"><span class="pre">X</span></code>; however, if it has been pre-calculated
+previously, then it should be passed to the <code class="docutils literal notranslate"><span class="pre">K</span></code> parameter to avoid
+losing time to re-calculate it.</p>
+</section>
+</section>
+<section id="dynamical-lie-algebra-of-a-parameterized-quantum-circuit">
+<h2>Dynamical Lie algebra of a parameterized quantum circuit<a class="headerlink" href="#dynamical-lie-algebra-of-a-parameterized-quantum-circuit" title="Link to this heading">#</a></h2>
+<p>The parameterized unitary transformation <span class="math notranslate nohighlight">\(U(\cdot)\)</span>, which
+operates on <span class="math notranslate nohighlight">\(n\)</span> qubits, can be expressed as a sum of Pauli
+generators:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[U(\mathbf{x}) = \exp\left(-i \sum_{j = 0}^{4^n-1} f_j(\mathbf{x}) \sigma_j \right)\]</div>
+</div>
+<p>Here, <span class="math notranslate nohighlight">\(f_j(\mathbf{x})\)</span> belongs to <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, and
+<span class="math notranslate nohighlight">\(\sigma_j\)</span> represents the tensor product of <span class="math notranslate nohighlight">\(n\)</span> Pauli
+matrices. For instance:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\sigma_0 = \mathrm{Id} \otimes \mathrm{Id} \otimes ... \otimes \mathrm{Id}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_1 = \mathrm{Id} \otimes \mathrm{Id} \otimes ... \otimes X\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_{4^n-1} = Z \otimes Z \otimes ... \otimes Z\)</span>.</p></li>
+</ul>
+<p>Each unitary transformation can depend on all <span class="math notranslate nohighlight">\(4^n\)</span> generators or
+only on a subset of them. In the context of a quantum circuit, <span class="math notranslate nohighlight">\(U\)</span>
+is represented by the product of elementary one-qubit and two-qubit
+gates. To determine the generator of this transformation, we employ the
+tools of the Dynamical Lie Algebra, a vector space with a bilinear
+operation denoted as the commutator
+(<span class="math notranslate nohighlight">\([\sigma, \eta] = \sigma\eta - \eta\sigma\)</span>). This vector space is
+spanned by the generators of <span class="math notranslate nohighlight">\(U\)</span>, which include the generators of
+both single one- and two-qubit gates and the generators derived through
+repeated application of the commutator until a fixed point is reached.</p>
+<p>The number of generators is the rank of the Dynamical Lie Algebra.</p>
+<section id="the-lierankevaluator">
+<h3>The <code class="docutils literal notranslate"><span class="pre">LieRankEvaluator</span></code><a class="headerlink" href="#the-lierankevaluator" title="Link to this heading">#</a></h3>
+<p>The rank of the Dynamical Lie Algebra can be determined using the
+<code class="docutils literal notranslate"><span class="pre">LieRankEvaluator</span></code>. This class inherits from <code class="docutils literal notranslate"><span class="pre">KernelEvaluator</span></code> and
+is employed in a manner similar to the previous examples. It’s important
+to note that from a computational perspective, exact calculation is
+feasible only for small values of <span class="math notranslate nohighlight">\(n\)</span> or specific cases. In the
+worst-case scenario, calculating an exponential number of commutations
+is required to cover all the <span class="math notranslate nohighlight">\(4^n\)</span> potential Pauli strings. To
+address this, the search can be truncated once a predefined threshold
+<span class="math notranslate nohighlight">\(T\)</span> is reached.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">quask.evaluator</span> <span class="kn">import</span> <span class="n">LieRankKernelEvaluator</span>
+<span class="n">lre</span> <span class="o">=</span> <span class="n">LieRankKernelEvaluator</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">cost</span> <span class="o">=</span> <span class="n">lre</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="n">kernel</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">X</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cost (-1 * rank of DLA): </span><span class="si">{</span><span class="n">cost</span><span class="si">:</span><span class="s2">3.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cost</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">rank</span> <span class="n">of</span> <span class="n">DLA</span><span class="p">):</span> <span class="o">-</span><span class="mf">8.00000</span>
+</pre></div>
+</div>
+</section>
+<section id="use-of-the-dla-in-quantum-kernels">
+<h3>Use of the DLA in quantum kernels<a class="headerlink" href="#use-of-the-dla-in-quantum-kernels" title="Link to this heading">#</a></h3>
+<p>The application of the Dynamical Lie Algebra (DLA) in quantum machine
+learning has significantly contributed to the theoretical development of
+various tools. It has been demonstrated that the rank of the DLA serves
+as a proxy for expressibility. Essentially, the more generators a
+unitary transformation <span class="math notranslate nohighlight">\(U\)</span> possesses, the greater the capacity to
+map quantum states across the Hilbert space of the quantum system.</p>
+<p>However, it’s worth noting that this measure lacks extreme precision.
+For instance, it doesn’t account for the density of the distribution of
+quantum states, a consideration addressed by the norm of the
+super-operator <span class="math notranslate nohighlight">\(A\)</span>. Moreover, when we introduce a bandwidth
+parameter <span class="math notranslate nohighlight">\(\beta\)</span> to restrict the rotational angles, we
+effectively limit the region in which states can be mapped. In such
+cases, we may encounter a unitary transformation that, despite having an
+exponential number of generators, exhibits only mild expressibility.</p>
+<p>The rank of the DLA also sheds light on another intriguing aspect. Some
+relatively simple quantum circuits can be efficiently simulated on
+classical computers, rendering the use of quantum hardware redundant.
+This is particularly evident for circuits consisting solely of
+single-qubit gates. Research by (Somma) has established that unitary
+transformations with a polynomial number of generators can be
+efficiently simulated in polynomial time on classical hardware. While
+the reverse is not universally proven, having a multitude of generators
+offers favorable evidence that can be used to speculate that the chosen
+quantum circuit is challenging to simulate classically.</p>
+</section>
+</section>
+<section id="references-and-acknowledgements">
+<h2>References and acknowledgements<a class="headerlink" href="#references-and-acknowledgements" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="quantum_2_projected.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Projected quantum kernels</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="quantum_0_intro.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Quantum kernels</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Massimiliano Incudini, Michele Grossi
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Expressibility in quantum kernels</a><ul>
+<li><a class="reference internal" href="#expressibility-of-a-parameterized-quantum-circuit">Expressibility of a parameterized quantum circuit</a><ul>
+<li><a class="reference internal" href="#the-kernelevaluator-object">The <code class="docutils literal notranslate"><span class="pre">KernelEvaluator</span></code> object</a></li>
+<li><a class="reference internal" href="#the-haarevaluator-object">The <code class="docutils literal notranslate"><span class="pre">HaarEvaluator</span></code> object</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dynamical-lie-algebra-of-a-parameterized-quantum-circuit">Dynamical Lie algebra of a parameterized quantum circuit</a><ul>
+<li><a class="reference internal" href="#the-lierankevaluator">The <code class="docutils literal notranslate"><span class="pre">LieRankEvaluator</span></code></a></li>
+<li><a class="reference internal" href="#use-of-the-dla-in-quantum-kernels">Use of the DLA in quantum kernels</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references-and-acknowledgements">References and acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>
