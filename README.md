@@ -2,8 +2,8 @@
 
 ## About Me
 
-I am a PhD student at the University of Verona, specializing in Quantum Computing for machine learning and optimization. 
-Currently, I'm focusing my research on Quantum Kernels.
+I am a PhD student at the University of Verona, specializing in quantum computing techniques for machine learning. 
+Currently, I'm focusing my research on quantum algorithms for topological data analysis and their applications.
 
 1. [Ongoing Projects](#ongoing-projects)
 2. [Work Experience](#work-experience)
@@ -55,7 +55,7 @@ Currently, I'm focusing my research on Quantum Kernels.
 ### Journal papers
 - *[Resource saving via ensemble techniques for quantum neural networks](https://doi.org/10.1007/s42484-023-00126-z)* (2023)
   - Authors: Massimiliano Incudini, Michele Grossi, Andrea Ceschini, Antonio Mandarino, Massimo Panella, Sofia Vallecorsa, David Windridge
-  - To appear on Quantum Machine Intelligence
+  - Journal: Quantum Machine Intelligence
 
 - *[Amplitude-assisted tagging of longitudinally polarised bosons using wide neural networks](https://doi.org/10.1140/epjc/s10052-023-11931-y)* (2023)
   - Authors: Michele Grossi, Massimiliano Incudini, Mathieu Pellen & Giovanni Pelliccioli 
@@ -79,13 +79,13 @@ Currently, I'm focusing my research on Quantum Kernels.
   
 ### Conference papers
 
-- *Higher-order topological kernels via quantum computation* (2023)
+- [*Higher-order topological kernels via quantum computation*](https://ieeexplore.ieee.org/document/10313786) (2023)
   - Authors: Massimiliano Incudini, Francesco Martini and Alessandra Di Pierro
-  - To appear at the Proceeding of the 2023 IEEE International Conference on Quantum Computing and Engineering (QCE)
+  - Proceeding: 2023 IEEE International Conference on Quantum Computing and Engineering (QCE)
     
-- *The maximum-likelihood quantum amplitude estimation algorithm provides the best tradeoff between accuracy and circuit depth among quantum solutions for integral estimation* (2023)
+- [*The maximum-likelihood quantum amplitude estimation algorithm provides the best tradeoff between accuracy and circuit depth among quantum solutions for integral estimation*](https://ieeexplore.ieee.org/document/10313672) (2023)
   - Authors: Marco Maronese, Enrico Prati, Massimiliano Incudini and Luca Asproni
-  - To appear at the Proceeding of the 2023 IEEE International Conference on Quantum Computing and Engineering (QCE)
+  - Proceeding: 2023 IEEE International Conference on Quantum Computing and Engineering (QCE)
     
 - *[Quantum machine learning and fraud detection](https://doi.org/10.1007/978-3-030-91631-2_8)* (2021)
   - Authors: Alessandra Di Pierro and Massimiliano Incudini. 
@@ -93,17 +93,20 @@ Currently, I'm focusing my research on Quantum Kernels.
 
 ### Preprints
 
+- *Network medicine-based epistasis detection in complex diseases: ready for quantum computing* (2023)
+  - Available at [https://www.medrxiv.org/content/10.1101/2023.11.07.23298205v1](https://www.medrxiv.org/content/10.1101/2023.11.07.23298205v1)
+    
 - *Structure learning of quantum embeddings* (2022)
-  - Available at arXiv:2209.11144, w/ F. Martini, A. Di Pierro
+  - Available at arXiv:2209.11144
 
 ## Talks
 
 ### Conferences and workshops
 
 - Quantum Techniques for Machine Learning (QTML) 2023
-    - Talk title: *A Topological Features Based Quantum Kernel*
-    - November 2023, Meyrin
-    - Abstract will be added soon
+    - Talk title: *Higher-order topological kernels via quantum computation*
+    - 25 November 2023, Meyrin
+    - Abstract available [here](https://indico.cern.ch/event/1288979/contributions/5641382/)
  
 - EurOPT 2023
     - Talk title: *Computing graph edit distance on quantum devices*
@@ -201,7 +204,9 @@ Currently, I'm focusing my research on Quantum Kernels.
     - *Andrea Senese*, MSc Computer Science Engineering at the University of Torino
         - Thesis title: *Quantum unsupervised kernel learning applied to LHCb*
         - I have been co-supervisor of Andrea together with Luca Roversi (professor at the University of Torino) and Alessandra di Pierro (professor at the University of Verona)
-    - *DDB*
+    - *Daniele Lizzio Bosco*, MSc Computer Science at the University of Udine
+        - Thesis title: *Automatic Discovery of Kernels for Quantum Anomaly Detection*
+        - I have been co-supervisor of Daniele together with Giuseppe Serra (professor at the University of Udine) and Alessandra di Pierro (professor at the University of Verona)
 
 ## Contact Information
 
