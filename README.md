@@ -24,10 +24,10 @@ Currently, I'm focusing my research on quantum algorithms for topological data a
 
 - *CERN* (Meyrin, Switzerland, 02/2023-05/2023)
     - Role: *Visiting Scientist*
-    - Variational Quantum Circuit applied to graph-based data in High Energy Physics
+    - Ensemble techniques for quantum neural networks
 - *University of Verona* (Verona, Italy, 10/2021-10/2024)
     - Role: *Ph.D. Student*
-    - Applications of Quantum Kernels to real-world problems
+    - Discovery of quantum kernels for real-world applications
 
 ### Industrial
 
