@@ -96,8 +96,8 @@ Currently, I'm focusing my research on quantum algorithms for topological data a
 - *Network medicine-based epistasis detection in complex diseases: ready for quantum computing* (2023)
   - Available at [https://www.medrxiv.org/content/10.1101/2023.11.07.23298205v1](https://www.medrxiv.org/content/10.1101/2023.11.07.23298205v1)
     
-- *Structure learning of quantum embeddings* (2022)
-  - Available at arXiv:2209.11144
+- *Automatic and effective discovery of quantum kernels* (2023)
+  - Available at [https://arxiv.org/abs/2209.11144](https://arxiv.org/abs/2209.11144)
 
 ## Talks
 
