@@ -53,6 +53,11 @@ Currently, I'm focusing my research on quantum algorithms for topological data a
 ## Publications
 
 ### Journal papers
+
+- *[The Quantum Amplitude Estimation Algorithms on Near-Term Devices: A Practical Guide](https://www.mdpi.com/2624-960X/6/1/1)* (2024)
+  - Authors: Marco Maronese, Massimiliano Incudini, Luca Asproni, Enrico Prati.
+  - Journal: Quantum Reports
+
 - *[Resource saving via ensemble techniques for quantum neural networks](https://doi.org/10.1007/s42484-023-00126-z)* (2023)
   - Authors: Massimiliano Incudini, Michele Grossi, Andrea Ceschini, Antonio Mandarino, Massimo Panella, Sofia Vallecorsa, David Windridge
   - Journal: Quantum Machine Intelligence
