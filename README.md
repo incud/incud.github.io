@@ -2,8 +2,14 @@
 
 ## About Me
 
-I am a PhD student at the University of Verona, specializing in quantum computing techniques for machine learning. 
-Currently, I'm focusing my research on quantum algorithms for topological data analysis and their applications.
+I am a computer scientist by training, with a PhD in quantum
+machine learning. My interests lie at the intersection of quantum
+computing and network science, with a focus on biological
+systems. I work on assessing the real-world impact of quantum
+algorithms through logical-level resource estimation and performance
+simulation across fault-tolerant architectures, adapting
+qubit layouts, quantum error correction codes, and magic
+state factory designs to specific hardware requirements. 
 
 1. [Ongoing Projects](#ongoing-projects)
 2. [Work Experience](#work-experience)
@@ -22,15 +28,19 @@ Currently, I'm focusing my research on quantum algorithms for topological data a
 
 ### Academic
 
+- *LIACS, University of Leiden* (Leiden, Netherlands, 02/2024–05/2024)  
+    - Role: *Visiting Scientist*  
+    - Developed quantum algorithms for topological data analysis and higher-order networks in collaboration with Prof. Vedran Dunjko.
 - *CERN* (Meyrin, Switzerland, 02/2023-05/2023)
     - Role: *Visiting Scientist*
-    - Ensemble techniques for quantum neural networks
+    - Investigated overparameterized machine learning models and applications in high-energy physics
 - *University of Verona* (Verona, Italy, 10/2021-10/2024)
-    - Role: *Ph.D. Student*
-    - Discovery of quantum kernels for real-world applications
+    - Role: *Ph.D. Candidate*
 
 ### Industrial
 
+- *Intel* (10/2024-today)
+    - Role: *Research scientist*
 - *Data Reply* (Milan, Italy, 07/2021-07/2023)
     - Role: *Consultant for Quantum and Accelerated Computing*
     - Development of Quantum Computing solutions for problems in the financial industry
@@ -46,6 +56,8 @@ Currently, I'm focusing my research on quantum algorithms for topological data a
 
 ## Education
 
+- PhD in Computer Science, University of Verona, Verona, Italy, 2021–2024  
+    - Thesis: *On the construction of useful quantum kernels* (2025)
 - MSc in Computer Science Engineering, University of Verona, Verona, Italy, 2021
 - BSc in Computer Science, University of Verona, Verona, Italy, 2018 
 - Technical Diploma, I.T.I.S Enrico Fermi, Mantova, Italy, 2015
@@ -53,6 +65,14 @@ Currently, I'm focusing my research on quantum algorithms for topological data a
 ## Publications
 
 ### Journal papers
+
+- *[Automatic and effective discovery of quantum kernels](https://ieeexplore.ieee.org/abstract/document/10812182)* (2024)  
+  - Authors: Massimiliano Incudini et al.  
+  - Journal: IEEE Transactions on Emerging Topics in Computational Intelligence
+
+- *[Network medicine-based epistasis detection in complex diseases: ready for quantum computing](https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkae697/7739512)* (2024)  
+  - Authors: Hoffmann M et al.  
+  - Journal: Nucleic Acids Research
 
 - *[The Quantum Amplitude Estimation Algorithms on Near-Term Devices: A Practical Guide](https://www.mdpi.com/2624-960X/6/1/1)* (2024)
   - Authors: Marco Maronese, Massimiliano Incudini, Luca Asproni, Enrico Prati.
@@ -98,11 +118,9 @@ Currently, I'm focusing my research on quantum algorithms for topological data a
 
 ### Preprints
 
-- *Network medicine-based epistasis detection in complex diseases: ready for quantum computing* (2023)
-  - Available at [https://www.medrxiv.org/content/10.1101/2023.11.07.23298205v1](https://www.medrxiv.org/content/10.1101/2023.11.07.23298205v1)
-    
-- *Automatic and effective discovery of quantum kernels* (2023)
-  - Available at [https://arxiv.org/abs/2209.11144](https://arxiv.org/abs/2209.11144)
+- *[Testing the presence of balanced and bipartite components in a sparse graph is QMA1-hard](https://arxiv.org/abs/2412.14932)* (2025)  
+  - Authors: Incudini M, Gyurik C, Molteni R, Dunjko V  
+  - Status: Under review
 
 ## Talks
 
