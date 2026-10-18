@@ -2,16 +2,13 @@
 
 ## About Me
 
-I am a computer scientist by training, with a PhD in quantum
-machine learning. My interests lie at the intersection of quantum
-computing and network science, with a focus on biological
-systems. I work on assessing the real-world impact of quantum
-algorithms through logical-level resource estimation and performance
-simulation across fault-tolerant architectures, adapting
-qubit layouts, quantum error correction codes, and magic
-state factory designs to specific hardware requirements. 
+I am a computational physicist with a background in computer science and experience in quantum computing theory. I am currently a postdoctoral researcher at SISSA in Trieste.
 
-1. [Ongoing Projects](#ongoing-projects)
+My current interests are fault-tolerant quantum algorithms, their applications to computational physics and computational genomics, and realistic full-stack resource estimation. My work on quantum Monte Carlo sampling combines algorithm design with end-to-end resource estimates and comparisons against optimized classical implementations. I also study how quantum error correction, qubit layouts, compilation, and magic state factories affect practical performance.
+
+Previously, I worked on randomized benchmarking for triple-dot silicon spin qubits, quantum machine learning, and quantum algorithms for finance.
+
+1. [Research and Software](#research-and-software)
 2. [Work Experience](#work-experience)
 3. [Education](#education)
 4. [Publications](#publications)
@@ -20,15 +17,20 @@ state factory designs to specific hardware requirements.
 7. [Academic service](#academic-service)
 8. [Contact Information](#contact-information)
 
-## Ongoing Projects
+## Research and Software
 
-- [QUASK](https://quask.readthedocs.io/en/latest/) is a quantum machine learning software written in Python that supports researchers in designing, experimenting, and assessing different quantum and classic kernel performances.
+- [Fully-quantum Monte Carlo walks](https://arxiv.org/abs/2607.22818): fault-tolerant quantum algorithms for low-temperature Gibbs sampling, with resource estimates and comparisons against optimized classical implementations.
+- [NeEDL](https://github.com/biomedbigdata/NeEDL): software for epistasis detection in computational genomics. I developed its quantum computing module.
+- [QuASK](https://quask.readthedocs.io/en/latest/): a Python framework for designing, experimenting with, and assessing quantum and classical kernels.
 
-## Work Experience 
+## Work Experience
 
 ### Academic
 
-- *LIACS, University of Leiden* (Leiden, Netherlands, 02/2024–05/2024)  
+- *SISSA* (Trieste, Italy, 01/2026-present)
+    - Role: *Postdoctoral Researcher*
+    - Fault-tolerant quantum algorithms for Monte Carlo sampling, with end-to-end resource estimation and benchmarking against optimized classical implementations.
+- *LIACS, University of Leiden* (Leiden, Netherlands, 02/2024-05/2024)  
     - Role: *Visiting Scientist*  
     - Developed quantum algorithms for topological data analysis and higher-order networks in collaboration with Prof. Vedran Dunjko.
 - *CERN* (Meyrin, Switzerland, 02/2023-05/2023)
@@ -39,14 +41,15 @@ state factory designs to specific hardware requirements.
 
 ### Industrial
 
-- *Intel* (10/2024-today)
-    - Role: *Research scientist*
+- *Intel Foundry* (Hillsboro, Oregon, 10/2024-09/2025)
+    - Role: *Staff Researcher*
+    - Fault-tolerant quantum computing, resource estimation, quantum error correction implementation, compilers, and leakage-aware randomized benchmarking for silicon quantum-dot qubit platforms.
 - *Data Reply* (Milan, Italy, 07/2021-07/2023)
     - Role: *Consultant for Quantum and Accelerated Computing*
-    - Development of Quantum Computing solutions for problems in the financial industry
-- *Technology Reply* (Verona, Italy, 02/2019-07/2022)
+    - Developed quantum computing solutions for financial institutions, focusing on computational finance and scalability (part-time).
+- *Technology Reply* (Verona, Italy, 02/2019-07/2021)
     - Role: *Consultant*
-    - Web services development and maintenance for the financial sector
+    - Developed and maintained web services and software architectures for the financial sector (part-time).
 - *Edulife* (Verona, Italy, 09/2018-01/2019)
     - Role: *Full-Stack Developer*
     - Development of e-learning platforms based on Microsoft software stack (C#, SQL Server, ASPX)
@@ -56,8 +59,8 @@ state factory designs to specific hardware requirements.
 
 ## Education
 
-- PhD in Computer Science, University of Verona, Verona, Italy, 2021–2024  
-    - Thesis: *On the construction of useful quantum kernels* (2025)
+- PhD in Computer Science, University of Verona, Verona, Italy, 2021-2024  
+    - Thesis: *[On the construction of useful quantum kernels](https://iris.univr.it/handle/11562/1160627)* (2025)
 - MSc in Computer Science Engineering, University of Verona, Verona, Italy, 2021
 - BSc in Computer Science, University of Verona, Verona, Italy, 2018 
 - Technical Diploma, I.T.I.S Enrico Fermi, Mantova, Italy, 2015
@@ -73,6 +76,10 @@ state factory designs to specific hardware requirements.
 - *[Network medicine-based epistasis detection in complex diseases: ready for quantum computing](https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkae697/7739512)* (2024)  
   - Authors: Hoffmann M et al.  
   - Journal: Nucleic Acids Research
+
+- *[Toward useful quantum kernels](https://onlinelibrary.wiley.com/doi/full/10.1002/qute.202300298)* (2024)
+  - Authors: Massimiliano Incudini, Francesco Martini, Alessandra Di Pierro
+  - Journal: Advanced Quantum Technologies
 
 - *[The Quantum Amplitude Estimation Algorithms on Near-Term Devices: A Practical Guide](https://www.mdpi.com/2624-960X/6/1/1)* (2024)
   - Authors: Marco Maronese, Massimiliano Incudini, Luca Asproni, Enrico Prati.
@@ -118,13 +125,26 @@ state factory designs to specific hardware requirements.
 
 ### Preprints
 
-- *[Testing the presence of balanced and bipartite components in a sparse graph is QMA1-hard](https://arxiv.org/abs/2412.14932)* (2025)  
+- *[Practical advantage beyond the quadratic speedup limit with fully-quantum walks](https://arxiv.org/abs/2607.22818)* (2026)
+  - Authors: Incudini M, Mazzola G
+  - arXiv preprint
+
+- *[Hybrid Method of Efficient Simulation of Physics Applications for a Quantum Computer](https://arxiv.org/abs/2602.09020)* (2026)
+  - Authors: Rieger C, Schmitz A. T., Salem G, Incudini M, Vallecorsa S, Matsuura A. Y., Grossi M, Guerreschi G. G.
+  - arXiv preprint
+
+- *[Testing the presence of balanced and bipartite components in a sparse graph is QMA1-hard](https://arxiv.org/abs/2412.14932)* (2024)  
   - Authors: Incudini M, Gyurik C, Molteni R, Dunjko V  
-  - Status: Under review
+  - arXiv preprint
 
 ## Talks
 
 ### Conferences and workshops
+
+- Computing in High Energy and Nuclear Physics (CHEP) 2024
+    - Talk title: *Automatic and effective discovery of quantum kernels*
+    - 19 October 2024, Kraków
+    - Presented by Michele Grossi
 
 - Quantum Techniques for Machine Learning (QTML) 2023
     - Talk title: *Higher-order topological kernels via quantum computation*
@@ -155,6 +175,34 @@ state factory designs to specific hardware requirements.
 
 ### Seminars
 
+- IQM Simulation Seminar Series
+    - Talk title: *Practical advantage beyond the quadratic speedup limit with fully-quantum walks*
+    - 15 September 2026, Munich (online)
+
+- IBM Research Zurich Quantum working group
+    - Talk title: *Practical advantage beyond the quadratic speedup limit with fully-quantum walks*
+    - 2 September 2026, Zurich (online)
+
+- University of Copenhagen, Department of Chemistry
+    - Talk title: *Practical advantage beyond the quadratic speedup limit with fully-quantum walks*
+    - 20 August 2026, Copenhagen
+
+- Quantum Magic Day at SISSA
+    - Talk title: *A Clifford lens on quantum-circuit simulation (with applications to Monte Carlo sampling)*
+    - 27 March 2026, Trieste
+
+- Intel Labs
+    - Talk title: *Toward useful quantum kernels*
+    - 12 April 2024, Santa Clara (remote)
+
+- aQa lab, University of Leiden
+    - Talk title: *A quantum algorithm for spectral clustering via Hodge Laplacian*
+    - 13 March 2024, Leiden
+
+- Unitary Fund
+    - Talk title: *QuASK*
+    - 28 February 2024, Milan (remote)
+
 - Institute for Computational Systems Biology, University of Hamburg
     - Talk title: *Quantum Computing: between the skepticism and the hype*
     - 8 September 2023 at the University of Hamburg  (in presence event)
@@ -174,7 +222,7 @@ state factory designs to specific hardware requirements.
 - CERN QTI Lectures
     - Talk title: *On the construction of useful quantum kernels*
     - 29 March 2023 in CERN, Meyrin, Switzerland (both in presence and remote event)
-    - Talk recorded [on CERN Indico](https://indico.cern.ch/event/1251853/) and [Youtube](TODO)
+    - Talk recorded [on CERN Indico](https://indico.cern.ch/event/1251853/)
     
 
 ### Summer schools
@@ -192,6 +240,14 @@ state factory designs to specific hardware requirements.
 
 ### Poster presentations
 
+- QMATH Masterclass on Quantum Error Correction and Fault-Tolerance
+    - Poster title: *Practical advantage beyond the quadratic speedup limit with fully-quantum walks*
+    - 17-21 August 2026, Copenhagen
+
+- Quantum Computing Theory in Practice (QCTiP) 2025
+    - Poster title: *Testing the presence of balanced and bipartite components in a sparse graph is QMA1-hard*
+    - 23-25 April 2025, Berlin
+
 - Theory of Quantum Computation, Communication and Cryptography (TQC) 2023
     - Poster title: *The Quantum Path Kernel: a Generalized Neural Tangent Kernel for Deep Quantum Machine Learning*
     - 24-28 July 2023 in Aveiro, Portugal
@@ -204,21 +260,35 @@ state factory designs to specific hardware requirements.
 
 ### Courses
 
+I have worked as a teaching assistant for university courses at MSc and PhD level, including:
+
+- Teaching Assistant for *Advanced Quantum Algorithm* course (2025), *Phd Physics* at *SISSA*
+    - *Introduction to Qiskit* and *Quantum walks* (4 hours)
+
 - Teaching Assistant for *Quantum Computing* course (6 CFU, April-June 2022), *MSc Computer Science* at *University of Verona*
     - Laboratory part: *Introduction to the Qiskit Framework and its applications* (12 hours)
     
 - Teaching Assistant for *Quantum Computing* course (6 CFU, April-June 2021), *MSc Computer Science* at *University of Verona*
     - Laboratory part: *Introduction to the Qiskit Framework and its applications* (12 hours)
 
+I have also worked in the public school system as:
+
+- High-school teacher at *I.T.I.S. Enrico Fermi*, Mantova, Italy (10/2025-12/2025).
+
 ### Summer schools
 
 - CISM-UNIUD joint advanced school on Quantum Machine and Deep Learning 2023
     - Lecture 1: [First steps in Quantum Programming using Qiskit](talks/2023-05-29-CISM/Lecture_Incudini_2023_05_29.html)
     - Lecture 2: [Implementation of quantum kernels with Qiskit and scikit-learn](talks/2023-05-29-CISM/Lecture_Incudini_2023_05_31.html)
-  
+
+
 ## Academic service
 
-- Reviewer for: [Quantum Machine Intelligence](https://www.springer.com/journal/42484), [IEEE Transactions on Neural Networks and Learning Systems](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385), [IOP Quantum Science and Technology](https://iopscience.iop.org/journal/2058-9565), [IOP Journal of Physics A](https://iopscience.iop.org/journal/1751-8121)
+- Reviewer for:
+    - APS: PRX Quantum, Physical Review A, Physical Review Applied
+    - IEEE: Journal of Biomedical and Health Informatics, Transactions on Emerging Topics in Computational Intelligence, [Transactions on Neural Networks and Learning Systems](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385), Transactions on Quantum Engineering
+    - IOP: [Journal of Physics A](https://iopscience.iop.org/journal/1751-8121), Machine Learning Science and Technology, [Quantum Science and Technology](https://iopscience.iop.org/journal/2058-9565)
+    - Quantum journal; Quantum Information and Computation; [Quantum Machine Intelligence](https://www.springer.com/journal/42484); Scientific Reports; Cluster Computing; Advanced Quantum Technologies
 - Program Committee member for: [Quantum Techniques for Machine Learning (QTML) 2023](https://qtml-2023.web.cern.ch/) ([archive](https://web.archive.org/web/20230523195227/https://qtml-2023.web.cern.ch/committees/))
 - Supervisor for: 
     - *Davide Tezza*, MSc Mathematics at the University of Trento
@@ -233,7 +303,8 @@ state factory designs to specific hardware requirements.
 
 ## Contact Information
 
-- *Email*: massimiliano \<dot\> incudini \<at\> univr \<dot\> it
+- *Email*: massimiliano \<dot\> incudini \<at\> gmail \<dot\> com
 - *Website*: [incud.github.io](https://incud.github.io)
 - *GitHub*: [github.com/incud](https://github.com/incud)
+- *Google Scholar*: [Publications](https://scholar.google.com/citations?user=sjBkVpMAAAAJ)
 - *LinkedIn*: [www.linkedin.com/in/massimiliano-incudini](https://www.linkedin.com/in/massimiliano-incudini/)
