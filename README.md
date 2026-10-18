@@ -288,6 +288,7 @@ I have also worked in the public school system as:
     - APS: PRX Quantum, Physical Review A, Physical Review Applied
     - IEEE: Journal of Biomedical and Health Informatics, Transactions on Emerging Topics in Computational Intelligence, [Transactions on Neural Networks and Learning Systems](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385), Transactions on Quantum Engineering
     - IOP: [Journal of Physics A](https://iopscience.iop.org/journal/1751-8121), Machine Learning Science and Technology, [Quantum Science and Technology](https://iopscience.iop.org/journal/2058-9565)
+    - ACM: Transactions on Quantum Computing
     - Quantum journal; Quantum Information and Computation; [Quantum Machine Intelligence](https://www.springer.com/journal/42484); Scientific Reports; Cluster Computing; Advanced Quantum Technologies
 - Program Committee member for: [Quantum Techniques for Machine Learning (QTML) 2023](https://qtml-2023.web.cern.ch/) ([archive](https://web.archive.org/web/20230523195227/https://qtml-2023.web.cern.ch/committees/))
 - Supervisor for: 
