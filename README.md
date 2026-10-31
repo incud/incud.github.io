@@ -262,7 +262,7 @@ Previously, I worked on randomized benchmarking for triple-dot silicon spin qubi
 
 I have worked as a teaching assistant for university courses at MSc and PhD level, including:
 
-- Teaching Assistant for *Advanced Quantum Algorithm* course (2025), *Phd Physics* at *SISSA*
+- Teaching Assistant for *Advanced Quantum Algorithm* course (2026), *Phd Physics* at *SISSA*
     - *Introduction to Qiskit* and *Quantum walks* (4 hours)
 
 - Seminar for *Introduction to Quantum Machine Learning* course (19/09/2024), *PhD Computer Science* at *University of Verona*
