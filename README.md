@@ -265,6 +265,12 @@ I have worked as a teaching assistant for university courses at MSc and PhD leve
 - Teaching Assistant for *Advanced Quantum Algorithm* course (2025), *Phd Physics* at *SISSA*
     - *Introduction to Qiskit* and *Quantum walks* (4 hours)
 
+- Seminar for *Introduction to Quantum Machine Learning* course (19/09/2024), *PhD Computer Science* at *University of Verona*
+    - *Quantum algorithms for topological data analysis with ML applications*
+
+- Seminar for *Introduction to Quantum Machine Learning* course (28/09/2023), *PhD Computer Science* at *University of Verona*
+    - *Introduction to the Qiskit Framework*
+
 - Teaching Assistant for *Quantum Computing* course (6 CFU, April-June 2022), *MSc Computer Science* at *University of Verona*
     - Laboratory part: *Introduction to the Qiskit Framework and its applications* (12 hours)
     
